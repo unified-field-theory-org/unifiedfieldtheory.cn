@@ -26,7 +26,7 @@ class ShortUrlGenerator {
 					const [path, lang, slug] = replacePath;
 					return [path, lang, slug];
 				} else {
-					return []
+					return [];
 				}
 			})
 			.forEach(([path, lang, slug]) => {

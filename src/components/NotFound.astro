@@ -18,11 +18,15 @@ const t = useTranslationsForLang(lang);
 			<p set:html={t('404.content')} />
 		</div>
 		<div class="sl-flex actions">
-			<Button link={`/${lang}/`} variant="primary" icon={{ type: 'icon', name: 'right-arrow' }} set:html={t('404.linkText')} />
+			<Button
+				link={`/${lang}/`}
+				variant="primary"
+				icon={{ type: 'icon', name: 'right-arrow' }}
+				set:html={t('404.linkText')}
+			/>
 		</div>
 	</div>
 </div>
-
 
 <style>
 	.hero {
@@ -35,7 +39,7 @@ const t = useTranslationsForLang(lang);
 		content: '';
 		inset: 0;
 		background-image: linear-gradient(to right, var(--sl-color-white) 1px, transparent 1px),
-		linear-gradient(to bottom, var(--sl-color-white) 1px, transparent 1px);
+			linear-gradient(to bottom, var(--sl-color-white) 1px, transparent 1px);
 		background-position: right -1px;
 		background-size: 23px 23px;
 		-webkit-mask-image: radial-gradient(circle at 100% 0%, white, transparent 65%);

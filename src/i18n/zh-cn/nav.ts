@@ -8,9 +8,11 @@ export default NavDictionary({
 	'about-website': '关于本网站',
 	'join-community': '加入社区',
 	researchExperiment: '研究实验',
-	'research-experiment/generation-of-gravitational-fields-by-low-voltage-varying-electromagnetic-fields': '低电压变化电磁场产生引力场试验',
+	'research-experiment/generation-of-gravitational-fields-by-low-voltage-varying-electromagnetic-fields':
+		'低电压变化电磁场产生引力场试验',
 	academicPaper: '学术论文',
-	'academic-paper/unified-field-equation-generated-by-longitudinal-electromagnetic-lem-waves': '纵向电磁波 (LEM) 产生的统一场方程',
+	'academic-paper/unified-field-equation-generated-by-longitudinal-electromagnetic-lem-waves':
+		'纵向电磁波 (LEM) 产生的统一场方程',
 	resources: '资源',
 	'resources/relevant-literature': '相关文献',
 	'resources/field-animations': '宇宙四大场动画演示',

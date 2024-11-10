@@ -4,16 +4,16 @@ import { defineConfig, sharpImageService } from 'astro/config';
 import { makeLocalesConfig } from './config/locales';
 import { makeSidebar } from './config/sidebar';
 
+import vercel from '@astrojs/vercel/serverless';
 import rehypeSlug from 'rehype-slug';
 import remarkSmartypants from 'remark-smartypants';
-import vercel from "@astrojs/vercel/serverless";
 
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 import { sitemap } from './integrations/sitemap';
 import { rehypeAutolink } from './plugins/rehype-autolink';
 import { rehypeTasklistEnhancer } from './plugins/rehype-tasklist-enhancer';
 import { remarkFallbackLang } from './plugins/remark-fallback-lang';
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
 
 // https://astro.build/config
 export default defineConfig({

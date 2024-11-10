@@ -17,9 +17,10 @@ const { sources, imageSrc, alt = 'Video thumbnail' } = Astro.props as Props;
 	</video>
 	<button class="play-button" aria-label="Play video">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-			<path d="M18.394 12.796L8.8495 18.334C8.0395 18.8035 7 18.235 7 17.2885V6.21252C7 5.26752 8.038 4.69752 8.8495 5.16852L18.394 10.7065C18.5783 10.8117 18.7314 10.9638 18.8379 11.1472C18.9445 11.3307 19.0006 11.5391 19.0006 11.7513C19.0006 11.9634 18.9445 12.1718 18.8379 12.3553C18.7314 12.5388 18.5783 12.6908 18.394 12.796Z"/>
+			<path
+				d="M18.394 12.796L8.8495 18.334C8.0395 18.8035 7 18.235 7 17.2885V6.21252C7 5.26752 8.038 4.69752 8.8495 5.16852L18.394 10.7065C18.5783 10.8117 18.7314 10.9638 18.8379 11.1472C18.9445 11.3307 19.0006 11.5391 19.0006 11.7513C19.0006 11.9634 18.9445 12.1718 18.8379 12.3553C18.7314 12.5388 18.5783 12.6908 18.394 12.796Z"
+			></path>
 		</svg>
-
 	</button>
 </div>
 
@@ -27,7 +28,7 @@ const { sources, imageSrc, alt = 'Video thumbnail' } = Astro.props as Props;
 	document.addEventListener('DOMContentLoaded', () => {
 		const containers = document.querySelectorAll('.video-container');
 
-		containers.forEach(container => {
+		containers.forEach((container) => {
 			const video = container.querySelector('video');
 			const playButton = container.querySelector('.play-button');
 

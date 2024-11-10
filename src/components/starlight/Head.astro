@@ -12,10 +12,11 @@ const is404 = Astro.url.pathname.endsWith('/404/');
 import { allPages } from '~/content';
 import { getOgImageUrl } from '../../util/getOgImageUrl';
 const currentPath = Astro.url.pathname;
-const currentPage = allPages.find(page => page.slug === currentPath.replace(/^\/|\/$/g, ''));
+const currentPage = allPages.find((page) => page.slug === currentPath.replace(/^\/|\/$/g, ''));
 const currentHref = Astro.url.href;
-const pageTitle = currentPage?.data?.title || "Unified Field Theory";
-const pageDescription = currentPage?.data?.description || "Zhang's Unified Field Theory document collection site";
+const pageTitle = currentPage?.data?.title || 'Unified Field Theory';
+const pageDescription =
+	currentPage?.data?.description || "Zhang's Unified Field Theory document collection site";
 
 const baiduId1 = import.meta.env.PUBLIC_BAIDU_ANALYTICS_ID_1;
 const baiduId2 = import.meta.env.PUBLIC_BAIDU_ANALYTICS_ID_2;
@@ -26,19 +27,19 @@ const googleId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 <!-- Baidu -->
 <script define:vars={{ baiduId1 }}>
 	var _hmt = _hmt || [];
-	(function() {
-		var hm = document.createElement("script");
+	(function () {
+		var hm = document.createElement('script');
 		hm.src = `https://hm.baidu.com/hm.js?${baiduId1}`;
-		var s = document.getElementsByTagName("script")[0];
+		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(hm, s);
 	})();
 </script>
 <script define:vars={{ baiduId2 }}>
 	var _hmt = _hmt || [];
-	(function() {
-		var hm = document.createElement("script");
+	(function () {
+		var hm = document.createElement('script');
 		hm.src = `https://hm.baidu.com/hm.js?${baiduId2}`;
-		var s = document.getElementsByTagName("script")[0];
+		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(hm, s);
 	})();
 </script>
@@ -47,7 +48,9 @@ const googleId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleId}`}></script>
 <script define:vars={{ googleId }}>
 	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
+	function gtag() {
+		dataLayer.push(arguments);
+	}
 	gtag('js', new Date());
 
 	gtag('config', googleId);
@@ -61,19 +64,18 @@ const googleId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 <meta property="og:type" content="website" />
 
 <meta name="twitter:image" content={canonicalImageSrc} />
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content={pageTitle}>
-<meta name="twitter:description" content={pageDescription}>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={pageDescription} />
 <meta name="twitter:site" content="unifiedfieldtheory.cn" />
 <meta name="twitter:creator" content="unifiedfieldtheory.cn" />
-
 
 <!-- Algolia docsearch language facet -->
 <meta name="docsearch:language" content={lang} />
 
-<meta name="description" content={pageDescription}>
-<meta name="keywords" content={pageTitle}>
-<meta name="author" content="@obiscr">
+<meta name="description" content={pageDescription} />
+<meta name="keywords" content={pageTitle} />
+<meta name="author" content="@obiscr" />
 
 <!-- Fathom analytics -->
 <script
