@@ -1,6 +1,7 @@
 export const allLanguages = {
 	en: 'English',
 	'zh-cn': '简体中文',
+	ja: '日本語',
 } as const;
 
 /**
