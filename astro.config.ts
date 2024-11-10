@@ -50,7 +50,7 @@ export default defineConfig({
 			locales: makeLocalesConfig(),
 			sidebar: makeSidebar(),
 			social: {
-				github: 'https://github.com/unified-field-theory-org/documentation',
+				github: 'https://github.com/unified-field-theory-org/unifiedfieldtheory.cn',
 				slack: 'https://unifiedfieldtheorycn.slack.com',
 				discord: 'https://discord.gg/W3JYMwBBWb',
 			},
