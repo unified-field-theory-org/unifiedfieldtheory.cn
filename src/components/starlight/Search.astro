@@ -32,16 +32,16 @@ const docSearchStrings = getDocSearchStrings(Astro);
 
 	docsearch({
 		container: 'sl-doc-search',
-		appId: 'VJRPHEK5I7',
-		indexName: 'unifiedfieldtheory',
-		apiKey: 'f9e6f481e5d0cbdbf2bc6432dbb685b6',
+		appId: import.meta.env.PUBLIC_ALGOLIA_APPID,
+		indexName: import.meta.env.PUBLIC_ALGOLIA_INDEX_NAME,
+		apiKey: import.meta.env.PUBLIC_ALGOLIA_SEARCH_API_KEY,
 		searchParameters: {
 			facetFilters: [[`lang:${location.pathname.split('/')[1]}`]],
 			attributesToHighlight: ['hierarchy.lvl0'],
 		},
 		insights: true,
 		getMissingResultsUrl: ({ query }: { query: string }) =>
-			`https://github.com/unified-field-theory-org/documentation/issues/new?title=Missing+results+for+query+%22${encodeURIComponent(
+			`https://github.com/unified-field-theory-org/unifiedfieldtheory.cn/issues/new?title=Missing+results+for+query+%22${encodeURIComponent(
 				query
 			)}%22`,
 		transformItems: (items) => {
