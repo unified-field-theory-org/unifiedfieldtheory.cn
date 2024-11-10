@@ -21,13 +21,20 @@ class ShortUrlGenerator {
 		(await glob('./src/content/docs/**/*.{md,mdx}'))
 			.filter((file) => !file.endsWith('404.mdx'))
 			.map((file) => {
-				const [path, lang, slug] = file.replace('./src/content/docs/', '').match(/^([^/]+)\/(.+)$/);
-				return [path, lang, slug];
+				const replacePath = file.replace('./src/content/docs/', '').match(/^([^/]+)\/(.+)$/);
+				if (replacePath) {
+					const [path, lang, slug] = replacePath;
+					return [path, lang, slug];
+				} else {
+					return []
+				}
 			})
 			.forEach(([path, lang, slug]) => {
-				path = this.removeMarkdownExtension(path);
-				if (!paths.has(path)) {
-					paths.add(`/${path}`);
+				if (path) {
+					path = this.removeMarkdownExtension(path);
+					if (!paths.has(path)) {
+						paths.add(`/${path}`);
+					}
 				}
 			});
 		return paths;
