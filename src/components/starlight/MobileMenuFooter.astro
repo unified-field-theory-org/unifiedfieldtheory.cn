@@ -1,0 +1,15 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/MobileMenuFooter.astro';
+---
+
+<div class="sl-flex">
+	<Default {...Astro.props}><slot /></Default>
+</div>
+
+<style>
+	div {
+		flex-direction: column;
+		gap: 1rem;
+	}
+</style>

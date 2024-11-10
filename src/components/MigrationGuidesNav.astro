@@ -1,0 +1,26 @@
+---
+import { englishPages } from '~/content';
+import { isMigrationEntry } from '~/content/config';
+import { isLogoKey } from '~/data/logos';
+import { getLanguageFromURL } from '~/util';
+import CardsNav from './NavGrid/CardsNav.astro';
+
+const lang = getLanguageFromURL(Astro.url.pathname);
+
+const enPages = englishPages.filter(isMigrationEntry);
+
+const links = enPages
+	.sort((a, b) => {
+		// Sort alphabetically.
+		return a.data.framework.toLowerCase() > b.data.framework.toLowerCase() ? 1 : -1;
+	})
+	.map((page) => {
+		const pageUrl = page.slug.replace('en/', `/${lang}/`) + '/';
+		const slug = page.slug.split('/').pop()?.replace('from-', '');
+		return { title: page.data.framework, href: pageUrl, logo: isLogoKey(slug) };
+	});
+---
+
+<section>
+	<CardsNav minimal links={links} />
+</section>

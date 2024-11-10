@@ -1,0 +1,6 @@
+# Moved content
+# When moving a page, usually you’ll want to add a redirect to the bottom of this block.
+
+# Translated 404s
+/:lang/*            /:lang/404/     404
+/*                  /404/           404

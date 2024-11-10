@@ -1,0 +1,27 @@
+/** Custom Styles **/
+
+.card-grid {
+	/* TODO(@delucis): Upstream this fix to Starlight. `gtc` missing there. */
+	grid-template-columns: 100%;
+}
+@media (min-width: 50rem) {
+	.card-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* I'm not sure why Katex's Vector arrows don't show up, 
+	 but there is this style to make it show up */
+.katex .accent .accent-body:not(.accent-full) {
+	width: 9px !important;
+}
+
+.katex .accent .accent-body {
+	left: 0 !important;
+}
+
+.katex-display {
+	max-width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+}

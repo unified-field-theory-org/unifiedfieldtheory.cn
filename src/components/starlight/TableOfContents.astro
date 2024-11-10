@@ -1,0 +1,27 @@
+---
+import { useTranslations } from '../../i18n/util';
+import { useTranslations as useStarlightTranslations } from '@astrojs/starlight/internal';
+import TableOfContentsList from '../../../node_modules/@astrojs/starlight/components/TableOfContents/TableOfContentsList.astro';
+import type { Props } from '@astrojs/starlight/props';
+
+
+const { locale, toc } = Astro.props;
+const t = useTranslations(Astro);
+const starlightTranslations = useStarlightTranslations(locale);
+---
+
+{
+	toc && (
+		<starlight-toc data-min-h={toc.minHeadingLevel} data-max-h={toc.maxHeadingLevel}>
+			<nav aria-labelledby="starlight__on-this-page">
+				<h2 id="starlight__on-this-page">
+					{starlightTranslations('tableOfContents.onThisPage')}
+				</h2>
+				<TableOfContentsList toc={toc.items} />
+			</nav>
+		</starlight-toc>
+	)
+}
+
+<script src="../../../node_modules/@astrojs/starlight/components/TableOfContents/starlight-toc"
+></script>

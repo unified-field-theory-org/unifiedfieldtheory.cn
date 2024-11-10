@@ -1,0 +1,83 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Head.astro';
+
+const { isFallback, lang } = Astro.props;
+const ogImageUrl = getOgImageUrl(Astro.url.pathname, !!isFallback);
+
+const imageSrc = ogImageUrl ?? '/default-og-image.png';
+const canonicalImageSrc = new URL(imageSrc, Astro.site);
+const is404 = Astro.url.pathname.endsWith('/404/');
+
+import { allPages } from '~/content';
+import { getOgImageUrl } from '../../util/getOgImageUrl';
+const currentPath = Astro.url.pathname;
+const currentPage = allPages.find(page => page.slug === currentPath.replace(/^\/|\/$/g, ''));
+const currentHref = Astro.url.href;
+const pageTitle = currentPage?.data?.title || "Unified Field Theory";
+const pageDescription = currentPage?.data?.description || "Zhang's Unified Field Theory document collection site";
+
+const baiduId1 = import.meta.env.PUBLIC_BAIDU_ANALYTICS_ID_1;
+const baiduId2 = import.meta.env.PUBLIC_BAIDU_ANALYTICS_ID_2;
+const googleId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
+---
+
+<Default {...Astro.props}><slot /></Default>
+<!-- Baidu -->
+<script define:vars={{ baiduId1 }}>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = `https://hm.baidu.com/hm.js?${baiduId1}`;
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<script define:vars={{ baiduId2 }}>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = `https://hm.baidu.com/hm.js?${baiduId2}`;
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${googleId}`}></script>
+<script define:vars={{ googleId }}>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', googleId);
+</script>
+
+<meta property="og:image" content={canonicalImageSrc} />
+<meta property="og:image:alt" content="Unified field theory,统一场论" />
+<meta property="og:locale" content={lang} />
+<meta property="og:url" content={currentHref} />
+<meta property="og:site_name" content="Unified field theory" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:image" content={canonicalImageSrc} />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={pageTitle}>
+<meta name="twitter:description" content={pageDescription}>
+<meta name="twitter:site" content="unifiedfieldtheory.cn" />
+<meta name="twitter:creator" content="unifiedfieldtheory.cn" />
+
+
+<!-- Algolia docsearch language facet -->
+<meta name="docsearch:language" content={lang} />
+
+<meta name="description" content={pageDescription}>
+<meta name="keywords" content={pageTitle}>
+<meta name="author" content="@obiscr">
+
+<!-- Fathom analytics -->
+<script
+	src="https://cdn.usefathom.com/script.js"
+	data-site="EZBHTSIG"
+	data-canonical={is404 ? 'false' : 'true'}
+	defer></script>

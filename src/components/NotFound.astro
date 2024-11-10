@@ -1,0 +1,114 @@
+---
+import type { UILanguageKeys } from '~/i18n/translation-checkers';
+import { useTranslationsForLang } from '~/i18n/util';
+import Button from '~/components/Button.astro';
+
+interface Props {
+	lang: UILanguageKeys;
+}
+const { lang } = Astro.props;
+const t = useTranslationsForLang(lang);
+---
+
+<div class="hero">
+	<div class="grid-bg"></div>
+	<div id="_top" class="hero-content stack" style="--stack-gap: 2rem;">
+		<div class="stack" style="--stack-gap: 1rem;">
+			<h1 set:html={t('404.title')} />
+			<p set:html={t('404.content')} />
+		</div>
+		<div class="sl-flex actions">
+			<Button link={`/${lang}/`} variant="primary" icon={{ type: 'icon', name: 'right-arrow' }} set:html={t('404.linkText')} />
+		</div>
+	</div>
+</div>
+
+
+<style>
+	.hero {
+		position: relative;
+	}
+
+	.grid-bg {
+		z-index: -1;
+		position: absolute;
+		content: '';
+		inset: 0;
+		background-image: linear-gradient(to right, var(--sl-color-white) 1px, transparent 1px),
+		linear-gradient(to bottom, var(--sl-color-white) 1px, transparent 1px);
+		background-position: right -1px;
+		background-size: 23px 23px;
+		-webkit-mask-image: radial-gradient(circle at 100% 0%, white, transparent 65%);
+		mask-image: radial-gradient(circle at 100% 0%, white, transparent 65%);
+		opacity: 0.05;
+	}
+
+	.stack {
+		display: flex;
+		flex-direction: column;
+		gap: var(--stack-gap, 1.5rem);
+	}
+
+	.hero-content {
+		padding: 3rem var(--sl-content-pad-x);
+		text-align: center;
+	}
+
+	h1 {
+		font-size: var(--sl-text-5xl);
+		line-height: var(--sl-line-height-headings);
+		font-weight: 600;
+		color: var(--sl-color-white);
+	}
+	.actions {
+		flex-wrap: wrap;
+		gap: 1rem 2rem;
+		justify-content: center;
+	}
+
+	:global([data-has-hero] .main-pane) {
+		--sl-content-margin-inline: 0;
+		width: 100%;
+	}
+
+	@media (min-width: 32rem) {
+		.hero-content {
+			max-width: 36rem;
+			padding-block: 6rem;
+		}
+
+		h1 {
+			font-size: var(--sl-text-6xl);
+		}
+	}
+
+	:global([data-has-hero] .sl-container) {
+		max-width: 100%;
+	}
+
+	.hero-content,
+	:global([data-has-hero] .sl-markdown-content) {
+		max-width: 72rem;
+		margin-inline: auto;
+	}
+
+	@media (min-width: 78rem) {
+		.hero {
+			display: grid;
+		}
+		.hero > :global(*) {
+			/* Position all elements in the hero on top of each other in the same grid area. */
+			grid-area: 1 / 1 / -1 / -1;
+		}
+
+		.hero-content {
+			width: 100%;
+			text-align: start;
+			align-self: center;
+		}
+
+		.actions {
+			justify-content: start;
+		}
+	}
+</style>

@@ -1,0 +1,49 @@
+---
+import logo from '~/assets/logo.svg?raw';
+import { useTranslations } from '../../i18n/util';
+import { getLanguageFromURL } from '~/util';
+const t = useTranslations(Astro);
+const lang = getLanguageFromURL(Astro.url.pathname);
+const titleHref = lang ? `/${lang}/` : '/';
+---
+
+<span class="site-title sl-flex">
+	<a href={titleHref} set:html={logo} aria-label="Unified field theory" />
+	<a href={titleHref} set:html={t('site.title')} aria-label={t('site.title')}></a>
+</span>
+
+<style>
+	.site-title {
+		gap: 0.5rem;
+	}
+	.site-title a {
+		display: flex;
+		align-items: center;
+		font-weight: bold;
+		color: var(--sl-color-white);
+		text-decoration: none;
+	}
+
+	/* On focus, outline <img> and <svg> rather than <a> */
+	.site-title a:focus-visible {
+		outline: 0;
+	}
+	.site-title a:focus-visible > :global(*) {
+		outline: auto;
+		outline-offset: 0.33rem;
+		border-radius: 1px;
+	}
+	/* Adjust svg sizes to full nav height */
+	.site-title :global(svg) {
+		--display-height: 1.75rem;
+		/* `auto` ensures the `<svg>` scales down on really narrow viewports */
+		width: auto;
+		height: auto;
+		margin-block: calc((var(--sl-nav-height) - var(--display-height)) / 2);
+		transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	.site-title a:hover :global(svg) {
+		--hover-offset: 0.15rem;
+		transform: translateY(calc(var(--hover-offset) * -1));
+	}
+</style>

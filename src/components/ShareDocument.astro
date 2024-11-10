@@ -1,0 +1,112 @@
+---
+import redirects from "../../public/redirects.json"
+import { useTranslations } from '~/i18n/util';
+
+const t = useTranslations(Astro);
+
+import { allPages } from '~/content';
+const currentPath = Astro.url.pathname;
+const currentPage = allPages.find(page => page.slug === currentPath.replace(/^\/|\/$/g, ''));
+const currentHref = Astro.url.href
+const currentTitle = currentPage.data.title || "Unified field theory";
+let shortHref = currentHref;
+if (currentPage?.slug) {
+	const absHref = `/${currentPage.slug}`;
+	// 反转 redirects 对象，使得值成为键，键成为值
+	const invertedRedirects = Object.fromEntries(
+		Object.entries(redirects).map(([key, value]) => [value, key])
+	);
+
+	// 查找对应的短链接
+	const shortLink = invertedRedirects[absHref];
+	if (shortLink) {
+		shortHref = `https://uft.link${shortLink}`;
+	}
+}
+const twitterHref = `https://twitter.com/intent/tweet?text=${currentTitle}&url=${currentHref}&via=unifiedfieldtheory`
+---
+
+<aside class="not-content">
+	<div>
+		<h2>{t('share.title')}</h2>
+		<p>
+			<a href={twitterHref} target="_blank" aria-label="Share to Twitter" title="Share to Twitter">
+				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12.1626 1.5H14.3679L9.54994 7.00667L15.2179 14.5H10.7799L7.30394 9.95533L3.3266 14.5H1.11994L6.27327 8.61L0.835938 1.5H5.3866L8.5286 5.654L12.1626 1.5ZM11.3886 13.18H12.6106L4.7226 2.75067H3.41127L11.3886 13.18Z" fill="currentColor"/>
+				</svg>
+			</a>
+			<a id="copyLink" aria-label="Copy" title="Copy">
+				<svg width="16" height="16" viewBox="0 0 16 16" class="bi bi-copy" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M4 2C4 1.46957 4.21071 0.960859 4.58579 0.585786C4.96086 0.210714 5.46957 0 6 0L14 0C14.5304 0 15.0391 0.210714 15.4142 0.585786C15.7893 0.960859 16 1.46957 16 2V10C16 10.5304 15.7893 11.0391 15.4142 11.4142C15.0391 11.7893 14.5304 12 14 12H6C5.46957 12 4.96086 11.7893 4.58579 11.4142C4.21071 11.0391 4 10.5304 4 10V2ZM6 1.29289C5.73478 1.29289 5.68754 1.31246 5.5 1.5C5.31246 1.68754 5.29289 1.73478 5.29289 2V10.0934C5.29289 10.3587 5.31246 10.3125 5.5 10.5C5.68754 10.6875 5.81387 10.7071 6.07909 10.7071H14C14.2652 10.7071 14.3125 10.6875 14.5 10.5C14.6875 10.3125 14.7071 10.2652 14.7071 10V2C14.7071 1.73478 14.6875 1.68754 14.5 1.5C14.3125 1.31246 14.2652 1.29289 14 1.29289H6ZM2.02918 5.29289C1.76396 5.29289 1.68754 5.31246 1.5 5.5C1.31246 5.68754 1.29289 5.73478 1.29289 6V14C1.29289 14.2652 1.31246 14.3125 1.5 14.5C1.68754 14.6875 1.73478 14.7071 2 14.7071H10C10.2652 14.7071 10.3125 14.6875 10.5 14.5C10.6875 14.3125 10.7071 14.2652 10.7071 14V13H12V14C12 14.5304 11.7893 15.0391 11.4142 15.4142C11.0391 15.7893 10.5304 16 10 16H2C1.46957 16 0.960859 15.7893 0.585786 15.4142C0.210714 15.0391 0 14.5304 0 14V6C0 5.46957 0.210714 4.96086 0.585786 4.58579C0.960859 4.21071 1.46957 4 2 4H3V5.29289H2.02918Z"/>
+				</svg>
+
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="display: none;">
+					<path d="M14.161 2.31052C14.2603 2.2122 14.3788 2.1341 14.5095 2.08078C14.6403 2.02746 14.7807 2 14.9225 2C15.0643 2 15.2047 2.02746 15.3354 2.08078C15.4662 2.1341 15.5847 2.2122 15.6839 2.31052C16.1 2.71855 16.1058 3.37789 15.6985 3.79297L7.09759 13.6619C6.99994 13.766 6.88143 13.8496 6.74933 13.9077C6.61723 13.9658 6.4743 13.9972 6.32929 13.9998C6.18428 14.0025 6.04024 13.9764 5.90599 13.9231C5.77173 13.8699 5.65007 13.7906 5.54847 13.6901L0.314904 8.54248C0.113063 8.34269 0 8.07402 0 7.7942C0 7.51437 0.113063 7.24571 0.314904 7.04591C0.414173 6.94759 0.532652 6.86949 0.663403 6.81617C0.794155 6.76285 0.934552 6.73539 1.07637 6.73539C1.2182 6.73539 1.35859 6.76285 1.48934 6.81617C1.6201 6.86949 1.73858 6.94759 1.83784 7.04591L6.27721 11.4128L14.1319 2.34158L14.161 2.31052Z"/>
+				</svg>
+			</a>
+		</p>
+	</div>
+</aside>
+
+<style>
+	aside {
+		margin: 1rem 0;
+		position: relative;
+		background-color: var(--sl-color-gray-6);
+		padding: 1rem;
+		border-radius: 0.5rem;
+		display: flex;
+		border: 1px solid var(--sl-color-text-accent);
+		box-shadow: var(--sl-shadow-md);
+		overflow-y: hidden;
+	}
+	aside h2 {
+		font-size: var(--sl-text-lg) !important;
+	}
+	aside p {
+		font-size: var(--sl-text-sm) !important;
+		line-height: normal;
+		display: flex;
+		flex-direction: row;
+		gap: 6px;
+	}
+	aside p a {
+		cursor: pointer;
+	}
+	aside svg {
+		transition: transform 0.3s;
+		transform: translateY(2px);
+	}
+
+	aside svg:hover {
+		transform: translateY(0px);
+	}
+</style>
+
+<script define:vars={{ shortHref }}>
+	document.addEventListener('DOMContentLoaded', (event) => {
+		const copyLink = document.getElementById('copyLink');
+		const copySvg = copyLink.querySelector('.bi-copy');
+		const checkSvg = copyLink.querySelector('.bi-check-lg');
+		if (copyLink) {
+			copyLink.addEventListener('click', () => {
+				navigator.clipboard.writeText(shortHref).then(() => {
+					console.log('Copied!');
+
+					// Hide copy icon and show check icon
+					copySvg.style.display = 'none';
+					checkSvg.style.display = 'inline';
+
+					// After 3 seconds, revert back
+					setTimeout(() => {
+						copySvg.style.display = 'inline';
+						checkSvg.style.display = 'none';
+					}, 1000);
+
+				}).catch(err => {
+					console.error('Failed to copy: ', err);
+				});
+			});
+		}
+	});
+</script>

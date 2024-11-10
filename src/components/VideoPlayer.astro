@@ -1,0 +1,89 @@
+---
+interface Props {
+	sources: {
+		src: string;
+		type: 'video/mp4' | 'video/webm';
+	}[];
+	imageSrc: string;
+	alt?: string;
+}
+
+const { sources, imageSrc, alt = 'Video thumbnail' } = Astro.props as Props;
+---
+
+<div class="video-container">
+	<video loop muted playsinline preload="none" poster={imageSrc}>
+		{sources.map(({ src, type }) => <source src={src} type={type} />)}
+	</video>
+	<button class="play-button" aria-label="Play video">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+			<path d="M18.394 12.796L8.8495 18.334C8.0395 18.8035 7 18.235 7 17.2885V6.21252C7 5.26752 8.038 4.69752 8.8495 5.16852L18.394 10.7065C18.5783 10.8117 18.7314 10.9638 18.8379 11.1472C18.9445 11.3307 19.0006 11.5391 19.0006 11.7513C19.0006 11.9634 18.9445 12.1718 18.8379 12.3553C18.7314 12.5388 18.5783 12.6908 18.394 12.796Z"/>
+		</svg>
+
+	</button>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const containers = document.querySelectorAll('.video-container');
+
+		containers.forEach(container => {
+			const video = container.querySelector('video');
+			const playButton = container.querySelector('.play-button');
+
+			const togglePlay = () => {
+				if (video.paused) {
+					video.play();
+					playButton.style.opacity = '0';
+				} else {
+					video.pause();
+					playButton.style.opacity = '1';
+				}
+			};
+
+			playButton.addEventListener('click', togglePlay);
+			video.addEventListener('click', togglePlay);
+
+			video.addEventListener('ended', () => {
+				playButton.style.opacity = '1';
+			});
+		});
+	});
+</script>
+
+<style>
+	.video-container {
+		position: relative;
+		width: 100%;
+		cursor: pointer;
+	}
+
+	video {
+		width: 100%;
+		height: auto;
+	}
+
+	.play-button {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 60px;
+		height: 60px;
+		background: var(--sl-color-bg-accent);
+		border: none;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: opacity 0.3s ease;
+		margin: 0 !important;
+	}
+
+	.play-button svg {
+		width: 30px;
+		height: 30px;
+		fill: white;
+	}
+</style>
