@@ -6,7 +6,7 @@ export interface Props {
 	githubRepo?: `${string}/${string}`;
 }
 
-const { githubRepo = 'unified-field-theory-cn/documentation' } = Astro.props as Props;
+const { githubRepo = 'unified-field-theory-org/unifiedfieldtheory.cn' } = Astro.props as Props;
 
 const contributors = await getAllContributors(githubRepo);
 ---
