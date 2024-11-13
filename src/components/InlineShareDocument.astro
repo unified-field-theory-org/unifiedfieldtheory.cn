@@ -9,94 +9,69 @@ import { Icon } from '@astrojs/starlight/components';
 const currentPath = Astro.url.pathname;
 const currentPage = allPages.find((page) => page.slug === currentPath.replace(/^\/|\/$/g, ''));
 const currentHref = Astro.url.href;
-const currentTitle = currentPage.data.title || 'Unified field theory';
-let shortHref = currentHref;
+const currentTitle = currentPage?.data.title || 'Unified field theory';
+let shortHref = undefined;
 if (currentPage?.slug) {
 	const absHref = `/${currentPage.slug}`;
-	// 反转 redirects 对象，使得值成为键，键成为值
 	const invertedRedirects = Object.fromEntries(
 		Object.entries(redirects).map(([key, value]) => [value, key])
 	);
-
-	// 查找对应的短链接
+	
 	const shortLink = invertedRedirects[absHref];
 	if (shortLink) {
 		shortHref = `https://uft.link${shortLink}`;
 	}
 }
 const twitterHref = `https://twitter.com/intent/tweet?text=${currentTitle}&url=${currentHref}&via=unifiedfieldtheory`;
+const { toc } = Astro.props;
 ---
 
-<aside class="not-content">
-	<div>
-		<h2>{t('share.title')}</h2>
-		<p>
-			<a href={twitterHref} class="sl-flex" target="_blank" aria-label="Share to Twitter" title="Share to Twitter">
-				<Icon name="x.com" size="1.2em" />
-			</a>
-			<span id="externalAction" class="sl-flex external" aria-label="Copy External Link" title="Copy External Link">
-				<Icon name="external" size="1.4em" />
-			</span>
-			<span id="approveCheckAction" class="sl-hidden approve-check">
-				<Icon name="approve-check" size="1.4em" />
-			</span>
-		</p>
+
+{
+	!toc && shortHref && (
+	<div class="sl-flex">
+		<span><b>{t('share.title')}</b></span>
+		<a href={twitterHref} class="sl-flex" target="_blank" aria-label="Share to Twitter" title="Share to Twitter">
+			<Icon name="x.com" size="1.2em" />
+		</a>
+		<a id="inlineExternalAction" class="sl-flex" aria-label="Copy External Link" title="Copy External Link">
+			<Icon name="external" size="1.5em" />
+		</a>
+		<a id="inlineApproveCheckAction" class="sl-hidden">
+			<Icon name="approve-check" size="1.5em" />
+		</a>
 	</div>
-</aside>
+		)
+	}
 
 <style>
-	aside {
-		margin: 1rem 0;
-		position: relative;
-		background-color: var(--sl-color-gray-6);
-		padding: 1rem;
-		border-radius: 0.5rem;
-		display: flex;
-		border: 1px solid var(--sl-color-text-accent);
-		box-shadow: var(--sl-shadow-md);
-		overflow-y: hidden;
+	div {
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		font-size: var(--sl-text-sm);
 	}
-	aside h2 {
-		font-size: var(--sl-text-lg) !important;
+	a {
+		gap: 0.5rem;
+		align-items: center;
+		text-decoration: none;
+		color: var(--sl-color-gray-3);
 	}
-	aside p {
-		font-size: var(--sl-text-sm) !important;
-		line-height: normal;
-		display: flex;
-		flex-direction: row;
-		gap: 6px;
+	a:hover {
+		color: var(--sl-color-white);
 	}
-	aside p a {
-		cursor: pointer;
-	}
-	aside svg {
-		transition: transform 0.3s;
-		transform: translateY(2px);
-		&:hover{
-			transform: translateY(0px);
-		}
-	}
-	aside .external svg {
+	div svg {
 		transition: transform 0.3s;
 		transform: translateY(0px);
-		
 		&:hover {
 			transform: translateY(-2px);
-		}
-	}
-	aside .approve-check svg {
-		transition: transform 0.3s;
-		transform: translateY(-1px);
-		&:hover {
-			transform: translateY(-3px);
 		}
 	}
 </style>
 
 <script define:vars={{ shortHref }}>
 	document.addEventListener('DOMContentLoaded', (event) => {
-		const externalAction = document.getElementById('externalAction');
-		const approveCheckAction = document.getElementById('approveCheckAction');
+		const externalAction = document.getElementById('inlineExternalAction');
+		const approveCheckAction = document.getElementById('inlineApproveCheckAction');
 
 		if (externalAction) {
 			externalAction.addEventListener('click', () => {
