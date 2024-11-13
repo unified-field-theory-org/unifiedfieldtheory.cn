@@ -53,49 +53,8 @@ export default [
 		slug: 'resources/use-of-artificial-sites',
 		key: 'resources/use-of-artificial-sites',
 	},
-	// { text: 'Unified field theory', header: true, type: 'learn', key: 'unifiedFieldTheory' },
-	// {
-	// 	text: 'Chapter 1',
-	// 	slug: 'unified-field-theory/chapter-1',
-	// 	key: 'unified-field-theory/chapter-1',
-	// },
-	// {
-	// 	text: 'Chapter 2',
-	// 	slug: 'unified-field-theory/chapter-2',
-	// 	key: 'unified-field-theory/chapter-2',
-	// },
-	// {
-	// 	text: 'Chapter 3',
-	// 	slug: 'unified-field-theory/chapter-3',
-	// 	key: 'unified-field-theory/chapter-3',
-	// },
-	// {
-	// 	text: 'Chapter 4',
-	// 	slug: 'unified-field-theory/chapter-4',
-	// 	key: 'unified-field-theory/chapter-4',
-	// },
-	// {
-	// 	text: 'Chapter 5',
-	// 	slug: 'unified-field-theory/chapter-5',
-	// 	key: 'unified-field-theory/chapter-5',
-	// },
-	// {
-	// 	text: 'Chapter 6',
-	// 	slug: 'unified-field-theory/chapter-6',
-	// 	key: 'unified-field-theory/chapter-6',
-	// },
-	// {
-	// 	text: 'Chapter 7',
-	// 	slug: 'unified-field-theory/chapter-7',
-	// 	key: 'unified-field-theory/chapter-7',
-	// },
-	// {
-	// 	text: 'Chapter 8',
-	// 	slug: 'unified-field-theory/chapter-8',
-	// 	key: 'unified-field-theory/chapter-8',
-	// },
 	{ text: 'Main works', header: true, type: 'learn', key: 'mainWorks' },
-	{ text: 'Unified Field Theory', header: true, nested: true, collapsed: true, type: 'learn', key: 'unifiedFieldTheory2' },  // TODO: 之后将原来以 'unifiedFieldTheory' 为 key 的项删除后, 可以全项目将 unifiedFieldTheory2 替换为 unifiedFieldTheory
+	{ text: 'Unified Field Theory', header: true, nested: true, collapsed: true, type: 'learn', key: 'unifiedFieldTheory' },
 	{
 		text: 'Preface',
 		slug: 'main-works/unified-field-theory/section-0',
@@ -308,9 +267,9 @@ export default [
 	},
 	{ text: 'Unveiling the Mystery of Gravity', header: true, nested: true, collapsed: true, type: 'learn', key: 'gravityMystery' },
 	{ text: 'Unveiling the Mystery of Charge and Electromagnetic Fields', header: true, nested: true, collapsed: true, type: 'learn', key: 'chargeEMMystery' },
-	{ text: 'Zhang Xiangqian\'s Mathematical Theory', header: true, nested: true, collapsed: true, type: 'learn', key: 'zhangMathTheory' },
+	{ text: 'Zhang\'s Mathematical Theory', header: true, nested: true, collapsed: true, type: 'learn', key: 'zhangMathTheory' },
 	{ text: 'Unveiling the Nature of Light', header: true, nested: true, collapsed: true, type: 'learn', key: 'lightNature' },
-	{ text: 'A Concise Version of Zhang Xiangqian\'s Unified Field Theory', header: true, nested: true, collapsed: true, type: 'learn', key: 'zhangUnifiedField' },
+	{ text: 'A Concise Version of Zhang\'s Unified Field Theory', header: true, nested: true, collapsed: true, type: 'learn', key: 'zhangUnifiedField' },
 	{ text: 'Successful Experiment of Gravitational Field Generation by Varying Electromagnetic Fields (Including Theoretical Derivation)', header: true, nested: true, collapsed: true, type: 'learn', key: 'varyingEMFieldGravity' },
 	{ text: 'Application Report for the Development of Artificial Field Scanning Technology', header: true, nested: true, collapsed: true, type: 'learn', key: 'artificialFieldScanning' }
 ] satisfies NavEntry[];
