@@ -31,10 +31,21 @@ const twitterHref = `https://twitter.com/intent/tweet?text=${currentTitle}&url=$
 	<div>
 		<h2>{t('share.title')}</h2>
 		<p>
-			<a href={twitterHref} class="sl-flex" target="_blank" aria-label="Share to Twitter" title="Share to Twitter">
+			<a
+				href={twitterHref}
+				class="sl-flex"
+				target="_blank"
+				aria-label="Share to Twitter"
+				title="Share to Twitter"
+			>
 				<Icon name="x.com" size="1.2em" />
 			</a>
-			<span id="externalAction" class="sl-flex external" aria-label="Copy External Link" title="Copy External Link">
+			<span
+				id="externalAction"
+				class="sl-flex external"
+				aria-label="Copy External Link"
+				title="Copy External Link"
+			>
 				<Icon name="external" size="1.4em" />
 			</span>
 			<span id="approveCheckAction" class="sl-hidden approve-check">
@@ -72,14 +83,14 @@ const twitterHref = `https://twitter.com/intent/tweet?text=${currentTitle}&url=$
 	aside svg {
 		transition: transform 0.3s;
 		transform: translateY(2px);
-		&:hover{
+		&:hover {
 			transform: translateY(0px);
 		}
 	}
 	aside .external svg {
 		transition: transform 0.3s;
 		transform: translateY(0px);
-		
+
 		&:hover {
 			transform: translateY(-2px);
 		}
@@ -103,15 +114,15 @@ const twitterHref = `https://twitter.com/intent/tweet?text=${currentTitle}&url=$
 				navigator.clipboard
 					.writeText(shortHref)
 					.then(() => {
-						externalAction.classList.remove('sl-flex')
-						externalAction.classList.add('sl-hidden')
-						approveCheckAction.classList.remove('sl-hidden')
-						approveCheckAction.classList.add('sl-flex')
+						externalAction.classList.remove('sl-flex');
+						externalAction.classList.add('sl-hidden');
+						approveCheckAction.classList.remove('sl-hidden');
+						approveCheckAction.classList.add('sl-flex');
 						setTimeout(() => {
-							externalAction.classList.remove('sl-hidden')
-							externalAction.classList.add('sl-flex')
-							approveCheckAction.classList.remove('sl-flex')
-							approveCheckAction.classList.add('sl-hidden')
+							externalAction.classList.remove('sl-hidden');
+							externalAction.classList.add('sl-flex');
+							approveCheckAction.classList.remove('sl-flex');
+							approveCheckAction.classList.add('sl-hidden');
 						}, 1000);
 					})
 					.catch((err) => {
