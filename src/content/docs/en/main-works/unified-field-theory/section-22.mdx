@@ -6,13 +6,16 @@ tableOfContents: false
 ---
 
 import { Image } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
 import VideoPlayer from '~/components/VideoPlayer.astro';
+import img_2024_11_15_10_37_28 from "~/assets/main-works/unified-field-theory/section-22/2024_11_15_10_37_28.png"
 
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
 
 在数学中场的定义为：
+
 若空间中（或空间的某一部分），每一个点对应一个确定的量，则称这样的空间为场。
 
 当空间中每一点所对应的量为数量时，则称该空间为数量场，当空间中每一个点所对应的量是一个矢量时，则称这样的空间为矢量场。
@@ -29,7 +32,7 @@ This content is not yet supported in your language.
 
 物理4大场的统一定义为：
 
-相对于我们观察者，质点 $o$ 周围空间 $\Psi$ 中任意一个空间点 $p$，由 $o$ 点指向 $p$ 点的位移矢量【简称位矢】$\vec{R}$，随空间位置 $(x,y,z)$ 变化或者随时间t变化，这样的空间 $\Psi$ 称为物理场，也可以叫物理力场。
+相对于我们观察者，质点 $o$ 周围空间 $\Psi$ 中任意一个空间点 $p$，由 $o$ 点指向 $p$ 点的位移矢量【简称位矢】$\vec{r}$ ，随空间位置 $(x,y,z)$ 变化或者随时间 $t$ 变化，这样的空间 $\Psi$ 称为物理场，也可以叫物理力场。
 
 从数学上来讲，场是物体周围空间位移矢量对空间位置的导数或者是对时间的导数，其实就是空间相对于我们观察者的运动程度。
 
@@ -43,9 +46,7 @@ This content is not yet supported in your language.
 
 从以上的定义可以知道，物理4大场都是矢量场，不同的场只是我们观察者从不同的角度、不同的方式观察圆柱状螺旋运动空间而具有不同的运动程度、运动形式。
 
-:::note[注意]
-场是质点周围空间相对于我们观测者运动所表现出的一种性质，空间、质点、观测者、运动四个基本条件一个都不能少【特殊情况下，质点和观察者可以是同一个东西】，否则，场就失去了意义
-:::
+注意，场是质点周围空间相对于我们观测者运动所表现出的一种性质，空间、质点、观测者、运动四个基本条件一个都不能少【特殊情况下，质点和观察者可以是同一个东西】，否则，场就失去了意义。
 
 我们还要认识到，场具有三种形式。
 
@@ -58,6 +59,7 @@ This content is not yet supported in your language.
 当然，我们可以说场是：
 
 在某一个时间间隔里，物体周围空间某一个地方的空间位移量是多少，
+
 但是，很多情况下，我们可以说场是：
 
 - 在某一个静止的立体范围内空间的位移量是多少；
@@ -89,3 +91,13 @@ This content is not yet supported in your language.
 借助场论的梯度定理，可以描述出标量场【或者叫数量场】中物理量在某一个曲线上的分布。
 
 场的本质是以圆柱状螺旋式运动的空间，圆柱状螺旋式运动是旋转运动和旋转平面垂直方向直线运动的合成，而散度描述了空间的直线运动部分，旋度描述了空间的旋转运动部分。
+
+<Aside title="注解">
+  上述 "高斯定理", "斯托克斯定理", "散度", "旋度" 等, 可以参考“同济大学《高等数学》（第七版）下册”中第十一章的第五节和第六节进行更深入的了解。
+
+  <Image src={img_2024_11_15_10_37_28} alt="" class="" style="margin:0 auto; width:80%;"/>
+  
+  <div style="text-align: right;">
+    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+  </div>
+</Aside>

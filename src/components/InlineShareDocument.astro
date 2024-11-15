@@ -16,7 +16,7 @@ if (currentPage?.slug) {
 	const invertedRedirects = Object.fromEntries(
 		Object.entries(redirects).map(([key, value]) => [value, key])
 	);
-	
+
 	const shortLink = invertedRedirects[absHref];
 	if (shortLink) {
 		shortHref = `https://uft.link${shortLink}`;
@@ -26,23 +26,35 @@ const twitterHref = `https://twitter.com/intent/tweet?text=${currentTitle}&url=$
 const { toc } = Astro.props;
 ---
 
-
 {
 	!toc && shortHref && (
-	<div class="sl-flex">
-		<span><b>{t('share.title')}</b></span>
-		<a href={twitterHref} class="sl-flex" target="_blank" aria-label="Share to Twitter" title="Share to Twitter">
-			<Icon name="x.com" size="1.2em" />
-		</a>
-		<a id="inlineExternalAction" class="sl-flex" aria-label="Copy External Link" title="Copy External Link">
-			<Icon name="external" size="1.5em" />
-		</a>
-		<a id="inlineApproveCheckAction" class="sl-hidden">
-			<Icon name="approve-check" size="1.5em" />
-		</a>
-	</div>
-		)
-	}
+		<div class="sl-flex">
+			<span>
+				<b>{t('share.title')}</b>
+			</span>
+			<a
+				href={twitterHref}
+				class="sl-flex"
+				target="_blank"
+				aria-label="Share to Twitter"
+				title="Share to Twitter"
+			>
+				<Icon name="x.com" size="1.2em" />
+			</a>
+			<a
+				id="inlineExternalAction"
+				class="sl-flex"
+				aria-label="Copy External Link"
+				title="Copy External Link"
+			>
+				<Icon name="external" size="1.5em" />
+			</a>
+			<a id="inlineApproveCheckAction" class="sl-hidden">
+				<Icon name="approve-check" size="1.5em" />
+			</a>
+		</div>
+	)
+}
 
 <style>
 	div {
@@ -78,15 +90,15 @@ const { toc } = Astro.props;
 				navigator.clipboard
 					.writeText(shortHref)
 					.then(() => {
-						externalAction.classList.remove('sl-flex')
-						externalAction.classList.add('sl-hidden')
-						approveCheckAction.classList.remove('sl-hidden')
-						approveCheckAction.classList.add('sl-flex')
+						externalAction.classList.remove('sl-flex');
+						externalAction.classList.add('sl-hidden');
+						approveCheckAction.classList.remove('sl-hidden');
+						approveCheckAction.classList.add('sl-flex');
 						setTimeout(() => {
-							externalAction.classList.remove('sl-hidden')
-							externalAction.classList.add('sl-flex')
-							approveCheckAction.classList.remove('sl-flex')
-							approveCheckAction.classList.add('sl-hidden')
+							externalAction.classList.remove('sl-hidden');
+							externalAction.classList.add('sl-flex');
+							approveCheckAction.classList.remove('sl-flex');
+							approveCheckAction.classList.add('sl-hidden');
 						}, 1000);
 					})
 					.catch((err) => {
