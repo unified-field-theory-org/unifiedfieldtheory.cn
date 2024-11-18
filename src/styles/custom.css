@@ -25,3 +25,7 @@
 	overflow-x: auto;
 	overflow-y: hidden;
 }
+
+.katex-display>.katex>.katex-html>.tag {
+	right: 2px !important;
+}
