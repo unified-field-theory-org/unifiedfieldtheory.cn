@@ -29,3 +29,10 @@
 .katex-display>.katex>.katex-html>.tag {
 	right: 2px !important;
 }
+
+.custom-summary {
+    font-size: 0.8em !important;          /* 字体大小 */
+    color: #999999 !important;          /* 字体颜色 */
+    font-style: italic !important;        /* 倾斜 */
+    cursor: pointer !important;           /* 鼠标指针样式 */
+}

@@ -19,13 +19,16 @@ import img_2024_11_15_10_59_13 from "~/assets/main-works/unified-field-theory/se
 
 $o$ 点在周围产生的引力场 $\vec{A}$ ，表示了穿过包围 $o$ 点的高斯球面 $s$ 上，以光速发散运动的空间位移的条数。
 
-<Aside title="注解">
-  "高斯球面" (Gaussian surface) 是在矢量场分析中的一个重要概念，它是一个假想的封闭曲面。在这里，具体是指围绕质点 $o$ 的一个球形封闭曲面，可以是任意半径。这个球面用于计算通过它的空间位移通量。
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开注解：什么是“高斯球面”？</summary>
+  <Aside title="注解">
+    “高斯球面” (Gaussian surface) 是在矢量场分析中的一个重要概念，它是一个假想的封闭曲面。在这里，具体是指围绕质点 $o$ 的一个球形封闭曲面，可以是任意半径。这个球面用于计算通过它的空间位移通量。
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 
 ## 引力场的定义方程
@@ -40,15 +43,18 @@ $$
 \end{equation}
 $$
 
-<Aside title="注解">
-  此处公式容易引发误解，因为它将 $\vec{r}$ 写成一个关于 $x, y, z, t$ 的四元函数，将时间 $t$ 看作了第四个维度，让人感觉和统一场论的时空同一性背道而驰，反而是降维到了相对论的四维时空观。更符合统一场论基本原理的公式，可以参考本书“十九、螺旋时空波动方程”中如下图所示部分内容。但这里无需纠结这一问题，因为不影响本章内容的理解。
+<details>
+  <summary class="custom-summary">点击展开注解：关于此处将 $\vec{r}$ 写成了一个关于 $x, y, z, t$ 的四元函数</summary>
+  <Aside title="注解">
+    此处公式容易引发误解，因为它将 $\vec{r}$ 写成一个关于 $x, y, z, t$ 的四元函数，将时间 $t$ 看作了第四个维度，让人感觉和统一场论的时空同一性背道而驰，反而是降维到了相对论的四维时空观。更符合统一场论基本原理的公式，可以参考本书“十九、螺旋时空波动方程”中如下图所示部分内容。但这里无需纠结这一问题，因为不影响本章内容的理解。
 
-  <Image src={img_2024_11_15_10_53_02} alt="" class="" style="margin:0 auto; width:80%;"/>
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+    <Image src={img_2024_11_15_10_53_02} alt="" class="" style="margin:0 auto; width:80%;"/>
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 注意，$p$ 点在空间中走过的轨迹是圆柱状螺旋式，我们也可以认为是矢径 $\vec{r}$ 的一个端点 $o$ 不动，另一个端点 $p$ 运动变化，使得 $\vec{r}$ 在空间中划过一条圆柱状螺旋式轨迹。
 
@@ -66,15 +72,18 @@ A = 常数乘以 \dfrac{\Delta{n}}{\Delta{S}}
 \end{equation}
 $$
 
-<Aside title="注解">
-  这里实际上是给出了“引力场强度大小”和“空间位移密度”之间的关系：“引力场强度”的大小，就等于“空间位移密度”。这与目前大学物理教材中, 给出的“电场强度”就等于“电场线密度”，是类似的：(以下内容截取自“马文蔚《物理学》（第六版）上册” p172)
-  
-  <Image src={img_2024_11_15_10_59_13} alt="" class="" style="margin:0 auto; width:80%;"/>
+<details>
+  <summary class="custom-summary">点击展开注解：与“电场强度”的类比</summary>
+  <Aside title="注解">
+    这里实际上是给出了“引力场强度大小”和“空间位移密度”之间的关系：“引力场强度”的大小，就等于“空间位移密度”。这与目前大学物理教材中, 给出的“电场强度”就等于“电场线密度”，是类似的：(以下内容截取自“马文蔚《物理学》（第六版）上册” p172)
+    
+    <Image src={img_2024_11_15_10_59_13} alt="" class="" style="margin:0 auto; width:80%;"/>
 
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 上式给出的引力场定义简单明了，但过于粗糙，不能把引力场矢量性质表现出来，也没有把以矢量光速运动的空间位移 $\vec{r}$ 带进式子中去。
 
@@ -105,23 +114,26 @@ $$
 \end{equation}
 $$
 
-<Aside type="caution" title="疑问">
-  我对上面这段论述有极大的疑惑：“因为只有 $\Delta{n}=1$ 的情况下公式才具有物理意义，所以 $\Delta{n}$ 就直接等于1” 这种说法肯定是有问题的；至少是表述得很不清晰和不严谨的。
+<details>
+  <summary class="custom-summary">点击展开疑问</summary>
+  <Aside type="caution" title="疑问">
+    我对上面这段论述有极大的疑惑：“因为只有 $\Delta{n}=1$ 的情况下公式才具有物理意义，所以 $\Delta{n}$ 就直接等于1” 这种说法肯定是有问题的；至少是表述得很不清晰和不严谨的。
 
-  按照我的理解，应该写为：
+    按照我的理解，应该写为：
 
-  $$
-  \begin{equation}\nonumber
-  \vec{A} = - \dfrac{G\ k\ \Delta{n}\ \vec{r}}{\Delta{S}\ r} = - \dfrac{G\ k\ \vec{r}}{\frac{\Delta{S}}{\Delta{n}}\ r}
-  \end{equation}
-  $$
+    $$
+    \begin{equation}\nonumber
+    \vec{A} = - \dfrac{G\ k\ \Delta{n}\ \vec{r}}{\Delta{S}\ r} = - \dfrac{G\ k\ \vec{r}}{\frac{\Delta{S}}{\Delta{n}}\ r}
+    \end{equation}
+    $$
 
-  我认为原著公式中第三个式子 ($- \frac{G\ k\ \vec{r}}{\Delta{S}\ r}$) 中的 $\Delta{S}$，其实表达的是 "单位条数对应的面积"，和第二个式子 ($- \frac{G\ k\ \Delta{n}\ \vec{r}}{\Delta{S}\ r}$) 中的 $\Delta{S}$ 其实是不同的，但作者用了同一个字母表达它们。而且很乱的一点是，这里明明舍弃了 $\Delta{n}$，但是下面依然频繁出现 $\Delta{n}$。
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+    我认为原著公式中第三个式子 ($- \frac{G\ k\ \vec{r}}{\Delta{S}\ r}$) 中的 $\Delta{S}$，其实表达的是 "单位条数对应的面积"，和第二个式子 ($- \frac{G\ k\ \Delta{n}\ \vec{r}}{\Delta{S}\ r}$) 中的 $\Delta{S}$ 其实是不同的，但作者用了同一个字母表达它们。而且很乱的一点是，这里明明舍弃了 $\Delta{n}$，但是下面依然频繁出现 $\Delta{n}$。
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 上式中为什么用 $\vec{r}$ 的单位矢量 $\dfrac{\vec{r}}{c}$，而不是直接用矢量 $\vec{r}$ ？
 
@@ -135,13 +147,16 @@ $$
 \end{equation}
 $$
 
-<Aside type="danger" title="公式修正">
-  上述公式最后一个式子似乎少乘了一个 $cos \theta$；即最后一个式子应为: $-G\ k\ \Delta n\ cos \theta$
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开公式修正：最后一个式子似乎少乘了一个 $cos \theta$</summary>
+  <Aside type="danger" title="公式修正">
+    上述公式最后一个式子似乎少乘了一个 $cos \theta$；即最后一个式子应为: $-G\ k\ \Delta n\ cos \theta$
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 上式中 $A$ 是引力场 $\vec{A}$ 的数量。
 
@@ -262,13 +277,16 @@ m = \dfrac{k}{\Omega}
 \end{equation}
 $$
 
-<Aside title="注解">
-  注意上式中 $\Omega$ 的含义也会发生变化，变成“单位空间位移对应的立体角”了。原著中经常有类似的地方，用同一个字母表达多个含义，明白其意思就好。
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开注解：关于上式中 $\Omega$ 含义的说明</summary>
+  <Aside title="注解">
+    注意上式中 $\Omega$ 的含义也会发生变化，变成“单位空间位移对应的立体角”了。原著中经常有类似的地方，用同一个字母表达多个含义，明白其意思就好。
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 我们一旦知道了质量的本质，就可以对牛顿力学中的引力场方程 $\vec{A} = -\dfrac{G\ m\ \vec{r}}{r^3}$ 做出解释。
 
@@ -296,18 +314,20 @@ $$
 \end{equation}
 $$
 
-
-<Aside title="注解">
-  这里的 $\vec{\nabla}$ 叫做向量微分算子。
-  
-  对于一般的向量场: $\vec{A}(x, y, z) = P(x, y, z)\vec{i} + Q(x, y, z)\vec{j} + R(x, y, z)\vec{k}$, $(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z})\vec{i} + (\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x})\vec{j} + (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})\vec{k}$ 叫做向量场 $\vec{A}$ 的旋度, 记作 $\overrightarrow{\textup{rot}}\ \vec{A}$. 并且有 $\overrightarrow{\textup{rot}} \vec{A} = \vec{\nabla} \times \vec{A}$ 
-  
-  (摘自“同济大学《高等数学》（第七版）下册” p246)
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开注解：关于“旋度”</summary>
+  <Aside title="注解">
+    这里的 $\vec{\nabla}$ 叫做向量微分算子。
+    
+    对于一般的向量场: $\vec{A}(x, y, z) = P(x, y, z)\vec{i} + Q(x, y, z)\vec{j} + R(x, y, z)\vec{k}$, $(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z})\vec{i} + (\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x})\vec{j} + (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})\vec{k}$ 叫做向量场 $\vec{A}$ 的旋度, 记作 $\overrightarrow{\textup{rot}}\ \vec{A}$. 并且有 $\overrightarrow{\textup{rot}} \vec{A} = \vec{\nabla} \times \vec{A}$ 
+    
+    (摘自“同济大学《高等数学》（第七版）下册” p246)
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 对静止引力场
 
@@ -325,13 +345,16 @@ $$
 \end{equation}
 $$
 
-<Aside title="注解">
-  对于一般的向量场：$\vec{A}(x, y, z) = P(x, y, z)\vec{i} + Q(x, y, z)\vec{j} + R(x, y, z)\vec{k}$，$\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$ 叫做向量场 $\vec{A}$ 的散度，记作 $\textup{div}\ \vec{A}$。并且有 $\textup{div}\ \vec{A} = \vec{\nabla} \cdot \vec{A} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$ (摘自“同济大学《高等数学》（第七版）下册” p238)
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开注解：关于“散度”</summary>
+  <Aside title="注解">
+    对于一般的向量场：$\vec{A}(x, y, z) = P(x, y, z)\vec{i} + Q(x, y, z)\vec{j} + R(x, y, z)\vec{k}$，$\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$ 叫做向量场 $\vec{A}$ 的散度，记作 $\textup{div}\ \vec{A}$。并且有 $\textup{div}\ \vec{A} = \vec{\nabla} \cdot \vec{A} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$ (摘自“同济大学《高等数学》（第七版）下册” p238)
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 但在 $r$ 趋近于零【也可以说空间点 $p$ 无限趋近于 $o$ 点】，且 $o$ 点可以看成一个无限小的球体的情况下，式子出现了 $\dfrac{0}{0}$ 的情况，利用狄拉克 $\delta$ 函数，可以得到：
 
@@ -345,13 +368,16 @@ $G$ 是万有引力常数，$u = \dfrac{m}{\Delta x \Delta y \Delta z}$ 是物�
 
 统一场论给出的引力场定义方程的旋度和散度，和牛顿力学给出的引力场的散度、旋度是一致的。
 
-<Aside title="注解">
-  肯定是一致的。因为统一场论给出的引力场定义方程，相比于牛顿力学，只是进一步将质量 $m$ 展开为 $\dfrac{k\ \Delta n}{\Omega}$，而上述推导都假设 $m$ 不变，将其视作常数。
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开注解：为什么是一致的？</summary>
+  <Aside title="注解">
+    肯定是一致的。因为统一场论给出的引力场定义方程，相比于牛顿力学，只是进一步将质量 $m$ 展开为 $\dfrac{k\ \Delta n}{\Omega}$，而上述推导都假设 $m$ 不变，将其视作常数。
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 
 ## 从质量定义方程导出相对论质速关系
@@ -406,13 +432,16 @@ d\Omega = dV
 \end{equation}
 $$
 
-<Aside type="caution" title="疑问">
-  由于 $\Delta V = \dfrac{1}{3}\Delta S\ r$，所以上面的两个公式是否应该分别修正成 $d\Omega = \dfrac{3\ dV}{r^3}$ 和 $d\Omega = 3\ dV$ ？
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开疑问：上式是否应该写为 $d\Omega = 3\ dV$ ？</summary>
+  <Aside type="caution" title="疑问">
+    由于 $\Delta V = \dfrac{1}{3}\Delta S\ r$，所以上面的两个公式是否应该分别修正成 $d\Omega = \dfrac{3\ dV}{r^3}$ 和 $d\Omega = 3\ dV$ ？
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 有了以上的准备知识，我们来考虑以上的 $o$ 点在 $s'$ 系里，静止时候质量
 
@@ -457,13 +486,16 @@ $$
 
 我们只有把 $s$ 系里的时间 $t$ 取一个固定的时刻，$x$ 和 $x'$ 相互比较才有意义，所以，$dt/dx=0$，得出微分式：
 
-<Aside type="caution" title="疑问">
-  上面这句解释并没有说清楚为什么 $dt/dx=0$
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开疑问：上面这句解释并没有说清楚为什么 $dt/dx=0$</summary>
+  <Aside type="caution" title="疑问">
+    上面这句解释并没有说清楚为什么 $dt/dx=0$
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 $$
 \begin{align}
@@ -509,13 +541,16 @@ $$
 
 但是，薄板的质量增大了一个相对论因子 $\sqrt{1 - \dfrac{v^2}{c^2}}$
 
-<Aside type="danger" title="修正">
-  这里应该是想说质量增大了一个相对论因子$\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}$
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开修正：上式应取倒数</summary>
+  <Aside type="danger" title="修正">
+    这里应该是想说质量增大了一个相对论因子$\dfrac{1}{\sqrt{1-\dfrac{v^2}{c^2}}}$
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 质量的增大，从几何角度看，应该是空间位移矢量方向与考察的立体角之间的对应变化，所以：
 
@@ -615,10 +650,13 @@ $$
 
 注意，式中 $\gamma dx = dx'$ 是从洛伦兹正变换 $x' = \gamma(x - v t)$ 求微分得到的。
 
-<Aside type="caution" title="疑问">
-  和之前一样，这里直接将 $dt$ 那一项丢掉了，但并未说清楚为什么可以这样做。
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开疑问：为什么可以将 $dt$ 那一项丢掉</summary>
+  <Aside type="caution" title="疑问">
+    和之前一样，这里直接将 $dt$ 那一项丢掉了，但并未说清楚为什么可以这样做。
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
