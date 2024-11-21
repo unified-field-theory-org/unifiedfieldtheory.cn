@@ -25,22 +25,27 @@ This content is not yet supported in your language.
 
 下面我们来建立统一场论中的三维圆柱状螺旋时空方程，来替代相对论中四维时空方程。
 
-<Aside title="注解">
-  以下的变量命名不是很规范清晰，但为了尽量不改动原著内容，仍沿用原著的命名方式。
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开注解: 关于本书中变量命名问题的说明</summary>
+  <Aside title="注解">
+    以下的变量命名不是很规范清晰，但为了尽量不改动原著内容，仍沿用原著的命名方式。
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
-<Aside title="新增配图">
-{/* 调整大小为原图50% */}
-  <Image src={img_2024_11_14_19_52_36} alt="" class="" style="margin:0 auto; width:70%;"/>
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details open>
+  <summary class="custom-summary">点击收起配图</summary>
+  <Aside title="新增配图">
+    <Image src={img_2024_11_14_19_52_36} alt="" class="" style="margin:0 auto; width:70%;"/>
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 设想在某处空间区域里存在着一个质点 $o$ 点，相对于我们观测者静止，我们以 $o$ 点为原点，建立一个三维笛卡尔直角坐标系 $x,y,z$ 。
 
@@ -59,13 +64,16 @@ $$
 \end{equation}
 $$
 
-<Aside title="注解">
-  "$\vec{r}$ 随着空间位置 $x, y, z$ 和时间 $t$ 变化而变化"这句话容易引发人的困惑, 让人觉得 $\vec{r}$ 是关于 $x, y, z, t$ 这四个变量的函数, 应写成 $\vec{r}=f(x, y, z, t)$; 但是实际上, 统一场论认为时间是观察者周围空间光速运动所给观察者的感觉, 空间本身的位移和时间其实是同一个东西; 所以上面的公式就是想表述出空间位移和时间的对应关系。
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开注解: 关于 $\vec{r}$ 为什么不表示成 $x, y, z, t$ 的四元函数</summary>
+  <Aside title="注解">
+    "$\vec{r}$ 随着空间位置 $x, y, z$ 和时间 $t$ 变化而变化"这句话容易引发人的困惑, 让人觉得 $\vec{r}$ 是关于 $x, y, z, t$ 这四个变量的函数, 应写成 $\vec{r}=f(x, y, z, t)$; 但是实际上, 统一场论认为时间是观察者周围空间光速运动所给观察者的感觉, 空间本身的位移和时间其实是同一个东西; 所以上面的公式就是想表述出空间位移和时间的对应关系。
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 给出了 $\vec{r}(t)$ 和 $(x, y, z)$ 的具体关系，是以上的时空同一化方程：
 
@@ -75,31 +83,37 @@ $$
 \end{equation}
 $$
 
-<Aside type="danger" title="公式修正">
-  这里将原著上述公式中 $x, y, z$ 修正为带有 $\Delta$ 的项。
+<details>
+  <summary class="custom-summary">点击展开公式修正</summary>
+  <Aside type="danger" title="公式修正">
+    这里将原著上述公式中 $x, y, z$ 修正为带有 $\Delta$ 的项。
 
-  修正后公式: (其中 $\Delta x = x - x_0,\ \Delta y = y - y_0,\ \Delta z = z - z_0$)
+    修正后公式: (其中 $\Delta x = x - x_0,\ \Delta y = y - y_0,\ \Delta z = z - z_0$)
 
-  $$
-  \begin{equation}\nonumber
-  \vec{r}(t) = \vec{r_0}+\vec{c}t = (x_0 + \Delta x)\vec{i} + (y_0 + \Delta y)\vec{j} + (z_0 + \Delta z)\vec{k}
-  \end{equation}
-  $$
+    $$
+    \begin{equation}\nonumber
+    \vec{r}(t) = \vec{r_0}+\vec{c}t = (x_0 + \Delta x)\vec{i} + (y_0 + \Delta y)\vec{j} + (z_0 + \Delta z)\vec{k}
+    \end{equation}
+    $$
 
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 这个方程有时候也可以简写为：
 
-<Aside title="注解">
-  这里简写的含义是, 以空间点 $p$ 在初始时刻的位置为原点, 即 $\vec{r_0}=(0, 0, 0)$
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开注解：此处“简写”的含义</summary>
+  <Aside title="注解">
+    这里简写的含义是, 以空间点 $p$ 在初始时刻的位置为原点, 即 $\vec{r_0}=(0, 0, 0)$
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 $$
 \begin{equation}\nonumber
@@ -117,31 +131,37 @@ $$
 
 $r$ 是矢量 $\vec{r}$ 的数量。
 
-<Aside title="新增动画">
-  <VideoPlayer
-    sources={[
-      { src: "/videos/zh-cn/SpaceTimeIsomorphismEquation.mp4", type: "video/mp4" }
-    ]}
-    imageSrc="/gifs/zh-cn/SpaceTimeIsomorphismEquation.gif"
-    alt="Unified Field Theory Model"
-  />
+<details open>
+  <summary class="custom-summary">点击收起动画</summary>
+  <Aside title="新增动画">
+    <VideoPlayer
+      sources={[
+        { src: "/videos/zh-cn/SpaceTimeIsomorphismEquation.mp4", type: "video/mp4" }
+      ]}
+      imageSrc="/gifs/zh-cn/SpaceTimeIsomorphismEquation.gif"
+      alt="Unified Field Theory Model"
+    />
 
-  <div style="text-align: right;">
-    _由 **[uft@obiscr.com](mailto:uft@obiscr.com)** 添加，[在这里报告错误](https://github.com/unified-field-theory-org/animations/issues/new?title=%E5%8F%91%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%B8%B2%E6%9F%93%E9%94%99%E8%AF%AF&labels=animations)_
-  </div>
-</Aside>
+    <div style="text-align: right;">
+      _由 **[uft@obiscr.com](mailto:uft@obiscr.com)** 添加，[在这里报告错误](https://github.com/unified-field-theory-org/animations/issues/new?title=%E5%8F%91%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%B8%B2%E6%9F%93%E9%94%99%E8%AF%AF&labels=animations)_
+    </div>
+  </Aside>
+</details>
 
-<Aside type="caution" title="疑问">
-  如果一个空间点花费时间 $t$ 从 $(x_0,y_0,z_0)$ 运动到 $(x,y,z)$, 并且空间点的运动轨迹为螺旋线, 那么应该是 $(x_0,y_0,z_0)$ 到 $(x,y,z)$ 的弯曲的运动轨迹线的长度等于 $ct$, 而不是 $(x_0,y_0,z_0)$ 到 $(x,y,z)$ 的直线段的长度为 $ct$, 这应该怎么理解呢?
+<details>
+  <summary class="custom-summary">点击展开疑问</summary>
+  <Aside type="caution" title="疑问">
+    如果一个空间点花费时间 $t$ 从 $(x_0,y_0,z_0)$ 运动到 $(x,y,z)$, 并且空间点的运动轨迹为螺旋线, 那么应该是 $(x_0,y_0,z_0)$ 到 $(x,y,z)$ 的弯曲的运动轨迹线的长度等于 $ct$, 而不是 $(x_0,y_0,z_0)$ 到 $(x,y,z)$ 的直线段的长度为 $ct$, 这应该怎么理解呢?
 
-  <Image src={img_2024_11_14_20_17_48} alt="" class="" style="margin:0 auto; width:50%;"/>
+    <Image src={img_2024_11_14_20_17_48} alt="" class="" style="margin:0 auto; width:50%;"/>
 
-  或许这里不能用惯常的 "位移=速度×时间" 来理解空间的运动, 因为统一场论中本身就是用空间运动来定义时间的。
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+    或许这里不能用惯常的 "位移=速度×时间" 来理解空间的运动, 因为统一场论中本身就是用空间运动来定义时间的。
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 以上方程在相对论中也出现过，相对论中被认为是四维时空距离，真实情况是时间的本质就是我们对光速运动的空间的描述。三维空间中任意一维以光速运动，我们就可以认为是时间。
 
@@ -157,15 +177,18 @@ $r$ 是矢量 $\vec{r}$ 的数量。
 
 如果 $p$ 点在 $XOY$ 平面上以原点为圆心，以角速度 $\omega$ 旋转运动，在 $z$ 轴上以匀速度 $h$ 直线运动，$\vec{r}$ 在 $x$、$y$ 平面上投影长度为 $R$，则有:
 
-<Aside title="新增配图">
-  $XOY$ 平面上的投影
+<details open>
+  <summary class="custom-summary">点击收起配图</summary>
+  <Aside title="新增配图">
+    $XOY$ 平面上的投影
 
-  <Image src={img_2024_11_14_20_22_33} alt="" class="" style="margin:0 auto; width:70%;"/>
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+    <Image src={img_2024_11_14_20_22_33} alt="" class="" style="margin:0 auto; width:70%;"/>
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 $$
 \begin{align}
@@ -175,25 +198,27 @@ z =& z_0 + h t \nonumber
 \end{align}
 $$
 
+<details>
+  <summary class="custom-summary">点击展开公式修正</summary>
+  <Aside type="danger" title="公式修正">
+    原著中完整形式的 "三维螺旋时空方程" 是有问题的, 我对它进行了修正
+    修正后公式: (其中 $t'$ 为 $\vec{r_0}=(x_0, y_0, z_0)$ 对应的时刻, $t''$ 为 $\vec{r}=(x, y, z)$ 对应的时刻, $t'' - t' = t$)
 
-<Aside type="danger" title="公式修正">
-  原著中完整形式的 "三维螺旋时空方程" 是有问题的, 我对它进行了修正
-  修正后公式: (其中 $t'$ 为 $\vec{r_0}=(x_0, y_0, z_0)$ 对应的时刻, $t''$ 为 $\vec{r}=(x, y, z)$ 对应的时刻, $t'' - t' = t$)
+    $$
+    \begin{align}
+    x =& x_0 + R(cos(\omega t'') - cos(\omega t')) \nonumber \\
+    y =& y_0 + R(sin(\omega t'') - sin(\omega t')) \nonumber \\
+    z =& z_0 + h t \nonumber
+    \end{align}
+    $$
 
-  $$
-  \begin{align}
-  x =& x_0 + R(cos(\omega t'') - cos(\omega t')) \nonumber \\
-  y =& y_0 + R(sin(\omega t'') - sin(\omega t')) \nonumber \\
-  z =& z_0 + h t \nonumber
-  \end{align}
-  $$
+    可以明显看出, 原著公式的错误在于, 误认为 $cos(A) - cos(B) = cos(A-B)$
 
-  可以明显看出, 原著公式的错误在于, 误认为 $cos(A) - cos(B) = cos(A-B)$
-
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 以上也可以用以下矢量方程表示，
 
@@ -206,23 +231,26 @@ $$
 \end{equation}
 $$
 
-<Aside type="danger" title="公式修正">
-  修正后公式: (其中 $t'$ 为 $\vec{r_0}=(x_0, y_0, z_0)$ 对应的时刻, $t''$ 为 $\vec{r}=(x, y, z)$ 对应的时刻, $t'' - t' = t$)
-  
-  $$
-  \begin{equation} \nonumber
-  \begin{aligned}
-  \vec{r} =& \vec{r_0} + \vec{c}t \\
-  =& \{x_0 + R[cos(\omega t'') - cos(\omega t')]\} \vec{i} + \{y_0 + R[sin(\omega t'') - sin(\omega t')]\} \vec{j} \\
-  & + (z_0+ht)\vec{k}
-  \end{aligned}
-  \end{equation}
-  $$
+<details>
+  <summary class="custom-summary">点击展开公式修正</summary>
+  <Aside type="danger" title="公式修正">
+    修正后公式: (其中 $t'$ 为 $\vec{r_0}=(x_0, y_0, z_0)$ 对应的时刻, $t''$ 为 $\vec{r}=(x, y, z)$ 对应的时刻, $t'' - t' = t$)
+    
+    $$
+    \begin{equation} \nonumber
+    \begin{aligned}
+    \vec{r} =& \vec{r_0} + \vec{c}t \\
+    =& \{x_0 + R[cos(\omega t'') - cos(\omega t')]\} \vec{i} + \{y_0 + R[sin(\omega t'') - sin(\omega t')]\} \vec{j} \\
+    & + (z_0+ht)\vec{k}
+    \end{aligned}
+    \end{equation}
+    $$
 
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 以上可以叫三维螺旋时空方程。
 
@@ -234,15 +262,18 @@ $$
 \end{equation}
 $$
 
-<Aside title="新增配图">
-  上述“简化”的含义为，以 $\vec{r_0}$ 方向为 $x$ 轴方向，并且以旋转圆心为原点，如下图所示：
+<details>
+  <summary class="custom-summary">点击展开注解：此处“简化”的含义</summary>
+  <Aside title="新增配图">
+    上述“简化”的含义为，以 $\vec{r_0}$ 方向为 $x$ 轴方向，并且以旋转圆心为原点，如下图所示：
 
-  <Image src={img_2024_11_14_20_29_20} alt="" class="" style="margin:0 auto; width:60%;"/>
+    <Image src={img_2024_11_14_20_29_20} alt="" class="" style="margin:0 auto; width:60%;"/>
 
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 统一场论认为，宇宙的一切奥妙都是以上方程决定的，大到银河系、星球，小到电子、质子、中子的运动，以及物体为什么有质量、为什么有电荷，一直到人的思维等等······，都与这个方程有关。
 
@@ -261,13 +292,16 @@ $$
 
 上式 $\mathbf{X}$ , $\mathbf{Y}$ 是旋转量，如果 $\mathbf{X} \times \mathbf{Y} = \mathbf{Z}$ 表示右手螺旋关系，则 $\mathbf{Y} \times \mathbf{X} = - \mathbf{Z}$ 则表示左手螺旋关系。
 
-<Aside type="caution" title="疑问">
-  这里应该都是表示右手螺旋关系吧？
-  
-  <div style="text-align: right;">
-    _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
-  </div>
-</Aside>
+<details>
+  <summary class="custom-summary">点击展开疑问：应该都是表示右手螺旋关系吧？</summary>
+  <Aside type="caution" title="疑问">
+    这里应该都是表示右手螺旋关系吧？
+    
+    <div style="text-align: right;">
+      _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
 
 式 $\mathbf{X} \times \mathbf{Y} = \mathbf{Z}$ 和 $\mathbf{Y} \times \mathbf{X} = - \mathbf{Z}$ 反映了空间的旋转运动和直线运动之间的联系。
 
