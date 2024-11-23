@@ -4,6 +4,7 @@ import type { Props } from '@astrojs/starlight/props';
 import TableOfContents from 'virtual:starlight/components/TableOfContents';
 import MobileTableOfContents from 'virtual:starlight/components/MobileTableOfContents';
 import ShareDocument from '~/components/ShareDocument.astro';
+import StarlightLinkCard from '~/components/StarlightLinkCard.astro';
 ---
 
 {
@@ -13,11 +14,16 @@ import ShareDocument from '~/components/ShareDocument.astro';
 				<MobileTableOfContents {...Astro.props} />
 			</div>
 			<div class="right-sidebar-panel sl-hidden lg:sl-block">
-				<div class="sl-container">
+				<div class="top-container">
 					<TableOfContents {...Astro.props} />
 				</div>
-				<div class="sl-container">
-					<ShareDocument />
+				<div class="bottom-container">
+					<div class="sl-container">
+						<StarlightLinkCard />
+					</div>
+					<div class="sl-container">
+						<ShareDocument />
+					</div>
 				</div>
 			</div>
 		</>
@@ -30,6 +36,15 @@ import ShareDocument from '~/components/ShareDocument.astro';
 		justify-content: space-between;
 		height: 100%;
 		padding: 1rem var(--sl-sidebar-pad-x);
+	}
+	.top-container {
+		flex-shrink: 0; /* 保证内容不会被压缩 */
+	}
+	.bottom-container {
+		margin-top: auto; /* 将底部容器推到面板底部 */
+		display: flex;
+		flex-direction: column; /* 保证底部的内容按列排列 */
+		gap: 0rem; /* 添加子项之间的间距 */
 	}
 	.sl-container {
 		width: calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x));
