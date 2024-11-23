@@ -5,14 +5,13 @@ i18nReady: true
 tableOfContents: false
 ---
 
-import { Image } from 'astro:assets';
-import { Aside } from '@astrojs/starlight/components';
-import VideoPlayer from '~/components/VideoPlayer.astro';
-import Section141 from "~/assets/main-works/unified-field-theory/section-14/1.png"
-
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
+
+import { Image } from 'astro:assets';
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+import Section141 from "~/assets/main-works/unified-field-theory/section-14/1.png"
 
 
 我们知道，沿空间中任意一点最多可以作三条相互垂直的有向直线，称为三维空间。为什么恰巧是三条，不是二条，也不是四条？
@@ -47,3 +46,11 @@ This content is not yet supported in your language.
 在后面，我们还指出了正电荷和负电荷周围空间都是右手螺旋。
 
 但是，这个问题仍然有待理论和实践去探讨。不排除人类未来可以人为的制造左手螺旋空间。
+
+<br />
+<LinkCard
+  title="前往本章节讨论区"
+  href="https://forum.unifiedfieldtheory.cn/questions/10010000000000142"
+  description="看看大家阅读完本章之后都在讨论什么，并发表你自己的看法~"
+  target="_blank"
+/>
