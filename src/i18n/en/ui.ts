@@ -137,5 +137,6 @@ export default {
 	'share.title': 'Share',
 	// Discussion Link Card
 	'discussion.title': 'Head to the section discussion forum',
-	'discussion.description': 'See what people are talking about after reading this chapter, and give your opinion',
+	'discussion.description':
+		'See what people are talking about after reading this chapter, and give your opinion',
 };

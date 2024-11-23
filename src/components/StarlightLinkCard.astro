@@ -13,9 +13,4 @@ const currentPath = Astro.url.pathname;
 const href = linkMap[currentPath] || linkMap['/'];
 ---
 
-<LinkCard
-  title={t('discussion.title')}
-  href={href}
-  target="_blank"
-  rel="noopener noreferrer"
-/>
+<LinkCard title={t('discussion.title')} href={href} target="_blank" rel="noopener noreferrer" />
