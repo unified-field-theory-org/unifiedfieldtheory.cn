@@ -135,4 +135,7 @@ export default UIDictionary({
 	'studioHeading.label': 'Studio 功能',
 	// Share document
 	'share.title': '分享',
+	// Discussion Link Card
+	'discussion.title': '前往本章节讨论区',
+	'discussion.description': '看看大家阅读完本章之后都在讨论什么，并发表你自己的看法~',
 });
