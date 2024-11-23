@@ -5,12 +5,11 @@ i18nReady: true
 tableOfContents: false
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
-
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
+
+import { LinkCard } from '@astrojs/starlight/components';
 
 
 物理概念中有的是基本的，有些物理概念是这些基本概念导出的。比如时间和位移是基本的，速度是由时间和位移所导出的。
@@ -22,10 +21,25 @@ This content is not yet supported in your language.
 下面是表示这些物理概念从高级、基本的到低级的示意图。
 
 物体【或者是质点】、空间
+\
 → 时间、位移、场 
+\
 → 速度、光速
+\
 → 质量、电荷
+\
 → 动量
+\
 → 力
+\
 → 能量、功
+\
 → 温度、光、声音、颜色等等。
+
+<br />
+<LinkCard
+  title="前往本章节讨论区"
+  href="https://forum.unifiedfieldtheory.cn/questions/10010000000000133"
+  description="看看大家阅读完本章之后都在讨论什么，并发表你自己的看法~"
+  target="_blank"
+/>
