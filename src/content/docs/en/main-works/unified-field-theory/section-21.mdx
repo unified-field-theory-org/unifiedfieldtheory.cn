@@ -4,16 +4,16 @@ description: "二十一、解释洛伦兹变换中的光速不变"
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import { Aside } from '@astrojs/starlight/components';
-import VideoPlayer from '~/components/VideoPlayer.astro';
-import Section211 from "~/assets/main-works/unified-field-theory/section-21/1.png"
-import Section212 from "~/assets/main-works/unified-field-theory/section-21/2.png"
-import Section213 from "~/assets/main-works/unified-field-theory/section-21/3.png"
 
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
+import { Image } from 'astro:assets';
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+import Section211 from "~/assets/main-works/unified-field-theory/section-21/1.png"
+import Section212 from "~/assets/main-works/unified-field-theory/section-21/2.png"
+import Section213 from "~/assets/main-works/unified-field-theory/section-21/3.png"
+
 
 ## 对洛伦兹变换中光速不变的解释
 
@@ -244,7 +244,7 @@ $$
 
 $$
 \begin{equation}\nonumber
-\dfrac{x}{t} = \dfrac{x'}{t'} = 速率 = c
+\dfrac{x}{t} = \dfrac{x'}{t'} = \text{速率} = c
 \end{equation}
 $$
 
@@ -759,3 +759,11 @@ $$
 如果在太空中，甲乙二人拥抱在一起，后来相互踹对方一脚，二人都以相同的力，完全相同的踹法，彼此离开，在宇宙空间转一圈后相遇，谁更年轻？
 
 这种情况下，甲乙二人应该是同样的年轻。
+
+<br />
+<LinkCard
+  title="前往本章节讨论区"
+  href="https://forum.unifiedfieldtheory.cn/questions/10010000000000149"
+  description="看看大家阅读完本章之后都在讨论什么，并发表你自己的看法~"
+  target="_blank"
+/>
