@@ -1,0 +1,21 @@
+---
+// src/components/StarlightLinkCard.astro
+import linkMap from '../../public/discussions.json';
+import { useTranslations } from '~/i18n/util';
+import { LinkCard } from '@astrojs/starlight/components';
+
+const t = useTranslations(Astro);
+
+// 获取当前路径
+const currentPath = Astro.url.pathname;
+
+// 获取对应的Starlight链接
+const href = linkMap[currentPath] || linkMap['/'];
+---
+
+<LinkCard
+  title={t('discussion.title')}
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+/>
