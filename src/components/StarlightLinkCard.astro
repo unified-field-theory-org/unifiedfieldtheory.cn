@@ -6,13 +6,12 @@ import { LinkCard } from '@astrojs/starlight/components';
 
 const t = useTranslations(Astro);
 
-// Get current path and remove base if present
+// Get current path
 const currentPath = Astro.url.pathname;
-const base = import.meta.env.BASE_URL || '/';
-const normalizedPath = currentPath.replace(base.replace(/\/$/, ''), '');
 
-// Get corresponding forum link
-const href = linkMap[normalizedPath] || linkMap['/'];
+// Find matching link by checking if path ends with key
+const href = Object.entries(linkMap).find(([key]) => 
+  currentPath.endsWith(key))?.[1] || linkMap['/'];
 ---
 
 <LinkCard title={t('discussion.title')} href={href} target="_blank" rel="noopener noreferrer" />
