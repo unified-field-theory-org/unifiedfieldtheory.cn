@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define source and destination directories
-SRC_DIR="/Users/gaobaoqi/Documents/zxq/uft/unifiedfieldtheory.cn/src/content/docs/zh-cn/main-works/unified-field-theory"
-DEST_DIR="/Users/gaobaoqi/Documents/zxq/uft/unifiedfieldtheory.cn/src/content/docs/en/main-works/unified-field-theory"
+SRC_DIR="./src/content/docs/zh-cn/main-works/unified-field-theory"
+DEST_DIR="./src/content/docs/en/main-works/unified-field-theory"
 
 # Create destination directory if it doesn't exist
 mkdir -p "$DEST_DIR"
