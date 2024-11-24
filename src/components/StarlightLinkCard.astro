@@ -1,6 +1,6 @@
 ---
 // src/components/StarlightLinkCard.astro
-import linkMap from '../../public/discussions.json';
+import { getForumLink } from '../data/discussions';
 import { useTranslations } from '~/i18n/util';
 import { LinkCard } from '@astrojs/starlight/components';
 
@@ -10,8 +10,7 @@ const t = useTranslations(Astro);
 const currentPath = Astro.url.pathname;
 
 // Find matching link by checking if path ends with key
-const href = Object.entries(linkMap).find(([key]) => 
-  currentPath.endsWith(key))?.[1] || linkMap['/'];
+const forumLink = getForumLink(currentPath)
 ---
 
-<LinkCard title={t('discussion.title')} href={href} target="_blank" rel="noopener noreferrer" />
+<LinkCard title={t('discussion.title')} href={forumLink} target="_blank" rel="noopener noreferrer" />
