@@ -10,7 +10,12 @@ const t = useTranslations(Astro);
 const currentPath = Astro.url.pathname;
 
 // Find matching link by checking if path ends with key
-const forumLink = getForumLink(currentPath)
+const forumLink = getForumLink(currentPath);
 ---
 
-<LinkCard title={t('discussion.title')} href={forumLink} target="_blank" rel="noopener noreferrer" />
+<LinkCard
+	title={t('discussion.title')}
+	href={forumLink}
+	target="_blank"
+	rel="noopener noreferrer"
+/>
