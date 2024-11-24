@@ -1,4 +1,12 @@
-{
+// src/data/discussions.ts
+
+// 定义链接映射的类型
+type LinkMap = {
+  [key: string]: string;
+};
+
+// 导出链接映射对象
+export const forumLinks: LinkMap = {
   "/": "https://forum.unifiedfieldtheory.cn",
   "/main-works/unified-field-theory/section-0": "https://forum.unifiedfieldtheory.cn/questions/10010000000000125",
   "/main-works/unified-field-theory/section-1": "https://forum.unifiedfieldtheory.cn/questions/10010000000000129",
@@ -24,4 +32,10 @@
   "/main-works/unified-field-theory/section-21": "https://forum.unifiedfieldtheory.cn/questions/10010000000000149",
   "/main-works/unified-field-theory/section-22": "https://forum.unifiedfieldtheory.cn/questions/10010000000000150",
   "/main-works/unified-field-theory/section-23": "https://forum.unifiedfieldtheory.cn/questions/10010000000000151"
+} as const;  // 使用 as const 使值变为只读
+
+// 可选：导出一个获取链接的工具函数
+export function getForumLink(currentPath: string): string {
+  return Object.entries(forumLinks).find(([key]) => 
+    currentPath.endsWith(key))?.[1] || forumLinks['/'];
 }
