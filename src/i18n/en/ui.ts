@@ -136,7 +136,7 @@ export default {
 	// Share document
 	'share.title': 'Share',
 	// Discussion Link Card
-	'discussion.title': 'Go to discussions',
+	'discussion.title': 'Go to chapter discussions',
 	'discussion.description':
 		'See what people are talking about after reading this chapter, and give your opinion',
 };
