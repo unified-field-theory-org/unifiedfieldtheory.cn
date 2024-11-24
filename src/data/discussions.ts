@@ -36,6 +36,7 @@ export const forumLinks: LinkMap = {
 
 // 可选：导出一个获取链接的工具函数
 export function getForumLink(currentPath: string): string {
+  const normalizedPath = currentPath.replace(/^\/+|\/+$/g, '');
   return Object.entries(forumLinks).find(([key]) => 
-    currentPath.endsWith(key))?.[1] || forumLinks['/'];
+    normalizedPath.endsWith(key))?.[1] || forumLinks['/'];
 }
