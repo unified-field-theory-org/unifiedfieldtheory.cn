@@ -7,10 +7,18 @@ DEST_DIR="./src/content/docs/en/main-works/unified-field-theory"
 # Create destination directory if it doesn't exist
 mkdir -p "$DEST_DIR"
 
-# Process section-0 through section-23
-for i in {0..23}; do
-  file="section-${i}.mdx"
+# # Process section-0 through section-23
+# for i in {0..23}; do
+#   file="section-${i}.mdx"
+
+# Process every file in the source directory
+for file in $(ls "$SRC_DIR"); do
   
+  # 判断文件末尾是否为 "敬请期待...", 如果是则不处理
+  if [[ $(tail -n 1 "$SRC_DIR/$file") == "敬请期待..." ]]; then
+    continue
+  fi
+
   # Copy file from source to destination
   cp "$SRC_DIR/$file" "$DEST_DIR/$file"
   
