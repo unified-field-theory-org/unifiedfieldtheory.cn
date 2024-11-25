@@ -68,6 +68,8 @@ export const forumLinks: LinkMap = {
 		'https://forum.unifiedfieldtheory.cn/questions/10010000000000161',
 	'/main-works/unified-field-theory/section-29':
 		'https://forum.unifiedfieldtheory.cn/questions/10010000000000162',
+	'/main-works/unified-field-theory/section-30':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000163',
 } as const; // 使用 as const 使值变为只读
 
 // 可选：导出一个获取链接的工具函数
