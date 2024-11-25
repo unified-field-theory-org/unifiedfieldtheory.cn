@@ -13,7 +13,7 @@ export default NavDictionary({
 	academicPaper: '学术论文',
 	'academic-paper/unified-field-equation-generated-by-longitudinal-electromagnetic-lem-waves':
 		'纵向电磁波 (LEM) 产生的统一场方程',
-	resources: '资源',
+	resources: '相关资源',
 	'resources/relevant-literature': '相关文献',
 	'resources/field-animations': '宇宙四大场动画演示',
 	'resources/use-of-artificial-sites': '人工场的应用场景',
