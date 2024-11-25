@@ -4,12 +4,106 @@ description: "二十五、统一场论动力学方程"
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
-
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
 
 
-Coming soon...
+## 力的笼统定义
+
+力是物体【或者质点】在空间中相对于我们观察者运动【或者物体周围空间本身运动】的运动状态，在某一个空间范围【或者某一个时间内】的改变程度。
+
+从数学上讲，力也就是物体的运动量对空间位置、对时间的导数。
+
+力分惯性力和相互作用力。
+
+惯性力是物体的运动量在对空间位置求导数，这个空间位置是立体角。所以，受力物体与施力物体、与观察者的距离无关。惯性力相对简单。
+
+相互作用力是物体的运动量在对空间位置求导数，这个空间位置可以是体积、曲面、位矢。
+
+所以，受力物体与施力物体、与观察者的距离有关。
+
+牛顿力学中有惯性力和万有引力。
+
+物体的惯性力与受力物体和施力物体距离无关。而万有引力属于相互作用力，与距离有关。
+
+在电磁学中，洛伦兹力属于惯性力，而安培力属于相互作用力。
+
+这一节我们还要把牛顿力学的惯性力推广到电磁力和核力。
+
+
+## 把宇宙4种惯性力写在一个方程里
+
+我们用质点 $o$ 周围空间的某一个空间点 $p$ 的运动程度来描述 $o$ 点的动量 $\overrightarrow{p_\text{动}} = m\ (\vec{c} - \vec{v})$ 。$o$ 点的动量与 $o$ 点到 $p$ 点之间的距离无关，与惯性力有相似的性质。
+
+我们沿用牛顿力学的思想­——惯性力是动量对时间的导数，可以认为普遍的动量 $\overrightarrow{p_\text{动}} = m\ (\vec{c} - \vec{v})$ 随时间 $t$ 发生变化的变化程度，就是宇宙4种惯性力。
+
+$$
+\begin{equation}\nonumber
+\vec{F} = \dfrac{d\vec{p}}{dt} = \vec{c}\ \dfrac{dm}{dt} - \vec{v}\ \dfrac{dm}{dt} + m\ \dfrac{d\vec{c}}{dt} - m\ \dfrac{d\vec{v}}{dt}
+\end{equation}
+$$
+
+$(\vec{c} - \vec{v})\ \dfrac{dm}{dt}$ 为加质量力，$m\ \dfrac{d\vec{c} - d\vec{v}}{dt}$ 是加速度力。
+
+在统一场论中，$\vec{c}\ \dfrac{dm}{dt}$ 被认为是电场力，$\vec{v}\ \dfrac{dm}{dt}$ 被认为是磁场力，$m\ \dfrac{d\vec{v}}{dt}$ 牛顿第二定理中的惯性力，也等价于万有引力，$m\ \dfrac{d\vec{c}}{dt}$ 是核力。
+
+$m\ \dfrac{d\vec{c}}{dt}$ 这项力在统一场论中认为是核力，理由有：
+
+原子弹爆炸的能量可以用质能方程 $E = m\ c^2$ 计算，因而沿核力方向计算位移和核力的乘积的积分应该有 $m\ c^2$ 相同和相似的形式，而 $m\ \dfrac{d\vec{c}}{dt}$ 具备了这种条件。
+
+统一场论动力学方程应该包含核力，因为统一场论认为一切相互作用力都来自于质点在空间中的运动状态的改变程度，或者质点周围空间的运动状态的改变程度。
+
+如果认为相对论中质能方程 $E = m\ c^2$ ，可以反映出核力【 $\vec{F} = m\ \dfrac{d\vec{c}}{dt}$ 】是物体粒子沿核力方向移动了距离 $\vec{r}$ 做的功，由功和能量的定义方程，则有：
+
+$$
+\begin{equation}\nonumber
+E = \int_0^r \vec{F} \cdot d\vec{r} = \vec{F} \cdot \vec{r}
+\end{equation}
+$$
+
+上式的 $r$ 是位移矢量 $\vec{r}$ 的数量，积分范围在 $0$ 和 $r$ 之间，
+
+$$
+\begin{equation}\nonumber
+E = \vec{F} \cdot \vec{r} = m\ \vec{c} \cdot \dfrac{d\vec{r}}{dt}
+\end{equation}
+$$
+
+由前面的时空同一化方程 $\vec{r} = \vec{c}\ t$ 】得到：
+
+$$
+\begin{equation}\nonumber
+E = \vec{F} \cdot \vec{r} = m\ \vec{c} \cdot \dfrac{d\vec{r}}{dt} = m\ \vec{c} \cdot \vec{c} = m\ c^2
+\end{equation}
+$$
+
+加质量力 $(\vec{c} - \vec{v})\ \dfrac{dm}{dt}$ 造成的运动也可以称为加质量运动。加质量运动是一种不连续的运动，光在照射到玻璃上被反射回来速度的变化是不需要时间的，是不连续的，光是一种加质量运动。
+
+加质量运动就是一个物体质量随时间变化需要时间，当质量变化到零时候，可以从某一个速度突然的达到光速，随着这个物体一同运动的观测者发现这个运动过程不需要时间的，自己从某一个地方突然的消失，在另一个地方突然的出现。
+
+质量的变化有一种不连续特性。量子力学中电磁波辐射的能量不连续的原因是：
+
+光子在激发成光子之前需要一个固定的使质量变成零的能量。小于这个能量，光子无法激发起来以光速运动，光子的能量到达了激发条件，就以光速运动走了，再加能量，就加不上了。
+
+如果认定空间是静止的，也就是 $\vec{c} = \vec{0}$ ，那么式
+
+$$
+\begin{equation}\nonumber
+\vec{F} = \dfrac{d\vec{p}}{dt} = \vec{c}\ \dfrac{dm}{dt} - \vec{v}\ \dfrac{dm}{dt} + m\ \dfrac{d\vec{c}}{dt} - m\ \dfrac{d\vec{v}}{dt}
+\end{equation}
+$$
+
+中的 $\vec{c} = \vec{0}$ ，这样又回到了相对论和经典力学的动力学公式：
+
+$$
+\begin{equation}\nonumber
+\vec{F} = \dfrac{d\vec{p}}{dt} = - \vec{v}\ \dfrac{dm}{dt} - m\ \dfrac{d\vec{v}}{dt}
+\end{equation}
+$$
+
+惯性力和相互作用力相关，有共同点，也有区别，两种力，我们都可以用受力质点 $o$ 周围空间一个空间点 $p$ 的运动情况来考察质点 $o$ 受力情况。
+
+但是，惯性力与 $o$ 点到 $p$ 点的距离 $r$ 无关，而相互作用力与 $r$ 相关。
+
+惯性力是我们用立体角去考察，而立体角与距离长短无关。而相互作用力，是我们用三维锥体或者高斯曲面去考察，三维锥体或者高斯曲面都与距离有关。
