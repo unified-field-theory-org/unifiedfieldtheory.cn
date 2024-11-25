@@ -4,12 +4,134 @@ description: "二十七、证明惯性质量等价于引力质量"
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
-
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
 
+import { Aside } from '@astrojs/starlight/components';
 
-Coming soon...
+
+牛顿力学认为，惯性质量反映了物体不容易被加速的程度，而引力质量反映了加速别的物体的能力。
+
+在以上的质量为 $m$ 的 $o$ 点，相对于我们观察者静止情况下，相距 $r$ 远的地方如果有一个质量为 $m'$ 的 $p$ 点，受到 $o$ 点的引力 $\vec{F}$ 的作用，会使 $p$ 点有一个指向 $o$ 点加速度 $-\vec{A}$ ，并且
+
+$$
+\begin{align}
+F &= - \dfrac{G\ m\ m'}{r^2} \nonumber \\
+\vec{F} &= - m'\ \vec{A} \nonumber
+\end{align}
+$$
+
+牛顿在没有给出解释的情况下，把式 $\vec{F} = -m'\ \vec{A}$ 中的惯性质量$m'$ 和式 $\vec{F} = - \dfrac{G\ m\ m'}{r^2}\ \vec{e_r}$ 中的引力质量 $m'$ 等同起来，便有了下式：
+
+$$
+\begin{equation}\nonumber
+\vec{A} = - \dfrac{G\ m}{r^2}\ \vec{e_r}
+\end{equation}
+$$
+
+$r$ 是 $\vec{r}$ 的数量，$\vec{e_r}$ 是 $\vec{r}$ 的单位矢量。这个就是人们常说的惯性质量等价于引力质量。
+
+如果我们证明了 $p$ 点指向 $o$ 点加速度 $\vec{A}$ ，等于 $o$ 点在 $p$ 点处产生的引力场，就可以证明惯性质量等价于引力质量。
+
+下面我们来给出证明。
+
+前面给出的引力场方程
+
+$$
+\begin{equation}\nonumber
+\vec{A} = - \dfrac{G\ k\ n\ \vec{r}}{\Omega\ r^3}
+\end{equation}
+$$
+
+中 ，为了便于分析问题，我们令光速运动空间位移矢量 $\vec{r} = \vec{c}\ t$ 来表示，则引力场方程为：
+
+$$
+\begin{equation}\nonumber
+\vec{A} = - \dfrac{G\ k\ \vec{r}}{\Omega\ r^3}
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开注解：关于上面两个式子中字母 $\Omega$ 含义的说明</summary>
+  <Aside title="注解">
+    上面第一个式子 $\vec{A} = - \dfrac{G\ k\ n\ \vec{r}}{\Omega\ r^3}$ 和 第二个式子 $\vec{A} = - \dfrac{G\ k\ \vec{r}}{\Omega\ r^3}$ 中的 $\Omega$ 含义是不同的。前者表示 $n$ 条空间位移矢量对应的立体角，后者表示单位空间位移矢量对应的立体角。原文中有时会出现 “同一个字母在不同公式中表示不同含义” 这种不严谨的情况，明白其想表达的意思即可。
+
+    <div style="text-align: right;">
+        _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+以上方程中，我们令 $\vec{r}$ 的数量 $r$ 不变，只是方向在变化，这样，引力场 $\vec{A}$ 变成了光速运动空间位移 $\vec{r}$ 的方向和立体角 $\Omega$ 之间的对应变化。
+
+$\Omega$ 是包围 $o$ 点的高斯球面 $s = 4 \pi r^2$ 上的一个立体角，在 $r$ 取固定值的情况下，$\Omega$ 的大小正比于 $\vec{r} \cdot \vec{r} = c^2\ t^2$ 
+
+<details>
+  <summary class="custom-summary">点击展开疑问：上面想表达的是不是 $\Omega$ 的大小正比于 $s$ ？</summary>
+  <Aside type="caution" title="疑问">
+    上面想表达的是否是：在 $r$ 取固定值的情况下，$\Omega$ 的大小正比于 $s = 4 \pi r^2$ ？
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+因为 $\vec{r}$ 的数量 $r$ 虽然不变，但是，$\vec{r}$ 是矢量，可以通过垂直于 $\vec{r}$ 上的一块面积。
+
+所以，有：
+
+$$
+\begin{equation}\nonumber
+\vec{A} = - \dfrac{G\ k\ \vec{r}}{c^2\ t^2\ r^3}
+\end{equation}
+$$
+
+由于 $G,\ k,\ c,\ r$ 都是常数，合并常数，得到：
+
+$$
+\begin{equation}\nonumber
+\vec{A} = - \text{常数乘以} \dfrac{\vec{r}}{t^2}
+\end{equation}
+$$
+
+将 $\vec{r}$ 和 $t^2$ 对 $t$ 两次求导数得：
+
+$$
+\begin{equation}\nonumber
+\vec{A} = - \text{常数乘以} \dfrac{d^2\vec{r}}{dt^2}
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开注解：上式的具体推导过程</summary>
+  <Aside title="注解">
+    对 $\vec{A} = - \text{常数乘以} \dfrac{\vec{r}}{t^2}$ 中分式的分子和分母分别对 $t$ 求二阶导，有 $\dfrac{d^2\vec{r}}{dt^2} = $ 和 $ = 2$ ，因此有：
+
+    $$
+    \begin{align}
+      \vec{A} &= - \text{常数乘以}\ \dfrac{d^2\vec{r} / dt^2}{d^2t^2 / dt^2} \nonumber \\
+      &= - \text{常数乘以}\ \dfrac{d^2\vec{r} / dt^2}{2} \nonumber \\
+      &= - \dfrac{\text{常数}}{2}\ \dfrac{d^2\vec{r}}{dt^2} \nonumber \\
+      &= - \text{新常数乘以}\ \dfrac{d^2\vec{r}}{dt^2} \nonumber
+    \end{align}
+    $$
+
+    关于高阶导数的相关知识，可以参考 “<a href="https://pan.baidu.com/s/14if0AaMRdByVgxAt5ONaoQ?pwd=bv59" target="_blank" rel="noopener noreferrer">同济大学《高等数学》（第七版）上册</a>”  p26 第二章 导数与微分 第三节 高阶导数。
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+由于牛顿力学是人类历史上最早诞生的力学体系，所以，以上常数可以设定为 $1$ ，就如同牛顿第二定理比例常数可以设定为 $1$ 。所以有：
+
+$$
+\begin{equation}\nonumber
+\vec{A} = - \dfrac{d^2\vec{r}}{dt^2}
+\end{equation}
+$$
+
+证明完毕。
