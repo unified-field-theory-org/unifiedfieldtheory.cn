@@ -25,7 +25,13 @@ export default [
 	{ text: 'Donate Zhang', slug: 'donate-zhang', key: 'donate-zhang' },
 	{ text: 'About website', slug: 'about-website', key: 'about-website' },
 	{ text: 'Join community', slug: 'join-community', key: 'join-community' },
-	{ text: 'Research Experiment', header: true, collapsed: true, type: 'learn', key: 'researchExperiment' },
+	{
+		text: 'Research Experiment',
+		header: true,
+		collapsed: true,
+		type: 'learn',
+		key: 'researchExperiment',
+	},
 	{
 		text: 'Generation of gravitational fields by low-voltage varying electromagnetic fields',
 		slug: 'research-experiment/generation-of-gravitational-fields-by-low-voltage-varying-electromagnetic-fields',
