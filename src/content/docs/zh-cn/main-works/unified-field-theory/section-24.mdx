@@ -4,8 +4,273 @@ description: "二十四、统一场论动量公式"
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
+import { Aside } from '@astrojs/starlight/components';
 
 
-敬请期待...
+## 统一场论的静止动量公式
+
+统一场论的基本假设为：
+
+宇宙中任意一个物体 $o$ 点，相对于我们观察者静止的时候，周围空间总是以物体为中心、以矢量光速、以圆柱状螺旋式向外发散运动。
+
+设想有一个质点 $o$ 相对于我们观测者静止，周围空间中任意一个空间点 $p$ ，在零时刻从 $o$ 点出发，以矢量光速度 $\vec{c'}$ 沿某一个方向运动，经历了时间 $t'$ ，在 $t''$ 时刻到达 $p$ 点后来所在的位置。
+
+<details>
+  <summary class="custom-summary">点击展开注解：关于上述变量的命名问题</summary>
+  <Aside title="注解">
+    上述变量命名有很多不规范不严谨的地方。主要有两个：（1）同时用 $o$ 代表质点和坐标原点（注意他并不是以质点的位置为原点，而是以 “质点周围空间中任意一个空间点 $p$ 的出发点位置” 为原点）；（2）$t'$ 和  $t''$ 这两个命名方式相似的变量，却一个表示时间段，一个表示时间点。但是因为上述问题不影响理解，本着尽可能如实呈现原著的理念，我们不进行修正。
+
+    <div style="text-align: right;">
+        _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
+
+设想质点 $o$ 周围空间总共有 $n$ 条空间点的矢量位移，我们用 $\vec{r'} = \vec{c'}\ t'$ 表示其中一条的位移量。
+
+我们在 $o$ 点周围取个适当的立体角 $\Omega$ ，里面恰巧包含一条空间矢量位移 $\vec{r'} = \vec{c'}\ t'$ 
+
+$$
+\begin{equation}\nonumber
+\vec{L} = k\ \dfrac{\vec{r'}}{\Omega}
+\end{equation}
+$$
+
+可以反映出 $o$ 点周围局部地区的空间的运动量。式中的 $k$ 是比例常数，$\Omega$ 是一个任意大小的立体角。
+
+<details>
+  <summary class="custom-summary">点击展开修正：$\Omega$ 不是任意大小的立体角，而是单位空间矢量位移对应的立体角。</summary>
+  <Aside type="danger" title="修正">
+    $\Omega$ 不是任意大小的立体角，而是像公式上方的那句话说的，是一条空间矢量位移对应的立体角。
+
+    因此上式写成 $\vec{L} = k\ \dfrac{\Delta{n}\ \vec{r'}}{\Delta\Omega}$ 应该更好理解一些
+    
+    另外，还可以将上式与第二十三章中的 $\vec{A} = - \dfrac{G\ k\ \Delta{n}\ \vec{r}}{\Omega\ r^3}$ 以及 $m = \dfrac{k\ \Delta n}{\Delta \Omega}$ 进行类比
+    
+    <div style="text-align: right;">
+        _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
+
+将 $\vec{L} = k\ \dfrac{\vec{r'}}{\Omega}$ 中 $\vec{r'}$ 对时间 $t'$ 求偏导数，可以反映出 $o$ 点局部地区的运动空间随时间 $t'$ 的运动程度。
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial\vec{L}}{\partial t'} = k\ \dfrac{\partial\vec{r'}}{\partial t'}\ \dfrac{1}{\Omega} = \dfrac{k\ c'}{\Omega}
+\end{equation}
+$$
+
+注意 $\vec{r'} = \vec{c'}\ t'$ 。利用前面质量的定义方程 $m = \dfrac{k}{\Omega}$ ,
+
+可以把上式改写为统一场论的静止动量公式：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{p_\text{静}} = m'\ \vec{c'}
+\end{equation}
+$$
+
+这里的动量定义方程中把质量用 $m'$ 表示，是为了区分将要出现的运动质量 $m$ ，$\vec{c'}$ 是为了区分将要出现的运动矢量光速 $\vec{c}$ 
+
+$o$ 点的静止动量反映了 $o$ 点静止时候周围空间的运动程度。
+
+我们要认识到，$o$ 点的静止动量是周围的空间点 $p$ 的运动位移量 $\vec{r'}$ 随立体角度 $\Omega$ 、时间 $t'$ 的变化的变化程度，不随 $o$ 点和 $p$ 点之间距离的变化而变化。
+
+所以，我们测量一个物体 $o$ 点静止动量的大小，不需要考虑 $o$ 点与周围空间中一个考察点 $p$ 之间距离，这一点和引力场不一样。当 $o$ 点运动的时候，运动动量这种情况也是类似的。
+
+
+## 运动动量公式
+
+设想 $s'$ 系相对于 $s$ 系以匀速度 $\vec{v}$ 【标量为 $v$】沿 $x$ 轴正方向直线运动。
+
+以上的 $o$ 点相对于 $s'$ 系观察者静止，具有静止动量 $m'\ \vec{c'}$ 
+
+前面我们分析过，当 $o$ 点相对于 $s$ 系里的观察者以速度 $\vec{v}$ 运动的时候，静止动量的两部分——质量和矢量光速都要发生变化。
+
+在 $s'$ 系里，$o$ 点的静止质量为 $m'$，在 $s$ 系里变成了运动质量 $m$ 
+
+在 $s'$ 系里，$o$ 点周围空间点 $p$ 相对于 $s'$ 系里观察者的矢量光速为 $\vec{c'}$；在 $s$ 系里，$o$ 点周围空间点 $p$ 相对于 $s$ 系里观察者的矢量光速为 $\vec{c}$ 
+
+$\vec{c}$ 和 $\vec{c'}$ 方向不一样，但模是一样的，都是 $c$ ，也就是：
+
+$$
+\begin{equation}\nonumber
+\vec{c'} \cdot \vec{c'} = \vec{c} \cdot \vec{c} = c^2
+\end{equation}
+$$
+
+详细的证明在第二十二节《解释洛伦兹变换中的光速不变》中的第4小节《光源运动速度 $\vec{v}$ 和矢量光速 $\vec{c}$ 之间的关系》。
+
+在 $s$ 系里，运动动量是不是就可以写成 $m\ \vec{c}$ ？
+
+明显不行，因为 $\vec{c}$ 是质点 $o$ 点周围空间点 $p$ 相对于 $s$ 系中观察者的速度，不是相对于质点 $o$ 点的运动速度。
+
+动量反映的是质点 $o$ 点周围空间的运动情况，而不是反映观察者周围空间的运动情况。
+
+在 $s'$ 系里，观察者和质点 $o$ 点是相对静止的，$p$ 点相对于质点 $o$ 点的速度和相对于观察者的速度没有区别。
+
+但是，在 $s$ 系里是有区别的，因为在 $s$ 系里质点 $o$ 点是在以速度 $\vec{v}$ 相对观察者沿 $x$ 轴直线运动。
+
+在 $s$ 系里，$\vec{c}$ 是 $p$ 点相对于 $s$ 系里观察者的速度，$\vec{c}$ 也是 $p$ 点相对于质点 $o$ 点的运动速度【我们用 $\vec{u}$ 表示】和 $\vec{v}$ 的叠加，也就是 $\vec{c} = \vec{u} + \vec{v}$ 
+
+所以，在 $s$ 系里，$p$ 点相对于 $o$ 点的运动速度应该是：
+
+$$
+\begin{equation}\nonumber
+\vec{u} = \vec{c} - \vec{v}
+\end{equation}
+$$
+
+所以，运动动量可以写为：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{p_\text{动}} = m\ \vec{u} = m\ (\vec{c} - \vec{v})
+\end{equation}
+$$
+
+相对论力学、牛顿力学认为物体周围空间的光速运动不存在，也就是 $\vec{c} = \vec{0}$ ，所以，牛顿力学、相对论的动量方程是
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{p_\text{动}} = m\ \vec{v}
+\end{equation}
+$$
+
+也可以说，相对论、牛顿力学的动量 $m\ \vec{v}$ ，只是统一场论动量公式 $\overrightarrow{p_\text{动}} = m\ (\vec{c} - \vec{v})$ 中 $m\ \vec{c}$ 变化的时候的一个变化量。
+
+统一场论动量公式只是把牛顿、相对论动量公式扩展了，包含了物体静止时候周围空间的矢量光速运动，没有完全否定相对论、牛顿力学动量公式。
+
+
+## 物体运动时候的动量和静止时候的数量是相等的
+
+将运动动量公式 $\overrightarrow{p_\text{动}} = m\ (\vec{c} - \vec{v})$ 两边对自身点乘，结果为：
+
+$$
+\begin{align}
+p^2 &= m^2\ (c^2 - 2\ \vec{c} \cdot \vec{v} + v^2) \nonumber \\
+p &= m\ \sqrt{c^2 - 2\ \vec{c} \cdot \vec{v} + v^2} \nonumber
+\end{align}
+$$
+
+我们应该合理地认为，物体静止时候的静止动量 $m'\ \vec{c'}$ 的数量 $m'\ c$ ，和运动时候的运动动量 $m\ (\vec{c} - \vec{v})$ 的数量 $m\ \sqrt{c^2 - 2\ \vec{c} \cdot \vec{v} + v^2}$ 应该是相等的，不同的只是方向。所以，应该有：
+
+$$
+\begin{equation}\nonumber
+m'\ c = m\ \sqrt{c^2 - 2\ \vec{c} \cdot \vec{v} + v^2}
+\end{equation}
+$$
+
+由于光速不变、光速最大的限制，当物体运动速度 $\vec{v}$ 很大的时候，接近于光速 $\vec{c}$ ，$\vec{v}$ 和 $\vec{c}$ 之间的夹角 $\theta$ 也会趋向于零，如果不趋向于零，就有超光速出现。严格的证明如下：
+
+$s'$ 系相对于 $s$ 系以匀速度 $\vec{v}$ 沿 $x$ 轴【或者 $x'$ 轴，$x'$ 轴和 $x$ 轴相互重合】直线运动。
+
+在 $s'$ 系里，令物体 $o$ 点周围空间点 $p$ 的矢量光速为 $\vec{c'}$ ，$c_x'$ 为 $\vec{c'}$ 在 $x'$ 轴上的分量，$\theta'$ 为 $\vec{c'}$ 和 $x'$ 轴【或者  $\vec{c'_x}$ ，因为 $\vec{c'_x}$ 和 $x'$ 轴平行】之间的夹角。所以有：
+
+$$
+\begin{equation}\nonumber
+cos\ \theta' = \dfrac{c_x'}{c}
+\end{equation}
+$$
+
+$c_x'$ 为 $\vec{c_x'}$ 的标量，$c$ 是 $\vec{c'}$ 的标量。
+
+在 $s$ 系里，有：
+
+$$
+\begin{equation}\nonumber
+cos\ \theta = \dfrac{c_x}{c}
+\end{equation}
+$$
+
+$\theta$ 为 $s$ 系里 $\vec{c}$ 和 $\vec{c_x}$ 之间的夹角。$c_x$ 是 $\vec{c}$ 在 $x$ 轴上的分量 $\vec{c_x}$ 的标量。
+
+根据洛伦兹速度变换的逆变换公式：
+
+$$
+\begin{equation}\nonumber
+c_x = \dfrac{c_x' + v}{1 + \dfrac{c_x'\ v}{c^2}}
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开注解：上述公式的具体推导</summary>
+  <Aside title="注解">
+    上述 “洛伦兹速度变换的逆变换公式” 的具体推导可以参考 [这个链接](https://query.libretexts.org/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E5%AD%A6_III-%E5%85%89%E5%AD%A6%E4%B8%8E%E7%8E%B0%E4%BB%A3%E7%89%A9%E7%90%86%E5%AD%A6_(OpenSTAX)/05%3A_%E7%9B%B8%E5%AF%B9%E8%AE%BA/5.07%3A_%E7%9B%B8%E5%AF%B9%E8%AE%BA%E9%80%9F%E5%BA%A6%E5%8F%98%E6%8D%A2)。
+
+    <div style="text-align: right;">
+        _由 **[RainDream](mailto:bzsgbq@163.com)** 添加_
+    </div>
+  </Aside>
+</details>
+
+加以上的 $cos\ \theta = \dfrac{c_x}{c}$ ， $cos\ \theta' = \dfrac{c_x'}{c}$ ，可以导出：
+
+$$
+\begin{equation}\nonumber
+cos\ \theta = \dfrac{cos\ \theta' + \dfrac{v}{c}}{1 + \dfrac{v}{c}\ cos\ \theta'}
+\end{equation}
+$$
+
+从上式可以看出，当速度 $\vec{v}$ 的数量 $v$ 接近于光速 $c$ 的时候，$cos\ \theta$ 接近于 $1$ ，也就是 $\theta$ 接近于 $0$ 。
+
+当运动速度 $\vec{v}$ 和光速 $\vec{c}$ 很接近，我们忽略了 $\vec{v}$ 的数量 $v$ 和 $\vec{c}$ 的数量 $c$ 之间的差别，$\vec{v}$ 和 $\vec{c}$ 之间的夹角 $\theta$ 也趋向于零，结果有：
+
+$v\approx c$ 的时候，$\vec{c} \cdot \vec{v} \approx v^2$【我们如果选择 $\vec{c} \cdot \vec{v} \approx c^2$ ,结果会出现虚数而没有意义】，结果有：
+
+$$
+\begin{equation}\nonumber
+m'\ c = m\ \sqrt{c^2 - v^2}
+\end{equation}
+$$
+
+注意，上式中我们虽然忽略了 $c$ 和 $v$ 之间的差，但保留了 $c^2$ 和 $v^2$ 之间的差。
+
+比如 $9$ 和 $8$ 之间的差是 $1$ ，而 $9^2$ 和 $8^2$ 之间的差是 $17$，我们只能忽略小的值，保留大的值，这样才合理。
+
+对上式两边除以标量光速 $c$，得：
+
+$$
+\begin{equation}\nonumber
+m = \dfrac{m'}{\sqrt{1 - \dfrac{v^2}{c^2}}}
+\end{equation}
+$$
+
+这个式子大家是不是很眼熟？不错，它就是大名鼎鼎的相对论质速公式。
+
+原来物体以速度 $\vec{v}$ 运动的时候，质量 $m$ 的增大，是以减少本来的周围运动空间的光速 $\vec{c}$ 为代价的，动量总的数量仍然是守恒的。
+
+这个就是把动量守恒范围扩大到不同的参考系中，也就是相互运动的观察者，测量同一个物体的动量，总的数量是不变的。
+
+这个哲学思想是-----观察者只能观察运动状态，而不能改变运动状态。
+
+我们再用 $(\vec{c} - \vec{v})$ 的分量形式来分析式
+
+$$
+\begin{equation}\nonumber
+m'\ c = m\ \sqrt{c^2 - 2\ \vec{c} \cdot \vec{v} + v^2}
+\end{equation}
+$$
+
+$(\vec{c} - \vec{v})$ 的三个分量是 $(c_x - v_x), (c_y - v_y), (c_z - v_z)$ ，，，令 $(\vec{c} - \vec{v})$ 的数量为 $u$ ，则：
+
+$$
+\begin{align}
+u &= \sqrt{(c_x - v_x)^2 + (c_y - v_y)^2 + (c_z - v_z)^2} \nonumber \\
+  &= \sqrt{c_x^2 + c_y^2 + c_z^2 + v_x^2 + v_y^2 + v_z^2 - 2\ \vec{c} \cdot \vec{v}} \nonumber \\
+  &= \sqrt{c^2 + v^2 - 2\ \vec{c} \cdot \vec{v}} \nonumber
+\end{align}
+$$
+
+情况是相同的。
+
+对 $m' = m\ \sqrt{1 - \dfrac{v^2}{c^2}}$ 两边同时乘以标量光速的平方可以得到相对论的能量方程：
+
+$$
+\begin{equation}\nonumber
+E = m'\ c^2 = m\ c^2\ \sqrt{1 - \dfrac{v^2}{c^2}}
+\end{equation}
+$$
+
+后面还有详细的论证。
