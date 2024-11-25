@@ -44,7 +44,7 @@ export default NavDictionary({
 	'main-works/unified-field-theory/section-22': '二十二、宇宙中4大场的笼统定义',
 	'main-works/unified-field-theory/section-23': '二十三、引力场和质量的定义方程',
 	'main-works/unified-field-theory/section-24': '二十四、统一场论动量公式',
-	'main-works/unified-field-theory/section-25': '(待更新) 二十五、统一场论动力学方程',
+	'main-works/unified-field-theory/section-25': '二十五、统一场论动力学方程',
 	'main-works/unified-field-theory/section-26': '(待更新) 二十六、解释牛顿三大定理',
 	'main-works/unified-field-theory/section-27': '(待更新) 二十七、证明惯性质量等价于引力质量',
 	'main-works/unified-field-theory/section-28': '(待更新) 二十八、解释万有引力的本质',
