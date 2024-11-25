@@ -4,12 +4,119 @@ description: "二十九、引力场与时空波动方程"
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
-
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
 
+import { Aside } from '@astrojs/starlight/components';
 
-Coming soon...
+
+前面指出，物体周围空间以圆柱状螺旋式向四周发散运动，质点外空间点的矢量位移随空间位置变化、又随时间变化。
+
+物理量【这里是质点外的空间点的位移量，简称位矢】随空间位置变化又随时间变化，可以认为具有波动过程。
+
+我们知道，波动和圆柱状螺旋式运动有很大的区别，波动是振动的形式在媒质中的传播，而不像螺旋式运动是质点在空间中位置的移动。但是对于空间这个特殊的东西，两种运动却可以兼容。
+
+一个空间点运动不会有波动效应，但是，一群空间点情况就不一样了。
+
+大家可能记得一个名言：树上没有两片完全相同的树叶，但是，这个对于空间点来说就不成立了。
+
+一个空间点和另外一个空间点绝对没有区别。可以断定，空间的圆柱状螺旋式运动中包含了波动形式。
+
+下面我们由前面的时空同一化方程 $\vec{r} (t) = \vec{c}\ t = x\ \vec{i} + y\ \vec{j} + z\ \vec{k}$ 来推导出时空的波动方程，并且指出和引力场之间的关系。
+
+设想宇宙空间某一处存在一个质点 $o$ ，相对于我们观察者静止，根据前面的时间物理定义和时空同一化方程，$o$ 点和观察者的时间 $t$ 可以用 $o$ 点周围一个空间点 $p$ 的位移 $\vec{r} (t) = \vec{c}\ t = x\ \vec{i} + y\ \vec{j} + z\ \vec{k}$ 来表示。
+
+我们将 $\vec{r}$ 对时间 $t$ 求导数，有结果：
+
+$$
+\begin{equation}\nonumber
+\dfrac{d\vec{r}}{dt} = \vec{c}
+\end{equation}
+$$
+
+将上式两边平方，有结果：
+
+$$
+\begin{equation}\nonumber
+\dfrac{d\vec{r}}{dt} \cdot \dfrac{d\vec{r}}{dt} = c^2 = \dfrac{dr}{dt} \cdot \dfrac{dr}{dt}
+\end{equation}
+$$
+
+$c$ 是矢量光速 $\vec{c}$ 的标量，$r$ 是 $\vec{r}$ 的标量。
+
+我们现在来考虑另外一个空间点 $p'$ ,  $p'$ 点在 $o$ 点周围运动，我们用 $\vec{L}$ 表示其位移，$\vec{L}$ 随时间 $t$ 变化，是时间 $t$ 的函数，由 $\vec{r}$ 和 $t$ 的关系可以断定 $\vec{L}$ 又是 $\vec{r}$ 的函数。
+
+我们将空间点 $p'$ 点的位移 $\vec{L}$ 对空间位移 $\vec{r}$ 的数量 $r$ 两次求导数，有结果：
+
+$$
+\begin{align}
+\dfrac{\partial^2\vec{L}}{\partial r^2} &= \dfrac{\partial^2\vec{L}}{c^2\ \partial t^2} \nonumber \\
+\dfrac{\partial^2\vec{L}}{\partial x^2} + \dfrac{\partial^2\vec{L}}{\partial y^2} + \dfrac{\partial^2\vec{L}}{\partial z^2} &= \dfrac{\partial^2\vec{L}}{c^2\ \partial t^2} \nonumber
+\end{align}
+$$
+
+$r$ 是矢量 $\vec{r}$ 的数量。以上微分号 $d$ 已经改为偏微分号 $\partial$。
+
+对偏微分方程
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial^2\vec{L}}{\partial t^2} = c^2\ \dfrac{\partial^2\vec{L}}{\partial r^2}
+\end{equation}
+$$
+
+求解，通解为：
+
+$$
+\begin{equation}\nonumber
+L(r, t) = f(t - \dfrac{r}{c}) + g(t + \dfrac{r}{c})
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开注解：关于上述偏微分方程</summary>
+  <Aside title="注解">
+    上述偏微分方程是经典的一维波动方程，可点击 <a href="https://dsl.nju.edu.cn/litao/electrodynamics/ch5-a.pdf" target="_blank" rel="noopener noreferrer">此链接</a> p31 进行更深入的了解。
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+$f$ 和 $g$ 表示两个独立的函数，方程 $L(r, t) = f(t - \dfrac{r}{c})$ 可以认为是空间点从质点 $o$ 出发向外行进的波。
+
+而方程 $L(r, t) = f(t + \dfrac{r}{c})$ 传统认为在物理学中是不存在的，被认为是从无限远处汇聚到 $o$ 点的波。
+
+<details>
+  <summary class="custom-summary">点击展开修正：上式中 $f$ 或应改为 $g$ </summary>
+  <Aside type="danger" title="修正">
+    上面这句话中 $L(r, t) = f(t + \dfrac{r}{c})$ 应该改为 $L(r, t) = g(t + \dfrac{r}{c})$
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+对于普通介质，似乎是没有这种物理意义的，但是，对于空间这种特殊的介质，却有物理意义的。这个实际上可以解释负电荷的来源，这个以后详细再讲。
+
+以上方程也包含了以 $o$ 点为中心向四面八方直线运动形式，和从四面八方直线汇聚到 $o$ 点的运动。这种运动可以看成是螺旋波动的振幅趋近于零的极限情况。
+
+方程 $\dfrac{\partial^2\vec{L}}{\partial t^2} = c^2\ \dfrac{\partial^2\vec{L}}{\partial r^2}$ 有两个特解 $L = A\ cos\ [\omega\ (t - \dfrac{r}{c})]$ 和 $L = A\ sin\ [\omega\ (t - \dfrac{r}{c})]$ 满足这个方程。
+
+上面的波动速度 $c$ 是光速，时空的波动是横波。
+
+如果考虑运动的连续性，位移 $\vec{L}$ 在 $x$ 轴、$y$ 轴上的分量 $L_x$ 和 $L_y$ 合在一起，在 $z$ 轴的垂直平面上运动形式应该是一个圆。
+
+所以，某些情况下，$L_x$ 和 $L_y$ 一个取余弦波，另一个就取正弦波。因此，有下面的圆柱状螺旋时空波动方程：
+
+$$
+\begin{align}
+L_x &= A\ cos\ [\omega\ (t - \dfrac{r}{c})] \nonumber \\
+L_y &= A\ sin\ [\omega\ (t - \dfrac{r}{c})] \nonumber
+\end{align}
+$$
+
+在统一场论里，引力场是空间振动形成波动的根源，而电磁场是空间振动的传播，传播速度就是光速。

@@ -48,7 +48,7 @@ export default NavDictionary({
 	'main-works/unified-field-theory/section-26': '二十六、解释牛顿三大定理',
 	'main-works/unified-field-theory/section-27': '二十七、证明惯性质量等价于引力质量',
 	'main-works/unified-field-theory/section-28': '二十八、解释万有引力的本质',
-	'main-works/unified-field-theory/section-29': '(待更新) 二十九、引力场与时空波动方程',
+	'main-works/unified-field-theory/section-29': '二十九、引力场与时空波动方程',
 	'main-works/unified-field-theory/section-30': '(待更新) 三十、电荷与电场的定义方程',
 	'main-works/unified-field-theory/section-31':
 		'(待更新) 三十一、速度乘以质量随时间变化率就是电磁场力',
