@@ -7,9 +7,9 @@ export default NavDictionary({
 	'donate-zhang': '捐赠张祥前',
 	'about-website': '关于本网站',
 	'join-community': '加入社区',
-	researchExperiment: '研究实验',
-	'research-experiment/generation-of-gravitational-fields-by-low-voltage-varying-electromagnetic-fields':
-		'低电压变化电磁场产生引力场试验',
+	// researchExperiment: '研究实验',
+	// 'research-experiment/generation-of-gravitational-fields-by-low-voltage-varying-electromagnetic-fields':
+	// 	'低电压变化电磁场产生引力场试验',
 	academicPaper: '学术论文',
 	'academic-paper/unified-field-equation-generated-by-longitudinal-electromagnetic-lem-waves':
 		'纵向电磁波 (LEM) 产生的统一场方程',
@@ -68,6 +68,6 @@ export default NavDictionary({
 	zhangMathTheory: '张祥前的数学理论',
 	lightNature: '揭秘光的本质',
 	zhangUnifiedField: '张祥前统一场论简洁版',
-	varyingEMFieldGravity: '变化电磁场产生引力场试验成功（附理论推导）',
+	// varyingEMFieldGravity: '变化电磁场产生引力场试验成功（附理论推导）',
 	artificialFieldScanning: '研发人工场扫描技术的申请报告',
 });
