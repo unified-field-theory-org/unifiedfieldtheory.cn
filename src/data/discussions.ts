@@ -74,6 +74,24 @@ export const forumLinks: LinkMap = {
 		'https://forum.unifiedfieldtheory.cn/questions/10010000000000164',
 	'/main-works/unified-field-theory/section-32':
 		'https://forum.unifiedfieldtheory.cn/questions/10010000000000165',
+	'/main-works/unified-field-theory/section-33':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000166',
+	'/main-works/unified-field-theory/section-34':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000167',
+	'/main-works/unified-field-theory/section-35':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000168',
+	'/main-works/unified-field-theory/section-36':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000169',
+	'/main-works/unified-field-theory/section-37':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000170',
+	'/main-works/unified-field-theory/section-38':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000171',
+	'/main-works/unified-field-theory/section-39':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000172',
+	'/main-works/unified-field-theory/section-40':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000173',
+	'/main-works/unified-field-theory/appendix':
+		'https://forum.unifiedfieldtheory.cn/questions/10010000000000174',
 } as const; // 使用 as const 使值变为只读
 
 // 可选：导出一个获取链接的工具函数
