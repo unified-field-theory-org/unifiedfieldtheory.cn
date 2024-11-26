@@ -4,8 +4,425 @@ description: "三十四、推导麦克斯韦方程"
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
+import { Aside } from '@astrojs/starlight/components';
 
 
-敬请期待...
+麦克斯韦方程组4个方程可以描述出电磁现象所有的规律，但它不是最基本的。
+
+利用电场、磁场的定义方程、场论中的高斯定理、斯托克斯定理，相对论中的洛伦兹变换，可以推导出麦克斯韦4个方程。
+
+{/* ## 导出静电场 $\overrightarrow{E'}$ 的旋度 */}
+## 导出静电场 E' 的旋度
+
+对于静止电荷 $o$ 点，带有电荷 $q$ ，在周围产生的的静电场 $\overrightarrow{E'}$ ，对电场定义方程
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{E'} = f\ \dfrac{1}{\Omega^2}\ \dfrac{d\Omega}{dt}\ \dfrac{\vec{r}}{r^3}
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开注解：关于上式中的 $f$</summary>
+  <Aside title="注解">
+    根据第三十章中静电场的定义方程：
+
+    $$
+    \begin{equation}\nonumber
+    \vec{E} = -\ \dfrac{k'\ k}{4\pi\ \varepsilon_0}\ \dfrac{1}{\Omega^2}\ \dfrac{d\Omega}{dt}\ \dfrac{\vec{r}}{r^3}
+    \end{equation}
+    $$
+    
+    可得上式中 $f =  -\ \dfrac{k'\ k}{4\pi\ \varepsilon_0}$ ；其实就是一个常数。
+    
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+直接求旋度，注意，式中右边仅 $\dfrac{\vec{r}}{r^3}$ 是变量，得：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{\nabla} \times \overrightarrow{E'} = \vec{0}
+\end{equation}
+$$
+
+上式可以分解为以下三个分式：
+
+$$
+\begin{align}
+\dfrac{\partial E_z'}{\partial y'} - \dfrac{\partial E_y'}{\partial z'} &= 0 \nonumber \\
+\dfrac{\partial E_x'}{\partial z'} - \dfrac{\partial E_z'}{\partial x'} &= 0 \nonumber \\
+\dfrac{\partial E_y'}{\partial x'} - \dfrac{\partial E_x'}{\partial y'} &= 0 \nonumber
+\end{align}
+$$
+
+
+{/* ## 导出静电场 $\overrightarrow{E'}$ 的散度 */}
+## 导出静电场 E' 的散度
+
+对静电场定义方程
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{E'} = f\ \dfrac{1}{\Omega^2}\ \dfrac{d\Omega}{dt}\ \dfrac{\vec{r}}{r^3}
+\end{equation}
+$$
+
+直接求散度，注意式中右边仅 $\dfrac{\vec{r}}{r^3}$ 是变量，得：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{\nabla} \cdot \overrightarrow{E'} = 0 
+\end{equation}
+$$
+
+上式中的 $r$ 是包围 $o$ 点的高斯球面 $s$ 的半径，在 $r$ 趋近于零【也可以说高斯球面上的考察点——空间点 $p$ 无限趋近于电荷 $o$ 点】，且 $o$ 点可以看成一个无限小的带电球体的情况下，式子出现了 $0/0$ 的情况，利用狄拉克 $\delta$ 函数，可以得到：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{\nabla} \cdot \overrightarrow{E'} = \dfrac{\partial E_x'}{\partial x'} + \dfrac{\partial E_y'}{\partial y'} + \dfrac{\partial E_z'}{\partial z'} = \dfrac{\rho'}{\varepsilon_0}
+\end{equation}
+$$
+
+$\rho'$ 是包围电荷 $o$ 点的高斯球面 $s$ 【 $s$ 的体积非常小，无限接近于 $o$ 点】内电荷的密度，$\varepsilon_0$ 是真空介电常数。
+
+我们需要注意的是，如果 $o$ 点在高斯球面 $s$ 外，$s$ 没有包围 $o$ 点，其散度一直是零。
+
+
+{/* ## 导出运动电场 $\overrightarrow{E}$ 的高斯定理 */}
+## 导出运动电场 E 的高斯定理
+
+设想电荷 $o$ 点静止在 $s'$ 系里，带有的电荷 $q$ 虽然是一个不变量，但是电荷 $q$ 在 $s$ 系中是以匀速度 $\vec{v}$ 沿 $x$ 轴正方向直线运动，按照相对论的运动导致空间收缩，其体积要收缩到 $\dfrac{1}{\gamma}$ 为相对论因子】倍， 相应的 $q$ 的电荷密度要增大到 $\gamma$ 倍。
+
+所以，$q$ 在 $s$ 系中密度 $\rho$ 要比 $s'$ 系中密度 $\rho$ 增大一个相对论因子 $\gamma$ 
+
+$$
+\begin{equation}\nonumber
+\rho = \gamma\ \rho'
+\end{equation}
+$$
+
+电荷 $q$ 在 $s$ 系中是以匀速度 $\vec{v}$ 【标量为 $v$ 】沿 $x$ 轴正方向在直线运动，所以有电流密度：
+
+$$
+\vec{J} = \rho\ v\ \vec{i} =  \gamma\ \rho'\ v\ \vec{i}
+$$
+
+$\vec{i}$ 是沿 $x$ 轴的单位矢量。
+
+由洛伦兹正变换的 $x' = \gamma\ (x - v\ t)$ 得到 $\dfrac{\partial x'}{\partial x} = \gamma$ ，再由电场的相对论变换 $E_x = E_x'$ , $E_y = \gamma\ E_y'$ , $\ E_z = \gamma\ E_z'$ ，，，以及静电场 $\overrightarrow{E'}$ 的散度：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{\nabla} \cdot \overrightarrow{E'} = \dfrac{\partial E_x'}{\partial x'} + \dfrac{\partial E_y'}{\partial y'} + \dfrac{\partial E_z'}{\partial z'} = \dfrac{\rho'}{\varepsilon_0}
+\end{equation}
+$$
+
+可以得出运动电场 $\overrightarrow{E}$ 的高斯定理： 
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\overrightarrow{\nabla} \cdot \overrightarrow{E} &= \dfrac{\partial E_x}{\partial x} + \dfrac{\partial E_y}{\partial y} + \dfrac{\partial E_z}{\partial z}  \\
+  &= \gamma\ (\dfrac{\partial E_x'}{\partial x'} + \dfrac{\partial E_y'}{\partial y'} + \dfrac{\partial E_z'}{\partial z'}) \\
+  &= \gamma\ \dfrac{\rho'}{\varepsilon_0} \\
+  &= \dfrac{\rho}{\varepsilon_0}
+\end{aligned}
+\end{equation}
+$$
+
+
+## 导出磁场的高斯定理
+
+利用相对论洛伦兹变换得到的微分算符 $\dfrac{\partial}{\partial y} = \dfrac{\partial}{\partial y'}$ ，$\dfrac{\partial}{\partial z} = \dfrac{\partial}{\partial z'}$ ，
+
+由前面的空间点 $p$ 处磁场 $\vec{B}$ 和电场 $\vec{E}$ 满足的关系：
+
+$$
+\begin{align}
+B_x &= 0 \nonumber \\
+B_y &= \dfrac{v}{c^2}\ E_z \nonumber \\
+B_z &= -\ \dfrac{v}{c^2}\ E_y \nonumber
+\end{align}
+$$
+
+由于我们把考察点定在空间 $p$ 点上，而不是电荷 $o$ 点上，所以上式是左手螺旋关系。再加静电场 $\overrightarrow{E'}$ 的旋度的第一式
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_z'}{\partial y'} - \dfrac{\partial E_y'}{\partial z'} = 0
+\end{equation}
+$$
+
+再加电场的相对论变换公式
+
+$$
+\begin{align}
+\gamma\ E_z' &= E_z \nonumber \\
+\gamma\ E_y' &= E_y \nonumber
+\end{align}
+$$
+
+可以导出磁场的高斯定理：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\overrightarrow{\nabla} \cdot \overrightarrow{B} &= \dfrac{\partial B_x}{\partial x} + \dfrac{\partial B_y}{\partial y} + \dfrac{\partial B_z}{\partial z}  \\
+  &= 0 + \dfrac{\partial (\dfrac{v}{c^2}\ E_z)}{\partial y} - \dfrac{\partial (\dfrac{v}{c^2}\ E_y)}{\partial z} \\
+  &= 0 + \dfrac{\partial (\dfrac{v}{c^2}\ \gamma\ E_z')}{\partial y'} - \dfrac{\partial (\dfrac{v}{c^2}\ \gamma\ E_y')}{\partial z'} \\
+  &= \dfrac{v}{c^2}\ \gamma\ (\dfrac{\partial E_z'}{\partial y'} - \dfrac{\partial E_y'}{\partial z'}) \\
+  &= 0
+\end{aligned}
+\end{equation}
+$$
+
+
+## 导出法拉第电磁感应定理
+
+由静电场 $\overrightarrow{E'}$ 的旋度第一式
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_z'}{\partial y'} - \dfrac{\partial E_y'}{\partial z'} = 0
+\end{equation}
+$$
+
+由电场的相对论变换 $E_z' = \dfrac{1}{\gamma}\ E_z$ ，$E_y' = \dfrac{1}{\gamma}\ E_y$ ，$\partial y' = \partial y$ ，$\partial z' = \partial z$ ，导出：
+
+$$
+\begin{equation}\nonumber
+\dfrac{1}{\gamma}\ \dfrac{\partial E_z}{\partial y} - \dfrac{1}{\gamma}\ \dfrac{\partial E_y}{\partial z} = \dfrac{1}{\gamma}\ (\dfrac{\partial E_z}{\partial y} - \dfrac{\partial E_y}{\partial z}) = 0
+\end{equation}
+$$
+
+所以，
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_z}{\partial y} - \dfrac{\partial E_y}{\partial z} = 0
+\end{equation}
+$$
+
+由静电场 $\overrightarrow{E'}$ 的旋度第二式
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_x'}{\partial z'} - \dfrac{\partial E_z'}{\partial x'} = 0
+\end{equation}
+$$
+
+由电场的相对论变换 $E_x' = E_x$ ，$E_z' = \dfrac{1}{\gamma}\ E_z$ ，$\partial z' = \partial z$ ，由洛伦兹正变换 $x' = \gamma\ (x - v\ t)$ 求偏微分得到的 $\dfrac{1}{\partial x'} = \dfrac{1}{\gamma}\ \dfrac{1}{\partial x}$ ，导出：
+
+$$
+\begin{align}
+&\dfrac{\partial E_x}{\partial z} - \dfrac{1}{\gamma^2}\ \dfrac{\partial E_z}{\partial x} = 0 \nonumber \\
+&\dfrac{\partial E_x}{\partial z} - (1 - \dfrac{v^2}{c^2})\ \dfrac{\partial E_z}{\partial x} = 0 \nonumber \\
+&\dfrac{\partial E_x}{\partial z} - \dfrac{\partial E_z}{\partial x} = - \dfrac{v^2}{c^2}\ \dfrac{\partial E_z}{\partial x} \nonumber
+\end{align}
+$$
+
+由速度定义 $v = \dfrac{dx}{dt}$ 导出
+
+$$
+\begin{equation}\nonumber
+v\ \dfrac{\partial}{\partial x} = \dfrac{\partial}{\partial t}
+\end{equation}
+$$
+
+所以：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_x}{\partial z} - \dfrac{\partial E_z}{\partial x} = - \dfrac{v}{c^2}\ \dfrac{\partial E_z}{\partial t}
+\end{equation}
+$$
+
+由空间点 $p$ 处的磁场 $\vec{B}$ 和电场 $\vec{E}$ 满足的关系式
+
+$$
+\begin{equation}\nonumber
+B_y = \dfrac{v}{c^2}\ E_z
+\end{equation}
+$$
+
+得到：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_x}{\partial z} - \dfrac{\partial E_z}{\partial x} = -\ \dfrac{\partial B_y}{\partial t}
+\end{equation}
+$$
+
+由静电场 $\overrightarrow{E'}$ 的旋度第三式
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_y'}{\partial x'} - \dfrac{\partial E_x'}{\partial y'} = 0
+\end{equation}
+$$
+
+由电场的相对论变换 $E_x' = E_x$ ，$E_y' = \dfrac{1}{\gamma}\ E_y$ ，再由以上的洛伦兹正变换的微分算符 得到的 $\dfrac{1}{\partial x'} = \dfrac{1}{\gamma}\ \dfrac{1}{\partial x}$ ，$\partial y' = \partial y$ ，
+
+得到：
+
+$$
+\begin{align}
+\dfrac{1}{\gamma^2}\ \dfrac{\partial E_y}{\partial x} - \dfrac{\partial E_x}{\partial y} = 0 \nonumber \\
+(1 - \dfrac{v^2}{c^2})\ \dfrac{\partial E_y}{\partial x} - \dfrac{\partial E_x}{\partial y} = 0 \nonumber \\
+\dfrac{\partial E_y}{\partial x} - \dfrac{\partial E_x}{\partial y} = \dfrac{v^2}{c^2}\ \dfrac{\partial E_y}{\partial x} \nonumber
+\end{align}
+$$
+
+由速度定义得到的
+
+$$
+\begin{equation}\nonumber
+v\ \dfrac{\partial}{\partial x} = \dfrac{\partial}{\partial t}
+\end{equation}
+$$
+
+得到：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_y}{\partial x} - \dfrac{\partial E_x}{\partial y} = \dfrac{v}{c^2}\ \dfrac{\partial E_y}{\partial t}
+\end{equation}
+$$
+
+由空间点 $p$ 处的电场 $\vec{E}$ 和磁场 $\vec{B}$ 满足的关系
+
+$$
+B_z = -\ \dfrac{v}{c^2}\ E_y
+$$
+
+中，得到：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_y}{\partial x} - \dfrac{\partial E_x}{\partial y} = -\ \dfrac{\partial B_z}{\partial t}
+\end{equation}
+$$
+
+由以上的推导加托克斯定理得出法拉第电磁感应方程：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\overrightarrow{\nabla} \times \overrightarrow{E} &= (\dfrac{\partial E_z}{\partial y} - \dfrac{\partial E_y}{\partial z})\ \vec{i} + (\dfrac{\partial E_x}{\partial z} - \dfrac{\partial E_z}{\partial x})\ \vec{j} + (\dfrac{\partial E_y}{\partial x} - \dfrac{\partial E_x}{\partial y})\ \vec{k} \\
+  &= 0\ \vec{i} - \dfrac{\partial B_y}{\partial t}\ \vec{j} - \dfrac{\partial B_z}{\partial t}\ \vec{k} \\
+  &= -\ \dfrac{\partial B_x}{\partial t} \vec{i} - \dfrac{\partial B_y}{\partial t} \vec{j} - \dfrac{\partial B_z}{\partial t} \vec{k} \\
+  &= -\ \dfrac{\partial \vec{B}}{\partial t}
+\end{aligned}
+\end{equation}
+$$
+
+
+## 导出电流和变化电场产生磁场
+
+由空间点 $p$ 处的电场 $\vec{E}$ 和磁场 $\vec{B}$ 满足的关系式
+
+$$
+\begin{align}
+B_y &= \dfrac{v}{c^2}\ E_z \nonumber \\
+B_z &= -\ \dfrac{v}{c^2}\ E_y \nonumber
+\end{align}
+$$
+
+可以得出：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\dfrac{\partial B_z}{\partial y} - \dfrac{\partial B_y}{\partial z} &= -\ \dfrac{\partial (\dfrac{v}{c^2}\ E_y)}{\partial y} - \dfrac{\partial (\dfrac{v}{c^2}\ E_z)}{\partial z} \\
+  &= -\ \dfrac{v}{c^2}\ (\dfrac{\partial E_y}{\partial y} + \dfrac{\partial E_z}{\partial z}) \\
+  &= -\ \mu_0\ \varepsilon_0\ v\ (\dfrac{\rho}{\varepsilon_0} - \dfrac{\partial E_x}{\partial x})
+\end{aligned}
+\end{equation}
+$$
+
+注意，$\mu_0\ \varepsilon_0 = \dfrac{1}{c^2}$ ，$\rho$ 是电荷 $o$ 点在 $s$ 系里电荷体密度，这里用到了运动电场 $\vec{E}$ 的高斯定理
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{\nabla} \cdot \overrightarrow{E} = \dfrac{\partial E_x}{\partial x} + \dfrac{\partial E_y}{\partial y} + \dfrac{\partial E_z}{\partial z} = \dfrac{\rho}{\varepsilon_0}
+\end{equation}
+$$
+
+所以，
+
+$$
+-\ \mu_0\ \varepsilon_0\ v\ (\dfrac{\rho}{\varepsilon_0} - \dfrac{\partial E_x}{\partial x}) = -\ \mu_0\ v\ \rho + \mu_0\ \varepsilon_0\ v\ \dfrac{\partial E_x}{\partial x}
+$$
+
+以上是从空间点 $p$ 处考察得出的，由于电荷 $o$ 点的运动速度 $v$ 和 $p$ 点运动速度 $- v$ 正好相反。
+
+$\mu_0\ v\ \rho$ 是电流，上式如果表示的是电流和变化磁场产生磁场，则负号就要去掉。再由速度定义得到的
+
+$$
+\begin{equation}\nonumber
+\dfrac{v}{\partial x} = \dfrac{1}{\partial t}
+\end{equation}
+$$
+
+所以，上式的矢量式可以写为：
+
+$$
+\begin{equation}\nonumber
+\mu_0\ \vec{J} + \mu_0\ \varepsilon_0\ \dfrac{\partial E_x}{\partial t} \vec{i}
+\end{equation}
+$$
+
+$\vec{i}$ 沿 $x$ 轴的单位矢量，$\vec{J}$ 是电流。
+
+<details>
+  <summary class="custom-summary">点击展开修正：这里的 $\vec{J}$ 应该是指电流密度。</summary>
+  <Aside type="danger" title="修正">
+    这里的 $\vec{J}$ 应该是指电流密度。
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+由 $B_x = 0$ ，$B_z = -\ \dfrac{v}{c^2}\ E_y$ ，$\dfrac{v}{\partial x} = \dfrac{1}{\partial t}$ ，所以：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\dfrac{\partial B_x}{\partial z} - \dfrac{\partial B_z}{\partial x} &= - \dfrac{\partial B_z}{\partial x} \\
+  &= \dfrac{v}{c^2}\ \dfrac{\partial E_y}{\partial x} \\
+  &= \dfrac{1}{c^2}\ \dfrac{\partial E_y}{\partial t} \\
+  &= \mu_0\ \varepsilon_0\ \dfrac{\partial E_y}{\partial t}
+\end{aligned}
+\end{equation}
+$$
+
+由 $B_x = 0$ ，$B_y = \dfrac{v}{c^2}\ E_z$ ，$\dfrac{v}{\partial x} = \dfrac{1}{\partial t}$ ，所以：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\dfrac{\partial B_y}{\partial x} - \dfrac{\partial B_x}{\partial y} &= \dfrac{\partial B_y}{\partial x} \\
+  &= \dfrac{v}{c^2}\ \dfrac{\partial E_z}{\partial x} \\
+  &= \dfrac{1}{c^2}\ \dfrac{\partial E_z}{\partial t} \\
+  &= \mu_0\ \varepsilon_0\ \dfrac{\partial E_z}{\partial t}
+\end{aligned}
+\end{equation}
+$$
+
+由以上推理加斯托克斯定理，我们得到了麦克斯韦方程中的电流和运动电荷产生磁场：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\overrightarrow{\nabla} \times \overrightarrow{B} &= (\dfrac{\partial B_z}{\partial y} - \dfrac{\partial B_y}{\partial z})\ \vec{i} + (\dfrac{\partial B_x}{\partial z} - \dfrac{\partial B_z}{\partial x})\ \vec{j} + (\dfrac{\partial B_y}{\partial x} - \dfrac{\partial B_x}{\partial y})\ \vec{k} \\
+  &= (\mu_0\ J + \mu_0\ \varepsilon_0\ \dfrac{\partial E_x}{\partial t})\ \vec{i} + (\mu_0\ \varepsilon_0\ \dfrac{\partial E_y}{\partial t})\ \vec{j} + (\mu_0\ \varepsilon_0\ \dfrac{\partial E_z}{\partial t})\ \vec{k} \\
+  &= \mu_0\ \vec{J} + \mu_0\ \varepsilon_0\ \dfrac{\partial \vec{E}}{\partial t}
+\end{aligned}
+\end{equation}
+$$
