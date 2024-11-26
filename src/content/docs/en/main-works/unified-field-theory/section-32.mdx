@@ -4,12 +4,43 @@ description: "三十二、核力场的定义方程"
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
-
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
 
 
-Coming soon...
+所有的场都可以通过引力场变化而得到。核力场和电磁场一样也可以用引力场的变化来表示。
+
+电场是引力场中的质量随时间变化而产生的，核力场所不同的是引力场中空间点的位置矢量 $\vec{r}$ 【模为 $r$ 】随时间变化而产生的。
+
+引力场
+
+$$
+\begin{equation}\nonumber
+\vec{A} = -\ G\ m\ \dfrac{\vec{r}}{r^3} = -\ G\ \dfrac{k}{\Omega}\ \dfrac{\vec{r}}{r^3}
+\end{equation}
+$$
+
+中的 $\dfrac{\vec{r}}{r^3}$ 随时间 $t$ 变化，产生了核力场：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\vec{D} &= -\ G\ m\ \dfrac{d(\dfrac{\vec{r}}{r^3})}{dt} \\
+  &= -\ G\ m\ \dfrac{\dfrac{d\vec{r}}{dt} - 3\ \dfrac{\vec{r}}{r}\ \dfrac{dr}{dt}}{r^3} \\
+  &= -\ G\ m\ \dfrac{\vec{c} - 3\ \dfrac{\vec{r}}{r}\ \dfrac{dr}{dt}}{r^3}
+\end{aligned}
+\end{equation}
+$$
+
+以上的 $\vec{c}$ 是矢量光速。
+
+以上公式只是猜测，核力场不同于电场和磁场，电场和磁场人类已经有了公式去描述，只是人类不知道电场、磁场公式中的电荷是什么，一旦知道电荷的几何形式，我们只要把电荷的几何形式定义方程带入电场、磁场公式中，统一场论就可以彻底的用几何形式去表示电场、磁场。
+
+但是，核力场不同，人类没有关于核力、核力场的任何公式。
+
+另外，核力来自于原子核内的质子和中子，而质子和中子总是在运动中，所以，以上核力场公式即使是正确可靠的，不能直接使用，需要推广在运动粒子上才可以使用。
+
+以上的核力场公式是否可靠，以及核相互作用力精确公式，都需要人类在理论上和实验中继续探索。
+
+对于核相互作用力，这里给出一种猜测，就是质点（质量为 $m$ ）对附近质点 $p$（质量为 $m'$ ）施加的核力，等于 $o$ 点在 $p$ 点产生的核力场 $\vec{D}$ ，或者是叉乘角动量 $\vec{r} \times m'\ \vec{v}$ 

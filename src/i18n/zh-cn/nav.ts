@@ -52,7 +52,7 @@ export default NavDictionary({
 	'main-works/unified-field-theory/section-30': '三十、电荷与电场的定义方程',
 	'main-works/unified-field-theory/section-31':
 		'三十一、速度乘以质量随时间变化率就是电磁场力',
-	'main-works/unified-field-theory/section-32': '(待更新) 三十二、核力场的定义方程',
+	'main-works/unified-field-theory/section-32': '三十二、核力场的定义方程',
 	'main-works/unified-field-theory/section-33': '(待更新) 三十三、磁场的定义方程',
 	'main-works/unified-field-theory/section-34': '(待更新) 三十四、推导麦克斯韦方程',
 	'main-works/unified-field-theory/section-35': '(待更新) 三十五、随时间变化的引力场产生电场',
