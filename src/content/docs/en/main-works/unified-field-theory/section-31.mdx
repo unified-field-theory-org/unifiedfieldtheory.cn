@@ -4,12 +4,256 @@ description: "三十一、速度乘以质量随时间变化率就是电磁场力
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
-
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
 
+import { Aside } from '@astrojs/starlight/components';
 
-Coming soon...
+
+相对论和牛顿力学给出的动量公式 $\vec{p} = m\ \vec{v}$ 和统一场论给出的动量公式 $\vec{p} = m\ (\vec{c} - \vec{v})$ 是不一样的。
+
+统一场论的动力学方程：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\vec{F} &= \dfrac{d\vec{p}}{dt} = \dfrac{d[m\ (\vec{c} - \vec{v})]}{dt} \\
+  &= \vec{c}\ \dfrac{dm}{dt} - \vec{v}\ \dfrac{dm}{dt} + m\ \dfrac{d\vec{c}}{dt} - m\ \dfrac{d\vec{v}}{dt}
+\end{aligned}
+\end{equation}
+$$
+
+中， $m$ 是粒子的质量，$\vec{c}$ 是矢量光速，$\vec{v}$ 是粒子运动速度， $t$ 是时间。
+
+上式中 $(\vec{c} - \vec{v})\ \dfrac{dm}{dt} = \vec{c}\ \dfrac{dm}{dt} - \vec{v}\ \dfrac{dm}{dt}$ 是速度乘以质量随时间变化的力，简称加质量力。
+
+统一场论认为其本质就是电磁场力，其中 $\vec{c}\ \dfrac{dm}{dt}$ 是电场力，$\vec{v}\ \dfrac{dm}{dt}$ 是磁场力，
+
+按照统一场论的看法，以上的 $o$ 点静止在 $s'$ 里时候，具有静止质量 $m'$ ，周围的空间以矢量光速度 $\vec{c'}$ 离开 $o$ 点运动，带有电荷 $\dfrac{dm'}{dt'}$ $\overrightarrow{F_\text{静}}$ 可以表示为：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{F_\text{静}} = \vec{c'}\ \dfrac{dm'}{dt'}
+\end{equation}
+$$
+
+在 $s$ 系里，当 $o$ 点【运动质量为 $m$ 】以速度 $\vec{v}$ 沿 $x$ 轴运动的时候，周围空间以矢量光速 $\vec{c}$ $\vec{c}$ 和 $\vec{c'}$ 的方向不一样，模一样】离开 $o$ 点运动，沿 $\vec{v}$ 平行方向【也就是沿 $x$ 轴方向】受到了电场力 $\overrightarrow{{F_x}_\text{动}}$ 可以表示为：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{{F_x}_{\text{动}}} = \vec{c_x}\ \dfrac{dm}{dt}
+\end{equation}
+$$
+
+数量式为：
+
+$$
+\begin{equation}\nonumber
+{F_x}_{\text{动}} = c\ \dfrac{dm}{dt}
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开注解：关于上面 $\vec{c_x}$ 含义的说明</summary>
+  <Aside title="注解">
+    这里的 $\vec{c_x}$ 并不是指 $\vec{c}$ 沿 $x$ 轴方向的投影，用下面原文的话说：“ $\vec{c_x}$ 表示矢量光速 $\vec{c}$ 在 $s$ 系里的 $x$ 轴上”。也就是说它似乎是指我们这里考虑的 $\vec{c}$ 本身方向就是沿 $x$ 轴正方向。也正因如此，上面的数量式中才能将 $\vec{c_x}$ 的模写为 $c$ ；如果 $\vec{c_x}$ 表示的是 $\vec{c}$ 沿 $x$ 轴方向的投影，那么 $\vec{c_x}$ 的模就不能直接写为 $c$ 。这也是原著中变量命名混乱的一处体现。
+
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+相应的，
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{{F_x}_\text{静}} = \vec{c_x'}\ \dfrac{dm'}{dt'}
+\end{equation}
+$$
+
+数量式为：
+
+$$
+\begin{equation}\nonumber
+{F_x}_\text{静} = c\ \dfrac{dm'}{dt'}
+\end{equation}
+$$
+
+由于光速 $c$ 和电荷都不随速度 $\vec{v}$ 变化，也就是
+
+$$
+\begin{equation}\nonumber
+\dfrac{dm'}{dt'} = \dfrac{dm}{dt}
+\end{equation}
+$$
+
+所以，
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{{F_x}_\text{静}} = \overrightarrow{{F_x}_\text{动}}
+\end{equation}
+$$
+
+$c$ 是 $\vec{c}$ 的标量， $v$ 是 $\vec{v}$ 的标量， $F$ 是力 $\vec{F}$ 的标量。$\vec{c_x'}$ 表示矢量光速 $\vec{c'}$ 在 $s'$ 系里的 $x$ 轴上， $\vec{c_x}$ 表示矢量光速 $\vec{c}$ 在 $s$ 系里的 $x$ 轴上。
+
+注意， $t$ 和 $t'$ 是不一样的。$\vec{c'}$ 和 $\vec{c}$ 方向不一样，但是，模都是标量光速 $c$ ，并且 $c$ 是不变的。
+
+矢量光速 $\vec{c'}$ 和 $\vec{c}$ 如果在沿 $\vec{v}$ 垂直方向，受到了电场力：
+
+在 $s'$ 系里，
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{{F_y}_\text{静}} = \vec{c_y'}\ \dfrac{dm'}{dt'}
+\end{equation}
+$$
+
+数量式为：
+
+$$
+\begin{equation}\nonumber
+{F_y}_\text{静} = c\ \dfrac{dm'}{dt'}
+\end{equation}
+$$
+
+在 $s$ 系里，
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{{F_y}_\text{动}} = \vec{c_y}\ \dfrac{dm}{dt}
+\end{equation}
+$$
+
+由相对论速度变换，其数量式为：
+
+$$
+\begin{equation}\nonumber
+{F_y}_\text{动} = c\ \dfrac{dm}{dt}\ \sqrt{1 - \dfrac{v^2}{c^2}}
+\end{equation}
+$$
+
+所以，有：
+
+$$
+\begin{equation}\nonumber
+\sqrt{1 - \dfrac{v^2}{c^2}}\ {F_y}_\text{静} = {F_y}_\text{动}
+\end{equation}
+$$
+
+同样的理由可以得出：
+
+$$
+\begin{equation}\nonumber
+\sqrt{1 - \dfrac{v^2}{c^2}}\ {F_z}_\text{静} = {F_z}_\text{动}
+\end{equation}
+$$
+
+以上结论和相对论电磁力的变换是一致的。令 $o$ 点的电荷为 $q$ ，如果静电场表示为：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{E'} = \dfrac{\overrightarrow{F_\text{静}}}{q} = \overrightarrow{c'}\ \dfrac{dm'}{dt'}\ \dfrac{1}{q}
+\end{equation}
+$$
+
+动电场表示为：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{E} = \dfrac{\overrightarrow{F_\text{动}}}{q} = \overrightarrow{c}\ \dfrac{dm}{dt}\ \dfrac{1}{q}
+\end{equation}
+$$
+
+当 $o$ 点以匀速度 $\vec{v}$ 沿 $x$ 轴正方向直线运动的时候，在 $x$ 轴上，$\vec{c}$ 和 $\vec{c'}$ 的数量是一样的，都是 $c$ ，由于 $\dfrac{dm'}{dt'}$ 和 $q$ 是不变的，所以，
+
+$$
+\overrightarrow{E_x} = \overrightarrow{E_x'}
+$$
+
+在 $y$ 轴和 $z$ 轴上，$\vec{c}$ 的数量是 $c\ \sqrt{1 - \dfrac{v^2}{c^2}}$ ，$\vec{c'}$ 的数量是 $c$ ，
+
+所以，
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+F_y &= \dfrac{dm}{dt}\ c\ \sqrt{1 - \dfrac{v^2}{c^2}} \\
+  &= \dfrac{dm}{dt}\ c\ \dfrac{\sqrt{1 - \dfrac{v^2}{c^2}}\ \sqrt{1 - \dfrac{v^2}{c^2}}}{\sqrt{1 - \dfrac{v^2}{c^2}}} \\
+  &= \dfrac{dm}{dt}\ c\ \dfrac{1 - \dfrac{v^2}{c^2}}{\sqrt{1 - \dfrac{v^2}{c^2}}}
+\end{aligned}
+\end{equation}
+$$
+
+如果认为
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{E_y'} = \dfrac{\overrightarrow{{F_y}_\text{静}}}{q} = \overrightarrow{c_y'}\ \dfrac{dm'}{dt'}\ \dfrac{1}{q}
+\end{equation}
+$$
+
+是静电场 $\overrightarrow{E'}$ 在 $y$ 轴上的分量，
+
+$$
+\begin{equation}\nonumber
+E_y = \dfrac{dm}{dt}\ c\ \sqrt{1 - \dfrac{v^2}{c^2}}\ \dfrac{1}{q}
+\end{equation}
+$$
+
+是运动电场 $\overrightarrow{E}$ 在 $y$ 轴上的分量的话，则：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{E_y'} = \overrightarrow{E_y}\ \sqrt{1 - \dfrac{v^2}{c^2}}
+\end{equation}
+$$
+
+注意，
+
+$$
+\begin{equation}\nonumber
+\dfrac{dm'}{dt'}\ c\ \dfrac{1}{q} = \dfrac{dm}{dt}\ c\ \dfrac{1}{q}
+\end{equation}
+$$
+
+对 $\overrightarrow{E_z}$ 的分析，会得到同样的结果，这个结果和相对论的电场变换是一样的。
+
+我们还可以看到，运动电场力在速度 $\vec{v}$ 的垂直方向可以写成；
+
+$$
+\begin{equation}\nonumber
+F_\text{垂} = \dfrac{dm}{dt}\ c\ \dfrac{1 - \dfrac{v^2}{c^2}}{\sqrt{1 - \dfrac{v^2}{c^2}}}
+\end{equation}
+$$
+
+变成了两部分，一部分与速度 $\vec{v}$ 相关。
+
+如果认为
+
+$$
+\begin{equation}\nonumber
+\dfrac{dm}{dt}\ c\ \dfrac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}}
+\end{equation}
+$$
+
+是电场力，与速度 $\vec{v}$ 【数量为 $v$ 】相关的那部分力
+
+$$
+\begin{equation}\nonumber
+\dfrac{dm}{dt}\ c\ \dfrac{\dfrac{v^2}{c^2}}{\sqrt{1 - \dfrac{v^2}{c^2}}}
+\end{equation}
+$$
+
+是磁场【用 $\vec{B}$ 表示】力，则 $\vec{E}$ 和 $\vec{B}$ 满足【用矢量表示】以下矢量叉乘关系：
+
+$$
+\begin{equation}\nonumber
+\vec{B} = \dfrac{1}{c^2}\ \vec{v} \times \vec{E}
+\end{equation}
+$$
+
+这个结果和相对论是一样的。
