@@ -4,11 +4,180 @@ description: "三十六、匀速直线运动物体的引力场变化产生电场
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
-
 :::caution[Caution]
 This content is not yet supported in your language.
 :::
 
-Coming soon...
+import { Aside } from '@astrojs/starlight/components';
+
+
+以上指出，物体粒子 $o$ 点相对于我们观察者静止的时候，周围引力场 $\overrightarrow{A'}$ 的散度为：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{\nabla} \cdot \overrightarrow{A'} = \dfrac{\partial A_x'}{\partial x'} + \dfrac{\partial A_y'}{\partial y'} + \dfrac{\partial A_z'}{\partial z'}
+\end{equation}
+$$
+
+$A_x'$ ，$A_y'$ ，$A_z'$ 为 $\overrightarrow{A'}$ 分别在三个坐标轴上的分量。
+
+当 $o$ 点相对于我们以速度 $\vec{v}$ 的散度为：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{\nabla} \cdot \overrightarrow{A} = \dfrac{\partial A_x}{\partial x} + \dfrac{\partial A_y}{\partial y} + \dfrac{\partial A_z}{\partial z}
+\end{equation}
+$$
+
+对洛伦兹正变换 $x' = \gamma\ (x - v\ t)$ 求偏微分，得到 $\dfrac{1}{\gamma}\ \dfrac{\partial}{\partial x} = \dfrac{\partial}{\partial x'}$ ，再加上 $\partial y = \partial y'$ ，$\partial z = \partial z'$ ，再加以上的引力场的相对论变换，得到：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\overrightarrow{\nabla} \cdot \overrightarrow{A'} &= \dfrac{1}{\gamma}\ \dfrac{\partial \dfrac{A_x}{\gamma}}{\partial x} + \dfrac{1}{\gamma}\ \dfrac{\partial \dfrac{A_y}{\gamma}}{\partial y} + \dfrac{1}{\gamma}\ \dfrac{\partial \dfrac{A_z}{\gamma}}{\partial z} \\
+  &= \dfrac{1}{\gamma^2}\ \dfrac{\partial A_x}{\partial x} + \dfrac{1}{\gamma^2}\ \dfrac{\partial A_y}{\partial y} + \dfrac{1}{\gamma^2}\ \dfrac{\partial A_z}{\partial z} \\
+  &= \dfrac{1}{\gamma^2}\ \overrightarrow{\nabla} \cdot \overrightarrow{A}
+\end{aligned}
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开注解：关于上述推导所需的引力场的相对论变换</summary>
+  <Aside title="注解">
+    上述推导需要用到引力场的相对论变换，具体可以参考第二十三章的最后一小节：“引力场的洛伦兹变换”
+
+    具体来说，静止引力场 $\overrightarrow{A'}$ 在三个坐标轴上的分量，和运动引力场 $\overrightarrow{A}$ 在三个坐标轴上的分量之间存在以下关系：
+    
+    $$
+    \begin{align}
+    A_x &= \gamma\ A_x' \nonumber \\
+    A_y &= \gamma^2\ A_y' \nonumber \\
+    A_z &= \gamma^2\ A_z' \nonumber
+    \end{align}
+    $$
+    
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+由以上可以得到：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\overrightarrow{\nabla} \cdot \overrightarrow{A'} &= (1 - \dfrac{v^2}{c^2})\ \overrightarrow{\nabla} \cdot \overrightarrow{A} \\
+  &= \dfrac{\partial A_x}{\partial x} + \dfrac{\partial A_y}{\partial y} + \dfrac{\partial A_z}{\partial z} - \dfrac{v^2}{c^2}\ \dfrac{\partial A_x}{\partial x} - \dfrac{v^2}{c^2}\ \dfrac{\partial A_y}{\partial y} - \dfrac{v^2}{c^2}\ \dfrac{\partial A_z}{\partial z} \\
+  &= \dfrac{\partial A_x}{\partial x} + \dfrac{\partial A_y}{\partial y} + \dfrac{\partial A_z}{\partial z} - \dfrac{v}{c^2}\ v\ \dfrac{\partial A_x}{\partial x} - \dfrac{v}{c^2}\ v\ \dfrac{\partial A_y}{\partial y} - \dfrac{v}{c^2}\ v\ \dfrac{\partial A_z}{\partial z}
+\end{aligned}
+\end{equation}
+$$
+
+把上式改为矢量形式，由于这里是散度，不是旋度，所以，用速度 $\vec{v}$ 的三个分量去点乘。
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\overrightarrow{\nabla} \cdot \overrightarrow{A'} &= (1 - \dfrac{v^2}{c^2})\ \overrightarrow{\nabla} \cdot \overrightarrow{A} \\
+  &= \dfrac{\partial A_x}{\partial x} + \dfrac{\partial A_y}{\partial y} + \dfrac{\partial A_z}{\partial z} - \dfrac{v}{c^2}\ v\ \dfrac{\partial A_x}{\partial x} - \dfrac{v}{c^2}\ v\ \dfrac{\partial A_y}{\partial y} - \dfrac{v}{c^2}\ v\ \dfrac{\partial A_z}{\partial z} \\
+  &= \dfrac{\partial A_x}{\partial x} + \dfrac{\partial A_y}{\partial y} + \dfrac{\partial A_z}{\partial z} - \dfrac{v}{c^2}\ \dfrac{\partial A_x}{\partial x}\ \vec{v} \cdot \vec{i} - \dfrac{v}{c^2}\ \dfrac{\partial A_y}{\partial y}\ \vec{v} \cdot \vec{j} - \dfrac{v}{c^2}\ \dfrac{\partial A_z}{\partial z}\ \vec{v} \cdot \vec{k}
+\end{aligned}
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开修正</summary>
+  <Aside type="danger" title="修正">
+    原文中最后一项多了个 $v$，即写成了 $\dfrac{v}{c^2}\ v\ \dfrac{\partial A_z}{\partial z}\ \vec{v} \cdot \vec{k}$；因为这个错误过于明显，所以直接在正文内容中进行了修正。
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+上式中 $\vec{i}$ ，$\vec{j}$ ，$\vec{k}$ 是引力场 $\vec{A}$ 分别在 $x$ ，$y$ ，$z$ 轴上的三个分量 $A_x$ ，$A_y$ ，$A_z$ 的单位矢量。由数学中矢量点乘定理，加上速度定义得到的 $v\ \dfrac{\partial}{\partial x} = \dfrac{\partial}{\partial t}$ 。
+
+有：
+
+$$
+\begin{equation}\nonumber
+\begin{aligned}
+\overrightarrow{\nabla} \cdot \overrightarrow{A'} &= (1 - \dfrac{v^2}{c^2})\ \overrightarrow{\nabla} \cdot \overrightarrow{A} \\
+  &= \dfrac{\partial A_x}{\partial x} + \dfrac{\partial A_y}{\partial y} + \dfrac{\partial A_z}{\partial z} - \dfrac{v}{c^2}\ v\ \dfrac{\partial A_x}{\partial x} \\
+  &= \dfrac{\partial A_x}{\partial x} + \dfrac{\partial A_y}{\partial y} + \dfrac{\partial A_z}{\partial z} - \dfrac{v}{c^2}\ \dfrac{\partial A_x}{\partial t} \\
+  &= \dfrac{\partial A_x}{\partial x} + \dfrac{\partial A_y}{\partial y} + \dfrac{\partial A_z}{\partial z} + \dfrac{v}{c^2}\ \dfrac{1}{f}\ E_x
+\end{aligned}
+\end{equation}
+$$
+
+注意，上式中用到了电场 $\vec{E}$ 在 $x$ 轴上的分量 $E_x$ 和引力场 $\vec{A}$ 的在 $x$ 轴上的分量 $A_x$ 之间的关系式 $E_x = -\ f\ \dfrac{\partial A_x}{\partial t}$ ，
+
+以上表明，物体粒子 $o$ 点相对于我们观察者静止时候在周围空间产生了引力场 $\overrightarrow{A'}$ ，当以速度 $\vec{v}$ 表示】，变成了两部分，一部分与速度无关，一部分与运动速度有关，而与速度有关的、沿 $x$ 轴分布的那部分，其实就是电场。
+
+利用运动物体粒子的引力场和电场之间的关系，还可以导出磁场的旋度和变化引力场之间的关系。
+
+将以上的运动电场 $\vec{E}$ 和运动引力场 $\vec{A}$ 之间的关系
+
+$$
+\begin{equation}\nonumber
+\vec{E} = -\ f\ \dfrac{d\vec{A}}{dt}
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开修正：$\dfrac{d\vec{A}}{dt}$ 或应修正为 $\dfrac{\partial \vec{A}}{\partial t}$</summary>
+  <Aside type="danger" title="修正">
+    上面公式中的 $\dfrac{d\vec{A}}{dt}$ 或应修正为 $\dfrac{\partial \vec{A}}{\partial t}$
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+带入麦克斯韦方程组中的：
+
+$$
+\begin{equation}\nonumber
+\mu_0\ \vec{J} + \dfrac{1}{c^2}\ \dfrac{\partial \vec{E}}{\partial t} = \overrightarrow{\nabla} \times \overrightarrow{B}
+\end{equation}
+$$
+
+中，得到：
+
+$$
+\begin{equation}\nonumber
+\mu_0\ \vec{J} - \dfrac{f}{c^2}\ \dfrac{\partial^2 \vec{A}}{\partial t^2} = \overrightarrow{\nabla} \times \overrightarrow{B}
+\end{equation}
+$$
+
+式中 $\vec{J}$ 是密度为 $\rho$ 【 $\dfrac{\rho}{\varepsilon_0} = \overrightarrow{\nabla} \cdot \overrightarrow{E}$ 】电荷体沿 $x$ 轴正方向以速度 $\vec{v}$ 运动形成的电流， 
+
+$$
+\begin{equation}\nonumber
+\mu_0\ \vec{J} = \mu_0\ \varepsilon_0\ \dfrac{\vec{v}\ \rho}{\varepsilon_0} = \dfrac{1}{c^2}\ \dfrac{\vec{v}\ \rho}{\varepsilon_0}
+\end{equation}
+$$
+
+$\mu_0\ \vec{J}$ 在麦克斯韦方程中可以写为 $\dfrac{\vec{v}}{c^2}\ \overrightarrow{\nabla} \cdot \overrightarrow{E}$ 】，所以，上式可以写为：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\vec{v}}{c^2}\ \overrightarrow{\nabla} \cdot \overrightarrow{E} - \dfrac{f}{c^2}\ \dfrac{\partial^2 \vec{A}}{\partial t^2} = \overrightarrow{\nabla} \times \overrightarrow{B}
+\end{equation}
+$$
+
+所以：
+
+$$
+\begin{align}
+\dfrac{f}{c^2}\ \dfrac{\partial^2 \vec{A}}{\partial t^2} &= \dfrac{\vec{v}}{c^2}\ \overrightarrow{\nabla} \cdot \overrightarrow{E} - \overrightarrow{\nabla} \times \overrightarrow{B} \nonumber \\
+\dfrac{\partial^2 \vec{A}}{\partial t^2} &= \dfrac{1}{f}\ \vec{v}\ (\overrightarrow{\nabla} \cdot \overrightarrow{E}) - \dfrac{c^2}{f}\ \overrightarrow{\nabla} \times \overrightarrow{B} \nonumber
+\end{align}
+$$
+
+上式表示，变化的引力场可以产生电场，也可以产生磁场。
+
+这种情况和麦克斯韦方程是类似的，引力场可以纳入到麦克斯韦方程中，作为麦克斯韦方程的扩展形式。
