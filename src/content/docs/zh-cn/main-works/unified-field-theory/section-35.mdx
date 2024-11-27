@@ -4,8 +4,109 @@ description: "三十五、随时间变化的引力场产生电场"
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
+import { Aside } from '@astrojs/starlight/components';
 
 
-敬请期待...
+在统一场论中，电场、磁场、核力场都可以由引力场变化形成的，电荷是质量变化形成的。反过来，电场、磁场、核力场的变化也可以形成引力场。
+
+我们首先求出物体粒子 $o$ 点相对于我们观察者静止时候，变化引力场产生电场。下一步，我们求出物体粒子相对于我们运动时候，引力场的变化产生了电场。
+
+将引力场方程
+
+$$
+\begin{equation}\nonumber
+\vec{A} = - \dfrac{G\ m'\ \vec{r}}{r^3} = -\ G\ k\ \dfrac{1}{\Omega}\ \dfrac{\vec{r}}{r^3}
+\end{equation}
+$$
+
+中的 $\dfrac{1}{\Omega}$ 对时间 $t$ 求偏导数，得到：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial \vec{A}}{\partial t} = G\ k\ \dfrac{1}{\Omega^2}\ \dfrac{d\Omega}{dt}\ \dfrac{\vec{r}}{r^3}
+\end{equation}
+$$
+
+由以上的静电场几何定义方程
+
+$$
+\begin{equation}\nonumber
+\vec{E} = -\ \dfrac{k'\ k}{4\pi\ \varepsilon_0}\ \dfrac{1}{\Omega^2}\ \dfrac{d\Omega}{dt}\ \dfrac{\vec{r}}{r^3}
+\end{equation}
+$$
+
+可以得到：
+
+$$
+\begin{equation}\nonumber
+\vec{E} = -\ \dfrac{k'}{4\pi\ \varepsilon_0\ G}\ \dfrac{d\vec{A}}{dt}
+\end{equation}
+$$
+
+由于 $G$ , $k'$ , $4\pi$ , $\varepsilon_0$ 都是常数，合并常数为 $f$ ，则：
+
+$$
+\begin{equation}\nonumber
+\vec{E} = -\ f\ \dfrac{d\vec{A}}{dt}
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开修正：以上的 $\dfrac{d\vec{A}}{dt}$ 或都应修正为 $\dfrac{\partial \vec{A}}{\partial t}$</summary>
+  <Aside type="danger" title="修正">
+    以上的 $\dfrac{d\vec{A}}{dt}$ 或都应修正为 $\dfrac{\partial \vec{A}}{\partial t}$
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+由此得到三个分量的关系式：
+
+$$
+\begin{align}
+E_x &= -\ f\ \dfrac{\partial A_x}{\partial t} \nonumber \\
+E_y &= -\ f\ \dfrac{\partial A_y}{\partial t} \nonumber \\
+E_z &= -\ f\ \dfrac{\partial A_z}{\partial t} \nonumber
+\end{align}
+$$
+
+当带电的物体粒子 $o$ 点以匀速度 $\vec{v}$ 【标量为 $v$ 】沿 $x$ 轴正方向相对于我们直线运动的时候，用电场的相对论变换，加上引力场的相对论变换，可以求出运动物体电场和引力场满足的关系。
+
+为了区分，我们用带撇的字母表示 $o$ 点静止时候的产生的电场和引力场，不带撇的字母表示 $o$ 点运动时候产生的电场和引力场。
+
+$o$ 点静止时候的电场和引力场关系：
+
+$$
+\begin{align}
+E_x' &= -\ f\ \dfrac{\partial A_x'}{\partial t'} \nonumber \\
+E_y' &= -\ f\ \dfrac{\partial A_y'}{\partial t'} \nonumber \\
+E_z' &= -\ f\ \dfrac{\partial A_z'}{\partial t'} \nonumber
+\end{align}
+$$
+
+从相对论中的电场的洛伦兹变换我们知道：$E_x = E_x'$ ，$E_y = \gamma\ E_y'$ ，$E_z = \gamma\ E_z'$ ，其中 $\gamma = \dfrac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}}$ 
+
+由前面的引力场相对论变换，可知：$A_x = \gamma\ A_x'$ ，$A_y = \gamma^2\ A_y'$ ，$A_z = \gamma^2\ A_z'$ 
+
+对相对论中的洛伦兹时间正变换 $t' = \gamma\ (t - \dfrac{v\ x}{c^2})$ 对时间求偏微分，得到运动的时间延长了：
+
+$$
+\begin{align}
+\dfrac{\partial t'}{\partial t} = \gamma\ (\dfrac{\partial t}{\partial t} - \dfrac{v^2}{c^2}) &= \gamma\ (1 - \dfrac{v^2}{c^2}) = \dfrac{\gamma}{\gamma^2} = \dfrac{1}{\gamma} \nonumber \\
+\dfrac{\partial}{\partial t'} &= \gamma\ \dfrac{\partial}{\partial t} \nonumber
+\end{align}
+$$
+
+由以上可以求出 $o$ 点运动时候，运动电场 $\vec{E}$ 和运动引力场 $\vec{A}$ 之间满足的关系：
+
+$$
+\begin{align}
+E_x &= -\ f\ \dfrac{\partial A_x}{\partial t} \nonumber \\
+E_y &= -\ f\ \dfrac{\partial A_y}{\partial t} \nonumber \\
+E_z &= -\ f\ \dfrac{\partial A_z}{\partial t} \nonumber
+\end{align}
+$$
+
+从计算的结果看，物体粒子静止和匀速直线运动的时候，电场和引力场之间的关系式是一样的。
