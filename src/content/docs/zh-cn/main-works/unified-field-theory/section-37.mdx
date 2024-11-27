@@ -5,9 +5,730 @@ i18nReady: true
 ---
 
 import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
+import { Aside } from '@astrojs/starlight/components';
 import Section371 from "~/assets/main-works/unified-field-theory/section-37/1.png"
+import Section371_new from "~/assets/main-works/unified-field-theory/section-37/1_new.png"  // 最新版本的统一场论原文档中, 将 Section371 中更换为了这个配图. 但请不要删除 Section371 这个配图, 因为我在注解中附上了旧版本的叙述, 用到了这个配图.
 import Section372 from "~/assets/main-works/unified-field-theory/section-37/2.png"
+import Section372_new from "~/assets/main-works/unified-field-theory/section-37/2_new.jpg"  // Section372 的清晰度太低, 所以新增了一个清晰度更高的配图 Section372_new, 是从最新版本的统一场论原文档中直接另存为的. 这里的 Section372 对应的图片文件可以视情况删除.
 
 
-敬请期待...
+统一场论核心是变化的引力场可以产生电磁场，反过来，变化的电磁场也可以产生引力场。
+
+相对论和电磁学认为，运动电荷不仅仅产生电场，还会产生磁场。
+
+统一场论进一步认为运动电荷不仅仅产生磁场，还产生了引力场，下面我们求出运动电荷产生的电磁场与引力场之间的关系。
+
+
+## 匀速直线运动电荷的磁场可以表示引力场的旋度
+
+上面我们指出变化引力场产生的电场，方向没有变化，引力场和电场方向是一致的，而电场一般情况下和磁场方向总是垂直的，所以，引力场的方向和磁场方向在一般情况下也是垂直的。
+
+我们来探讨引力场的旋度和磁场之间的关系，因为旋度描述的就是场沿垂直方向随空间位置的变化情况，而散度描述的场沿平行方向随空间位置变化的情况。
+
+设想一个正点电荷 $o$ 点，在 $0$ 时刻从原点出发，相对于我们观测者以速度 $\vec{v}$ 【标量为 $v$ 】沿 $x$ 轴正方向匀速直线运动。
+
+在参考系 $s$ 系【 $s'$ 系相对于 $s$ 系以匀速度 $\vec{v}$ 沿 $x$ 轴正方向直线运动】里，点电荷 $o$ 在周围空间点 $p$ 处【 $p$ 点是我们的考察点】产生了电场 $\vec{E}$ 、磁场 $\vec{B}$ ，$\vec{B}$ 的环绕是右手螺旋。如下图。
+
+{/* <Image src={Section371} alt="" class="" style="margin:0 auto;" /> */}
+<Image src={Section371_new} alt="" class="" style="margin:0 auto;" />
+
+我们不以电荷 $o$ 点作为考察点，而是以空间点 $p$ 为考察点，由于 $o$ 点的运动速度 $\vec{v}$ 和 $p$ 点的运动速度 $-\vec{v}$ 方向正好相反，所以，这里的运动电场 $\vec{E}$ 、均匀磁场 $\vec{B}$ 满足左手螺旋关系式：
+
+$$
+\begin{equation}\nonumber
+\vec{B} = -\ \dfrac{1}{c^2}\ \vec{v} \times \vec{E}
+\end{equation}
+$$
+
+为了求出磁场和引力场之间的关系，我们先来求出 $s$ 系里引力场 $\vec{A}$ 的旋度：
+
+<details>
+  <summary class="custom-summary">点击展开注解：附旧版本的统一场论原文档在此处的叙述</summary>
+  <Aside title="注解">
+    *(新旧版本的统一场论原文档在此处的叙述有较大差异，特此附上旧版本的叙述供大家参考)*
+
+    设想一个点电荷o点，在0时刻从原点出发，相对于我们观测者以速度V【标量为v】沿x轴正方向匀速直线运动，点电荷o在周围空间点p处产生了电场E、磁场B和引力场A，如下图。
+
+    <Image src={Section371} alt="" class="" style="margin:0 auto;" />
+
+    我们以空间点p为考察点，来展开分析。
+    
+    引力场A和电场E的环绕方向是一致的，都是左手螺旋式，但是，在环绕线上某一个点附近，A和E是相互垂直的。
+    
+    为了证明电场E和磁场B、引力场A满足上图中所示的关系，我们先来求出A的旋度：
+
+    *(之后新旧版本的叙述就一致了)*
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+$$
+\begin{equation}\nonumber
+\vec{\nabla} \times \vec{A} = 
+(\dfrac{\partial A_z}{\partial y} - \dfrac{\partial A_y}{\partial z})\ \vec{i} + 
+(\dfrac{\partial A_x}{\partial z} - \dfrac{\partial A_z}{\partial x})\ \vec{j} + 
+(\dfrac{\partial A_y}{\partial x} - \dfrac{\partial A_x}{\partial y})\ \vec{k}
+\end{equation}
+$$
+
+由前面的物体静止时候的引力场的旋度为零，也就是：
+
+$\overrightarrow{\nabla} \times \overrightarrow{A'} = \vec{0}$ ，分量形式为：
+
+$$
+\begin{align}
+\dfrac{\partial A_z'}{\partial y'} - \dfrac{\partial A_y'}{\partial z'} &= 0 \nonumber \\
+\dfrac{\partial A_x'}{\partial z'} - \dfrac{\partial A_z'}{\partial x'} &= 0 \nonumber \\
+\dfrac{\partial A_y'}{\partial x'} - \dfrac{\partial A_x'}{\partial y'} &= 0 \nonumber
+\end{align}
+$$
+
+再由引力场的相对论变换，加上相对论的洛伦兹变换中的 $\partial y' = \partial y$ ，$\partial z' = \partial z$ ，得到：
+
+$$
+\begin{equation}\nonumber
+0 = \dfrac{\partial A_z'}{\partial y'}
+  - \dfrac{\partial A_y'}{\partial z'}
+  = \dfrac{1}{\gamma^2}\ \dfrac{\partial A_z}{\partial y} 
+  - \dfrac{1}{\gamma^2}\ \dfrac{\partial A_y}{\partial z}
+  = \dfrac{1}{\gamma^2} (\dfrac{\partial A_z}{\partial y} - \dfrac{\partial A_y}{\partial z})
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开注解：关于上述推导所需的引力场的相对论变换</summary>
+  <Aside title="注解">
+    上述推导需要用到引力场的相对论变换，具体可以参考第二十三章的最后一小节：“引力场的洛伦兹变换”
+
+    具体来说，静止引力场 $\overrightarrow{A'}$ 在三个坐标轴上的分量，和运动引力场 $\overrightarrow{A}$ 在三个坐标轴上的分量之间存在以下关系：
+    
+    $$
+    \begin{align}
+    A_x &= \gamma\ A_x' \nonumber \\
+    A_y &= \gamma^2\ A_y' \nonumber \\
+    A_z &= \gamma^2\ A_z' \nonumber
+    \end{align}
+    $$
+    
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details> 
+
+$\gamma = \dfrac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}}$ 是相对论因子，所以：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial A_z}{\partial y} - \dfrac{\partial A_y}{\partial z} = 0
+\end{equation}
+$$
+
+对相对论的洛伦兹正变换 $x' = \gamma\ (x - vt)$ 求偏微分得到
+
+$$
+\begin{equation}\nonumber
+\dfrac{1}{\gamma}\ \dfrac{\partial}{\partial x} = \dfrac{\partial}{\partial x'}
+\end{equation}
+$$
+
+再由静止引力场的旋度为零：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial A_x'}{\partial z'} - \dfrac{\partial A_z'}{\partial x'} = 0
+\end{equation}
+$$
+
+得：
+
+$$
+\begin{equation}\nonumber
+\dfrac{1}{\gamma}\   \dfrac{\partial A_x}{\partial z} - 
+\dfrac{1}{\gamma^3}\ \dfrac{\partial A_z}{\partial x} = 0
+\end{equation}
+$$
+
+所以：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial A_x}{\partial z} - \dfrac{1}{\gamma^2}\ \dfrac{\partial A_z}{\partial x} = 0
+\end{equation}
+$$
+
+所以：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial A_x}{\partial z} - (1 - \dfrac{v^2}{c^2}) \dfrac{\partial A_z}{\partial x} = 0
+\end{equation}
+$$
+
+所以：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial A_x}{\partial z} - \dfrac{\partial A_z}{\partial x} = - \dfrac{v^2}{c^2}\ \dfrac{\partial A_z}{\partial x}
+\end{equation}
+$$
+
+由速度定义 $v\ \dfrac{\partial}{\partial x} = \dfrac{\partial}{\partial t}$ ，所以：     
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial A_x}{\partial z} - \dfrac{\partial A_z}{\partial x} = - \dfrac{v}{c^2}\ \dfrac{\partial A_z}{\partial t}
+\end{equation}
+$$
+
+由静止引力场的旋度为零：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial A_y'}{\partial x'} - \dfrac{\partial A_x'}{\partial y'} = 0
+\end{equation}
+$$
+
+和引力场相对论变换，加以上的 $\dfrac{1}{\gamma}\ \dfrac{\partial}{\partial x} = \dfrac{\partial}{\partial x'}$ ，得：
+
+$$
+\begin{equation}\nonumber
+\dfrac{1}{\gamma^3}\ \dfrac{\partial A_y}{\partial x} - 
+\dfrac{1}{\gamma}\   \dfrac{\partial A_x}{\partial y} = 0
+\end{equation}
+$$
+
+所以：
+
+$$
+\begin{equation}\nonumber
+\dfrac{1}{\gamma^2}\ \dfrac{\partial A_y}{\partial x} - \dfrac{\partial A_x}{\partial y} = 0
+\end{equation}
+$$
+
+所以：
+
+$$
+\begin{equation}\nonumber
+(1 - \dfrac{v^2}{c^2})\ \dfrac{\partial A_y}{\partial x} - \dfrac{\partial A_x}{\partial y} = 0
+\end{equation}
+$$
+
+所以：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial A_y}{\partial x} - \dfrac{\partial A_x}{\partial y} = \dfrac{v^2}{c^2}\ \dfrac{\partial A_y}{\partial x}
+\end{equation}
+$$
+
+由速度定义 $v\ \dfrac{\partial}{\partial x} = \dfrac{\partial}{\partial t}$ ，所以：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial A_y}{\partial x} - \dfrac{\partial A_x}{\partial y} = \dfrac{v}{c^2}\ \dfrac{\partial A_y}{\partial t}
+\end{equation}
+$$
+​
+由前面的运动物体的引力场和电场之间关系式：
+
+$$
+\begin{align}
+E_x &= -\ f\ \dfrac{\partial A_x}{\partial t} \nonumber \\
+E_y &= -\ f\ \dfrac{\partial A_y}{\partial t} \nonumber \\
+E_z &= -\ f\ \dfrac{\partial A_z}{\partial t} \nonumber
+\end{align}
+$$
+
+可以得到：
+
+$$
+\begin{align}
+\dfrac{\partial A_z}{\partial y} - 
+\dfrac{\partial A_y}{\partial z} &= 0 \nonumber \\
+
+\dfrac{\partial A_x}{\partial z} - 
+\dfrac{\partial A_z}{\partial x} &= 
+\dfrac{v}{c^2}\ \dfrac{1}{f}\ E_z \nonumber \\
+
+\dfrac{\partial A_y}{\partial x} - 
+\dfrac{\partial A_x}{\partial y} &= 
+- \dfrac{v}{c^2}\ \dfrac{1}{f}\ E_y \nonumber
+\end{align}
+$$
+
+前面我们指出，电荷以速度 $\vec{v}$ 和电场 $\vec{E}$ 和磁场 $\vec{B}$ 三个分量满足以下左手螺旋关系：
+
+$$
+\begin{align}
+B_x &= 0 \nonumber \\
+B_y &= \dfrac{v}{c^2}\ E_z \nonumber \\
+B_z &= -\ \dfrac{v}{c^2}\ E_y \nonumber
+\end{align}
+$$
+
+通过对比，可以得到：
+
+$$
+\begin{align}
+\dfrac{\partial A_z}{\partial y} - 
+\dfrac{\partial A_y}{\partial z} &= B_x \nonumber \\
+
+\dfrac{\partial A_x}{\partial z} - 
+\dfrac{\partial A_z}{\partial x} &= 
+\dfrac{1}{f}\ B_y \nonumber \\
+
+\dfrac{\partial A_y}{\partial x} - 
+\dfrac{\partial A_x}{\partial y} &= 
+\dfrac{1}{f}\ B_z \nonumber
+\end{align}
+$$
+
+合并以上三式，可以得到引力场 $\vec{A}$ 的旋度和磁场 $\vec{B}$ 所满足的关系：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{\nabla} \times \overrightarrow{A} = \dfrac{1}{f}\ \overrightarrow{B}
+\end{equation}
+$$
+
+这个是磁场和引力场满足的基本关系方程，这个方程告诉我们，电荷以某一个速度匀速直线运动时候产生的磁场，可以表现为引力场的旋度形式。
+
+电磁学和量子力学引入的磁矢势概念，并非是一个虚无的概念，其本质就是漩涡引力场。这个方程可能是量子力学中AB效应的最终解释。
+
+将方程 $\overrightarrow{\nabla} \times \overrightarrow{A} = \dfrac{1}{f}\ \overrightarrow{B}$ 两边点乘矢量面元 $d\vec{S}$ 和引力场 $\vec{A}$ 之间关系的积分方程：
+
+$$
+\begin{equation}\nonumber
+\oint \vec{A} \cdot d \vec{l} = \dfrac{1}{f}\ \oiint \vec{B} \cdot d \vec{S}
+\end{equation}
+$$
+
+这种引力场以磁力线为轴线，满足右手螺旋，在空间中环绕分布。
+
+
+## 随时间变化的磁场产生电场和引力场
+
+设想一个正点电荷 $o$ 点，在 $0$ 时刻从原点出发，相对于我们观测者以匀速度 $\vec{v}$ 、均匀磁场 $\vec{B}$ ：
+
+$$
+\begin{equation}\nonumber
+\vec{B} = \dfrac{1}{c^2}\ \vec{v} \times \vec{E}
+\end{equation}
+$$
+
+统一场论认为，当 $o$ 点相对于我们以加速度 $\vec{A}$ 沿 $x$ 轴正方向运动，电荷 $o$ 在周围任意一个空间点 $p$ 处产生了运动电场 $\vec{E}$ 、引力场 $- \vec{A}$ 和电场 $\dfrac{d\vec{E}}{dt}$ 。
+
+以下是证明过程。
+
+我们以空间点 $p$ 为考察点，把所有的变量都直接关系到空间点 $p$ 上，从而与点电荷 $o$ 没有太大的关系了。
+
+由于考察点不再电荷 $o$ 点上，而在空间点 $p$ 上，按照统一场论的动量公式 $\vec{p} = m\ (\vec{c} - \vec{v})$ ，空间点 $p$ 的运动速度和 $o$ 点运动速度 $\vec{v}$ 正好相反，所以，$p$ 点的运动速度为 $- \vec{v}$，所以，磁场 $\vec{B}$ 和电场 $\vec{E}$ 之间的关系，我们改变正负号，采用左手螺旋式：
+
+$$
+\begin{equation}\nonumber
+\vec{B} = - \dfrac{1}{c^2}\ \vec{v} \times \vec{E}
+\end{equation}
+$$
+
+分量形式为：
+
+$$
+\begin{align}
+B_x &= 0 \nonumber \\
+B_y &= \dfrac{v}{c^2}\ E_z \nonumber \\
+B_z &= -\ \dfrac{v}{c^2}\ E_y \nonumber
+\end{align}
+$$
+
+将以上方程 $\vec{B} = - \dfrac{1}{c^2}\ \vec{v} \times \vec{E}$ 对时间 $t$ 求导数，有：
+
+$$
+\begin{equation}\nonumber
+\dfrac{d\vec{B}}{dt} = - \dfrac{1}{c^2}\ \dfrac{d\vec{v}}{dt} \times \vec{E} - \dfrac{1}{c^2}\ \vec{v} \times \dfrac{d\vec{E}}{dt}
+\end{equation}
+$$
+
+如果我们能够证明 $\dfrac{d\vec{B}}{dt} = - \dfrac{1}{c^2}\ \vec{v} \times \dfrac{d\vec{E}}{dt}$ 表示的是磁场变化产生变化的电场【也称漩涡电场】，就是法拉第电磁感应原理，作为对应，多出的一项 $\dfrac{d\vec{B}}{dt} = - \dfrac{1}{c^2}\ \dfrac{d\vec{v}}{dt} \times \vec{E}$ 应该是变化磁场产生引力场。
+
+因为 $\dfrac{d\vec{v}}{dt} = \vec{A}$ 是空间点 $p$ 的加速度，按照统一场论，空间本身的加速度等价于引力场。
+
+我们先来证明 $\dfrac{d\vec{B}}{dt} = - \dfrac{1}{c^2}\ \vec{v} \times \dfrac{d\vec{E}}{dt}$ 就是法拉第电磁感应原理。
+
+$\dfrac{d\vec{B}}{dt} = - \dfrac{1}{c^2}\ \vec{v} \times \dfrac{d\vec{E}}{dt}$ 三个分量如下【微分号 $d$ 改为偏微分号 $\partial$ 】：
+
+$$
+\begin{align}
+\dfrac{\partial B_x}{\partial t} &= 0 \nonumber \\
+\dfrac{\partial B_y}{\partial t} &= \dfrac{v}{c^2}\ \dfrac{\partial E_z}{\partial t} \nonumber \\
+\dfrac{\partial B_z}{\partial t} &= -\ \dfrac{v}{c^2}\ \dfrac{\partial E_y}{\partial t} \nonumber
+\end{align}
+$$
+
+由静电场旋度为零
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_x'}{\partial z'} - \dfrac{\partial E_z'}{\partial x'} = 0
+\end{equation}
+$$
+
+和洛伦兹正变换中的
+
+$$
+\begin{align}
+E_x &= E_x' \nonumber \\
+\partial z'&= \partial z \nonumber \\
+E_z' &= \dfrac{1}{\gamma}\ E_z \nonumber \\
+\dfrac{\partial}{\partial x'} &= \dfrac{1}{\gamma}\ \dfrac{\partial}{\partial x} \nonumber \\
+\gamma &= \dfrac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}} \nonumber
+\end{align}
+$$
+
+得到：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_x}{\partial z} - \dfrac{1}{\gamma^2}\ \dfrac{\partial E_z}{\partial x} = 0
+\end{equation}
+$$
+
+所以
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_x}{\partial z} - (1 - \dfrac{v^2}{c^2})\ \dfrac{\partial E_z}{\partial x} = 0
+\end{equation}
+$$
+
+所以
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_x}{\partial z} - 
+\dfrac{\partial E_z}{\partial x} = - \dfrac{v^2}{c^2}\ 
+\dfrac{\partial E_z}{\partial x}
+\end{equation}
+$$
+
+由速度的定义得：
+
+$$
+\begin{equation}\nonumber
+v\ \dfrac{\partial}{\partial x} = \dfrac{\partial}{\partial t}
+\end{equation}
+$$
+
+得到：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_x}{\partial z} - 
+\dfrac{\partial E_z}{\partial x} = - \dfrac{v}{c^2}\ 
+\dfrac{\partial E_z}{\partial t}
+\end{equation}
+$$
+
+类似以上的操作，可以得到：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\partial E_y}{\partial x} - 
+\dfrac{\partial E_x}{\partial y} = \dfrac{v}{c^2}\ 
+\dfrac{\partial E_y}{\partial t}
+\end{equation}
+$$
+
+把这两个式子和上面的 $\dfrac{d\vec{B}}{dt} = - \dfrac{1}{c^2}\ \vec{v} \times \dfrac{d\vec{E}}{dt}$ 的三个分量：
+
+$$
+\begin{align}
+\dfrac{\partial B_x}{\partial t} &= 0 \nonumber \\
+\dfrac{\partial B_y}{\partial t} &= \dfrac{v}{c^2}\ \dfrac{\partial E_z}{\partial t} \nonumber \\
+\dfrac{\partial B_z}{\partial t} &= -\ \dfrac{v}{c^2}\ \dfrac{\partial E_y}{\partial t} \nonumber
+\end{align}
+$$
+
+对比，可以得到：
+
+$$
+\begin{align}
+\dfrac{\partial E_z}{\partial y} - 
+\dfrac{\partial E_y}{\partial z} &= 0 \nonumber \\
+\dfrac{\partial E_x}{\partial z} - 
+\dfrac{\partial E_z}{\partial x} &= - \dfrac{\partial B_y}{\partial t} \nonumber \\
+\dfrac{\partial E_y}{\partial x} - 
+\dfrac{\partial E_x}{\partial y} &= - \dfrac{\partial B_z}{\partial t} \nonumber
+\end{align}
+$$
+
+合并以上三式，正是法拉第电磁感应方程：
+
+$$
+\begin{equation}\nonumber
+\vec{\nabla} \times \vec{E} = -\ \dfrac{\partial \vec{B}}{\partial t}
+\end{equation}
+$$
+
+下面我们对磁场 $\vec{B}$ 变化产生引力场 $- \vec{A}$ 的方程 $\dfrac{d\vec{B}}{dt} = - \dfrac{1}{c^2}\ \dfrac{d\vec{v}}{dt} \times \vec{E}$ 展开分析。
+
+该方程的三个分量如下：
+
+$$
+\begin{align}
+\dfrac{\partial \overrightarrow{B_x}}{\partial t} &= \vec{0} \nonumber \\
+
+\dfrac{\partial \overrightarrow{B_y}}{\partial t} &= 
+\dfrac{1}{c^2}\ \dfrac{\partial \vec{v}}{\partial t} \times \overrightarrow{E_z} = 
+\dfrac{1}{c^2}\ \overrightarrow{A} \times \overrightarrow{E_z} \nonumber \\
+
+\dfrac{\partial \overrightarrow{B_z}}{\partial t} &= 
+- \dfrac{1}{c^2}\ \dfrac{\partial \vec{v}}{\partial t} \times \overrightarrow{E_y} = 
+- \dfrac{1}{c^2}\ \overrightarrow{A} \times \overrightarrow{E_y} \nonumber \\
+\end{align}
+$$
+
+以上方程可以写为
+
+$$
+\begin{equation}\nonumber
+\dfrac{d \vec{B}}{dt} = - \dfrac{1}{c^2}\ \vec{A} \times \vec{E}
+\end{equation}
+$$
+
+对这个方程可以理解为：
+
+正电荷 $o$ 点沿 $x$ 轴正方向以加速度 $\vec{A}$ 、电场 $\vec{E}$ 和沿加速度方向相反的引力场 $-\vec{A}$ 
+
+$-\vec{A}$ 、$\vec{E}$ 、$\dfrac{d\vec{B}}{dt}$ 三者满足叉乘关系，三者相互垂直的时候值最大。
+
+以上是从微分角度分析，从积分角度分析，可以理解为变化磁场产生漩涡电场和漩涡引力场，并且都是左手螺旋。
+
+
+## 加速运动电荷的电场、磁场、引力场三者之间关系
+
+由于变化电磁场产生引力场是统一场论的核心，也是人工场技术得以应用的关键，下面，用另外一种方法来推导加速运动正电荷产生引力场。
+
+电场、磁场、引力场的各种关系，可以看成是磁场定义方程 $\vec{B} = \dfrac{1}{c^2}\ \vec{v} \times \vec{E}$ 这种基本关系的衍生，都可以从这个基本方程推导出来。
+
+式 $\dfrac{d\vec{B}}{dt} = \dfrac{1}{c^2}\ \vec{A} \times \vec{E}$ 只能适用于某些微观单个基本粒子，我们宏观看到的物体粒子，是许多微小带电粒子的复合，其正负电荷相互抵消了，磁场也有很多相互抵消了。
+
+<details>
+  <summary class="custom-summary">点击展开疑问：上式等号右边是否应该添加负号？</summary>
+  <Aside type="caution" title="疑问">
+    上式等号右边是否应该添加负号？即：$\dfrac{d\vec{B}}{dt} = - \dfrac{1}{c^2}\ \vec{A} \times \vec{E}$ ？原著中下面的这个式子就带负号。
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+以上推导出的变化磁场产生引力场公式 $\dfrac{d\vec{B}}{dt} = - \dfrac{1}{c^2}\ \vec{A} \times \vec{E}$ 有可能只适用于正电荷，因为正电荷周围空间光速发散运动，可以把空间的扭曲效应【包含了加速电场、加速磁场和变化电场形成的引力场】以光速发散传播出去。
+
+而负电荷周围空间光速向内收敛运动，按理是不能把空间扭曲效应发散出去的。
+
+但是，按照洛伦兹变换，光速运动空间缩短为零，不再和我们是同一个空间，对我们观察者来说无法观察，有不确定性。所以，这个公式能不能适用负电荷，还需要理论进一步探讨和实践去判断。
+
+为了进一步搞清楚加速运动电荷的电场、磁场、引力场三者之间的关系，我们结合一个实例来展开分析。
+
+设想一个相对于我们观测者静止带有电量为 $q$ 的正点电荷 $o$ 点，在周围空间点 $p$ 处产生了静电场 $E'$ 。
+
+在零时刻，当 $o$ 点离开原点，突然相对于我们以矢量加速度 $\vec{A}$【数量为 $a$ 】沿 $x$ 轴正方向加速运动。
+
+按照统一场论，$o$ 点的加速度运动，会导致空间点 $p$ 从 $o$ 点出来，以矢量光速 $\vec{c}$ 向外运动的同时，叠加了一个加速度 $-\vec{A}$ 。
+
+按照统一场论的引力场定义­­——引力场是空间点本身的加速度运动，引力场和空间点 $p$ 的加速度是等价的，所以，空间点 $p$ 所在的位置，会因为 $o$ 点以加速度 $\vec{A}$ 运动产生一个引力场 $-\vec{A}$ 【数量为 $a$ 】。
+
+下面我们来求出静电场 $\overrightarrow{E_r}$ 、加速变化的扭曲电场 $\overrightarrow{E_\theta}$ 、扭曲磁场 $\overrightarrow{B_\theta}$ 、引力场 $- \vec{A}$ 之间的关系。
+
+设想正点电荷 $o$ 相对于我们观测者一直静止在笛卡尔坐标系的原点 $o$ ，从时刻 $t = 0$ 开始以加速度 $\vec{A}$ 【数量为 $a$ 】沿 $x$ 轴正方向作直线匀加速度运动。
+
+在时刻 $t = \tau$ 时，$o$ 点到达了 $d$ 点就停止加速运动，此时的速度达到了 $v = g\ \tau$ ，以后就以速度 $v$ 继续沿 $x$ 轴作匀速直线运动，一直运动到后来的 $q$ 点。
+
+如下图所示：
+
+{/* <Image src={Section372} alt="" class="" style="margin:0 auto;" /> */}
+<Image src={Section372_new} alt="" class="" style="margin:0 auto;" />
+
+为了简单起见，我们考虑的是 $v$ 远远小于光速 $c$ ，$od$ 距离远小于 $oq$ 。
+
+下面我们考虑在任意时刻 $t$ ( $t$ 远大于 $\tau$ ) 时电荷 $o$ 周围的电场分布情况。
+
+在 $0$ 时刻至 $\tau$ 时刻这一段时间内，由于正点电荷 $o$ 的加速运动使它周围的电场线发生扭曲，并且这个扭曲状态也会以光速 $c$ 向外延伸。
+
+统一场论明确的指出，正电荷的电场线就是电荷周围以光速运动的空间点运动位移。
+
+以上的扭曲状态以光速向外运动，就像一个向四周匀速喷水的水龙头，一旦水龙头抖动一下，引起水流发生扭曲，这个扭曲状态肯定的是以水流的速度向外延伸。
+
+由加速运动电荷 $o$ 引起的电场的扭曲状态以光速 $c$ 向外延伸，在上图中可以看到扭曲状态的厚度为 $c\ \tau$ ，夹在两个球面之间。
+
+后一个球面，在 $t$ 时刻已向四周传播了 $c\ (t - \tau)$ 这么远的距离，这个球面是以 $q$ 点为中心，直径为 $c\ (t - \tau)$ 的球面。
+
+前一个球面，在 $t$ 时刻已向四周传播了 $c\ t$ 这么远的距离，这个球面是以 $o$ 点为中心，直径为 $c\ t$ 的球面。
+
+由于从时刻 $t =\tau$ 开始，电荷 $o$ 作匀速运动，所以在这个直径为 $c\ (t - \tau)$ 的球面内分布的电场应该是作匀速直线运动电荷的电场。
+
+根据我们前面的设定，电荷 $o$ 的运动速度 $v$ 远远的小于光速 $c$ , 所以这球面内的电场在任意时刻都近似为静电场。
+
+在时刻 $t$ 这一电场的电场线是从此时刻 $o$ 点所在位置 $q$ 引出的沿半径方向的直线。
+
+由于 $t$ 远大于 $\tau$ ，$c$ 远大于 $v$ ，所以 $r = c\ t$ 远大于 $\dfrac{v\ \tau}{2}$ ( 即从 $o$ 点到 $d$ 点的距离 )。因此，扭曲状态的前、后沿的两个球面几乎是同心圆。
+
+随着时间的推移，以上的扭曲状态的半径（ $c\ t$ ）不断的扩大，以光速向外延伸、传播。
+
+我们从统一场论中电荷、电场定义方程知道，电场线发生扭曲，不会改变电场线的条数，仍然是连续的，所以在扭曲状态的前后两侧面的电场线的条数是相等的。
+
+在 $v$ 远小于 $c$ 时候，这个扭曲的电场线可以当直线来看待。
+
+我们选用与 $x$ 轴成 $\theta$ 角的那一条电场线来分析。
+
+由于从 $o$ 点到 $d$ 点的距离 $od$ 相比 $r = c\ t$ 要小得多，我们可以把 $o$ 点和 $d$ 点看作为一点 (也就是 $od$ 接近于零)。而
+
+$$
+\begin{equation}\nonumber
+oq = \dfrac{v\ \tau}{2} + v\ (t - \tau) \approx v\ t
+\end{equation}
+$$
+
+扭曲区内的电场 $\overrightarrow{E}$ 可以分成两个分量 $\overrightarrow{E_r}$【径向电场，电荷静止时候本来就存在，其数量为 $e_r$ 】和 $\overrightarrow{E_\theta}$【横向电场，可以看成是 $\overrightarrow{E_r}$ 的变化形式，其数量为 $e_\theta$ 】。
+
+由上图可以看出
+
+$$
+\begin{equation}\nonumber
+\dfrac{e_\theta}{e_r} = 
+\dfrac{v\ t\ sin\theta}{c\ \tau} = 
+\dfrac{a\ t\ sin\theta}{c} = 
+\dfrac{a\ r\ sin\theta}{c^2}
+\end{equation}
+$$
+
+在统一场论中，引力场的本质就是空间点的加速度，引力场与引力场的场源指向引力场场点 $p$ 的位置矢量 $\vec{r}$ 【数量为 $r$ 】方向相反。
+
+所以，这里的引力场可以用 $-\vec{A}$ 【数量为 $-a$ 】表示，所以有：
+
+<details>
+  <summary class="custom-summary">点击展开修正：这里的数量或应写为 $a$ ，即不应加负号。</summary>
+  <Aside type="danger" title="修正">
+    这里引力场 $-\vec{A}$ 的数量或应写为 $a$ ，即不应加负号。但这是一个无关紧要的细节问题。
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+$$
+\begin{equation}\nonumber
+\dfrac{\overrightarrow{E_\theta}}{e_r} = \dfrac{1}{c^2}\ (- \vec{A} \times \vec{r})
+\end{equation}
+$$
+
+
+上式中由 $o$ 点指向空间点 $p$ 的位置 $r = c\ t$ 改用矢量 $\vec{r}$ 来表示。
+
+以上电场 $\overrightarrow{E_\theta}$ 垂直于电磁场的传播方向（这里是 $\overrightarrow{E_r}$ 的方向），并且只有在扭曲状态中存在。所以，它就是电荷 $o$ 点加速运动时候所产生的横向扭曲电场。
+
+$\overrightarrow{E_\theta}$ 可以看成是电荷因为加速运动引起了 $\overrightarrow{E_r}$ 的变化。
+
+上式给出了电荷 $o$ 静止时候本来就存在的电场 $\overrightarrow{E_r}$ 、加速运动引起 $\overrightarrow{E_r}$ 的变化形式 $\overrightarrow{E_\theta}$ 、加速运动电荷 $o$ 产生的引力场 $- \vec{A}$ 三者之间的关系。
+
+接下来，我们求出加速运动点电荷周围的变化磁场和产生的引力场之间的关系。
+
+按照麦克斯韦方程，电场在真空中变化，必然产生变化的磁场。
+
+统一场论、相对论都认为，电荷 $o$ 以速度 $\vec{v}$ 运动的时候，电场 $\vec{E}$ 和磁场 $\vec{B}$ 满足一种基本关系：
+
+$$
+\begin{equation}\nonumber
+\vec{B} = \dfrac{1}{c^2}\ \vec{v} \times \vec{E}
+\end{equation}
+$$
+
+由电荷加速运动而变化产生的横向扭曲电场 $\overrightarrow{E_\theta}$ 、横向磁场 $\overrightarrow{B_\theta}$ 【数量为 $b_\theta$ 】所满足的关系，没有跳出 $\vec{B} = \dfrac{1}{c^2}\ \vec{v} \times \vec{E}$ 。
+
+注意，这个时候，电荷 $o$ 点的运动速度为 $\vec{v}$ ，而电荷周围空间点 $p$【也可以说是场点，考察点】的运动速度为 $-\vec{v}$ 。
+
+统一场论指出，静止物体周围任意一个空间点以矢量光速 $\vec{c'}$ 向四周发散运动，当物体以速度 $\vec{v}$ 匀速直线运动的时候，空间点的运动速度变为 $\vec{c} - \vec{v}$ ，所以，空间点本来的矢量光速 $\vec{c'}$ 和 $\vec{c}$ 比较有了一个改变量——速度 $\vec{v}$ 。
+
+但是，这里的电荷 $o$ 点运动速度远远小于光速，所以，$o$ 点静止时候周围的空间点 $p$ 的矢量光速 $\vec{c'}$ 和运动时候的 $\vec{c}$ 没有区别，我们统一写成矢量光速 $\vec{c}$ 。
+
+由于扭曲状态是以光速在传播，空间点的运动速度是矢量光速 $\vec{c}$ ，加上统一场论的矢量光速概念，所以有式：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{B_\theta} = \dfrac{1}{c^2}\ \vec{c} \times \overrightarrow{E_\theta}
+\end{equation}
+$$
+
+数量形式为：
+
+$$
+\begin{equation}\nonumber
+c\ b_\theta = e_\theta
+\end{equation}
+$$
+
+把上式和式 $\dfrac{\overrightarrow{E_\theta}}{e_r} = \dfrac{1}{c^2}\ (- \vec{A} \times \vec{r})$ 【注意，$e_r$ 是 $\overrightarrow{E_r}$ 的数量】比较，我们有：
+
+$$
+\begin{equation}\nonumber
+\dfrac{\overrightarrow{B_\theta}}{e_r} = \dfrac{1}{c^3}\ (- \vec{A} \times \vec{r})
+\end{equation}
+$$
+
+上式表示了电荷静止时候就存在的电场 $\overrightarrow{E_r}$ 【数量为 $e_r$ 】因为电荷加速运动而变化，所产生的引力场 $- \vec{A}$ 、变化磁场 $\overrightarrow{B_\theta}$ 三者之间的关系。
+
+利用时空同一化方程 $\vec{r} = \vec{c}\ t$ ，上式 $\dfrac{\overrightarrow{B_\theta}}{e_r} = \dfrac{1}{c^3}\ (- \vec{A} \times \vec{r})$ 也可以改写为：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{B_\theta} = -\ \dfrac{e_r\ t}{c^2}\ (\vec{A} \times \hat{r})
+\end{equation}
+$$
+
+$\hat{r}$ 是矢量 $\vec{r}$ 的单 位矢量，和 $\vec{c}$ 的方向一致，$e_r$ 的方向和 $\hat{r}$ 也是一致，所以，
+
+$$
+\begin{equation}\nonumber
+e_r\ \hat{r} = \overrightarrow{E_r}
+\end{equation}
+$$
+
+所以，有：
+
+$$
+\begin{equation}\nonumber
+\overrightarrow{B_\theta} = -\ \dfrac{t}{c^2}\ (\overrightarrow{A} \times \overrightarrow{E_r})
+\end{equation}
+$$
+
+将以上两边对时间 $t$ 求导数，得：
+
+$$
+\begin{equation}\nonumber
+\dfrac{d \overrightarrow{B_\theta}}{dt} = -\ \dfrac{1}{c^2}\ \overrightarrow{A} \times \overrightarrow{E_r}
+\end{equation}
+$$
+
+其实，这个公式，和前面得到的：
+
+$$
+\begin{equation}\nonumber
+\dfrac{d\vec{B}}{dt} = 
+- \dfrac{1}{c^2}\ \dfrac{d\vec{v}}{dt} \times \vec{E} = 
+- \dfrac{1}{c^2}\ \vec{A} \times \vec{E}
+\end{equation}
+$$
+
+是吻合的，用语言描述就是：
+
+加速运动正电荷在周围空间产生加速度方向相反的引力场，并以光速向西周扩散传播。
+
+可以看出，变化电磁场产生变化电场和引力场方程，没有跳出磁场和电场满足的基本关系方程 $\vec{B} = \dfrac{1}{c^2}\ \vec{v} \times \vec{E}$ ，电场、磁场、引力场的一切关系都是这个方程的变种、衍生而已。
+
+以上描述了正电荷加速运动，引起电场变化，产生了变化磁场和引力场，并且给出了加速变化电场、加速变化磁场、引力场三者相互关系【包含了方向】。
