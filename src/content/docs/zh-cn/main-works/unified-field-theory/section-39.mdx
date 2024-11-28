@@ -4,8 +4,179 @@ description: "三十九、统一场论能量方程"
 i18nReady: true
 ---
 
-import { Image } from 'astro:assets';
-import VideoPlayer from '~/components/VideoPlayer.astro';
+import { Aside } from '@astrojs/starlight/components';
 
 
-敬请期待...
+## 能量的定义：
+
+能量是质点在空间中【或者质点周围空间本身】相对于我们观察者在某个空间范围内【由于时空同一化，也可以说在某一个时间段内】运动的运动量。
+
+能量和动量的定义是类似的，反映质点和空间相对于我们观察者的运动程度，所不同的是，动量是矢量，能量是标量，描述的角度不一样。
+
+注意，空间、物质点、观测者、运动四个条件一个都不能少，否则，能量就失去了意义。
+
+单独存在的空间，没有包含物体在里面，也就是纯真空是没有能量的。没有观察者，或者没有指明哪一个观察者，能量是不能确定的。
+
+
+## 统一场论能量方程
+
+将统一场论动量方程的标量形式 $m'\ c = m\ c\ \sqrt{1 - \dfrac{v^2}{c^2}}$ 两边乘以标量光速 $c$ ，就是统一场论能量方程：
+
+$$
+\begin{equation}\nonumber
+E = m'\ c^2 = m\ c^2\ \sqrt{1 - \dfrac{v^2}{c^2}}
+\end{equation}
+$$
+
+$m'\ c^2$ 为 $o$ 点静止能量，当质点的运动速度 $v = 0$ 时候，以上的能量方程和相对论的质能方程 $E = m\ c^2$ 是一样的。
+
+$m'\ c^2$ 为 $o$ 点的静止时候能量，这个和相对论的看法一致。
+
+一个相对于我们观测者静止质量为 $m'$ 的质点，相对论认为有一个静止能量 $E = m'\ c^2$ ，意思是指这个质点周围 $n$ 条空间点的矢量光速的平方，$n$ 的大小取决质量 $m'$ 。
+
+统一场论中的基本假设：宇宙任何物体静止时候周围空间以矢量光速向四周发散运动，可以直接解释相对论静止能量。
+
+在统一场论中，$m\ c^2\ \sqrt{1 - \dfrac{v^2}{c^2}}$ 为 $o$ 点以速度 $v$ 运动的时候的能量和静止能量 $m'\ c^2$ 是相等，相对论认为不相等。
+
+统一场论认为质点能量的量必须相对于一个确定的观察者才有意义。
+
+在统一场论中， $s'$ 系的观察者发现 $o$ 点静止，能量为 $m'\ c^2$ 。
+
+$s$ 系里观察者发现 $o$ 点以速度 $v$ 相对于自己运动，能量为 $m\ c^2\ \sqrt{1 - \dfrac{v^2}{c^2}}$
+
+但无论哪一个观察者都不可能观察到 $o$ 点能量为 $m\ c^2$ 。
+
+我们可以设想，一个质量为 $m$ 的火车相对于我们地面的观测者以匀速度 $\vec{v}$ 【数量为 $v$ 】直线运动，地面的观测者认为这个火车有动能 $\frac{1}{2}\ m\ v^2$ ，而火车上的观测者认为火车的速度为零，因而动能为零。
+
+所以讲，现代物理学认为动能相对于不同的参考系是不守恒的，一个物体具有的能量在不同的观测者看来是不一样的。但是，统一场论有着不同的看法。
+
+统一场论认为一个物体具有能量在相互运动的观测者看来数量是一样的，能量对于不同的参考系仍然是守恒的。不同的观察者看到的只是物体粒子运动形式有所不同，而粒子总的能量是不变的。
+
+统一场论强调了不同的观测者，看到了能量有不同的表现形式，但总的能量的数量与观测者无关，这种观点应该比相对论的观点要合理一些。 
+
+
+## 统一场论能量方程和经典力学动能公式的关系
+
+经典力学认为，一个质量为 $m$ 的质点 $o$ 点相对于我们观测者以速度 $\vec{v}$ 【数量为 $v$ 】运动时候，在我们观测者看来，具有动能 $E_k = \frac{1}{2}\ m\ v^2$ 。
+
+统一场论和相对论有相同的动能方程：
+
+$$
+\begin{equation}\nonumber
+(m - m')\ c^2 = E_k
+\end{equation}
+$$
+
+$E_k$ 也是牛顿力学中的动能， 
+
+将统一场论能量方程 $E = m\ c^2\ \sqrt{1 - \dfrac{v^2}{c^2}}$ 中 $\sqrt{1 - \dfrac{v^2}{c^2}}$ 用级数展开为
+
+$$
+\begin{equation}\nonumber
+1 - \dfrac{1}{2}\ \dfrac{v^2}{c^2} - \dfrac{1}{8}\ (\dfrac{v^2}{c^2})^2 - \dfrac{1}{16}\ (\dfrac{v^2}{c^2})^3 - \cdots
+\end{equation}
+$$
+
+<details>
+  <summary class="custom-summary">点击展开注解：关于上面的级数展开的具体推导</summary>
+  <Aside title="注解">
+    上面的级数展开使用到了二项展开式，具体可参考  “<a href="https://pan.baidu.com/s/14if0AaMRdByVgxAt5ONaoQ?pwd=bv59" target="_blank" rel="noopener noreferrer">同济大学《高等数学》（第七版）下册</a>” p289
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+略去后面的高次项，得到 $\sqrt{1 - \dfrac{v^2}{c^2}} \approx 1 - \dfrac{1}{2}\ \dfrac{v^2}{c^2}$ ，进而得到：
+
+$$
+\begin{equation}\nonumber
+E \approx m\ c^2\ - \dfrac{1}{2}\ m\ v^2
+\end{equation}
+$$
+
+$\frac{1}{2}\ m\ v^2$ 就是牛顿力学的动能 $E_k$ ,
+
+由 $E = m'\ c^2$ 可知 $\frac{1}{2}\ m\ v^2 \approx m\ c^2 - m'\ c^2 = c^2\ (m - m')$ ，这个表明经典动能是物体以速度 $v$ 运动的时候引起静止质量发生变化的变化量。
+
+
+## 统一场论中动量和动能之间的关系
+
+统一场论的静止动量 $\vec{p'} = m'\ \vec{c}$ ，运动动量为 $\vec{p} = m\ (\vec{c} - \vec{v})$ 【标量式为 $p = m\ c\ \sqrt{1 - \dfrac{v^2}{c^2}}$ 】。
+
+统一场论认为质点的静止动量的数量和运动动量是相等的。
+
+$$
+\begin{equation}\nonumber
+p = m\ c\ \sqrt{1 - \dfrac{v^2}{c^2}} = m'\ c
+\end{equation}
+$$
+
+$m'$ 为物体 $o$ 点静止质量，$m$ 是 $o$ 点以速度 $\vec{v}$ 【标量为 $v$ 】运动时候的质量。
+
+统一场论给出的能量方程认为质点 $o$ 静止时候具有能量 $m'\ c^2$ ，以速度 $v$ 运动的时候具有能量 $m\ c^2 - E_k$ 是一样的，并且：
+
+$$
+\begin{equation}\nonumber
+m\ c^2 - E_k = m'\ c^2
+\end{equation}
+$$
+
+其中 $E_k \approx \frac{1}{2}\ m\ v^2$ 为 $o$ 点的动能。
+
+将能量方程：
+
+$$
+\begin{equation}\nonumber
+m'\ c^2 = m\ c^2\ \sqrt{1 - \dfrac{v^2}{c^2}}
+\end{equation}
+$$
+
+两边除以标量光速 $c$ 就能够得到统一场论的动量公式的数量形式：
+
+$$
+\begin{equation}\nonumber
+m'\ c = m\ c\ \sqrt{1 - \dfrac{v^2}{c^2}}
+\end{equation}
+$$
+
+对于统一场论能量和相对论动量 $\vec{p'} = m\ \vec{v}$ 【数量为 $p'= m\ v$ 】之间的关系。
+
+对统一场论能量方程 $E = m'\ c^2 = m\ c^2\ \sqrt{1 - \dfrac{v^2}{c^2}}$ 两边平方，可得：
+
+$$
+\begin{equation}\nonumber
+E^2 = {m'}^2\ c^2\ c^2 = m^2\ c^2\ c^2 - m^2\ c^2\ v^2
+\end{equation}
+$$
+
+由此得到：
+
+$$
+\begin{align}
+m^2\ c^2\ c^2 &= m^2\ c^2\ v^2 + {m'}^2\ c^2\ c^2 \nonumber \\
+m^2\ c^2 &= {p'}^2 + {m'}^2\ c^2 \nonumber
+\end{align}
+$$
+
+这个结果和相对论看起来是一样的，但是，相对论认为 $m^2\ c^2\ c^2$ 是物体粒子的总能量，这个和统一场论是不一样的。
+
+<details>
+  <summary class="custom-summary">点击展开修正：此处应该是想说 “相对论认为 $m^2\ c^2\ c^2$ 是物体粒子的总能量「 **的平方** 」”</summary>
+  <Aside type="danger" title="修正">
+    此处应该是想说 “相对论认为 $m^2\ c^2\ c^2$ 是物体粒子的总能量「 **的平方** 」。当然这是一个无关紧要的细节问题。
+
+    <div style="text-align: right;">
+      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
+
+而统一场论认为总能量 $E$ 平方为：
+
+$$
+\begin{equation}\nonumber
+E^2 = {m'}^2\ c^2\ c^2 = m^2\ c^2\ c^2 - {p'}^2\ c^2
+\end{equation}
+$$
