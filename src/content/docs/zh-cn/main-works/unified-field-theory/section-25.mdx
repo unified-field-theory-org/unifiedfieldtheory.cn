@@ -68,11 +68,30 @@ E = \vec{F} \cdot \vec{r} = m\ \vec{c} \cdot \dfrac{d\vec{r}}{dt}
 $$
 
 <details>
-  <summary class="custom-summary">点击展开疑问：上式怎么将 $m\ \dfrac{d\vec{c}}{dt} \cdot \vec{r}$ 直接转化为了 $m\ \vec{c} \cdot \dfrac{d\vec{r}}{dt}$ ?</summary>
-  <Aside type="caution" title="疑问">
+  <summary class="custom-summary">点击展开注解：上式怎么将 $m\ \dfrac{d\vec{c}}{dt} \cdot \vec{r}$ 直接转化为了 $m\ \vec{c} \cdot \dfrac{d\vec{r}}{dt}$ ?</summary>
+  <Aside title="注解">
     <a href="https://forum.unifiedfieldtheory.cn/questions/10010000000000157/10020000000000219?share=raindream" target="_blank" rel="noopener noreferrer">点击可前往原问题帖</a>
-    <br />
-    目前该问题尚未被解答，欢迎前往讨论区发表您的看法。
+
+    根据 "张祥前统一场论1群" 中 "数学几何是物理" 的回答, 做如下整理:
+    
+    设 $c$ 为 $\vec{c}$ 的模, $\hat{c}$ 为 $\vec{c}$ 方向的单位向量; $r$ 为 $\vec{r}$ 的模, $\hat{r}$ 为 $\vec{r}$ 方向的单位向量.
+
+    由于 $\dfrac{d\vec{c}}{dt} = \dfrac{d(c\ \hat{c})}{dt} = c\ \dfrac{d\hat{c}}{dt} + \hat{c}\ \dfrac{dc}{dt}$, 且 $\dfrac{dc}{dt} = 0$ (因为 $\vec{c}$ 的模不变, 只有方向变化), 因此 $\dfrac{d\vec{c}}{dt} = c\ \dfrac{d\hat{c}}{dt}$, 因此:
+    $$
+    \begin{equation}\nonumber
+    E = \vec{F} \cdot \vec{r} = m\ \dfrac{d\vec{c}}{dt} \cdot \vec{r} = m\ c\ r\ \dfrac{d\hat{c}}{dt} \cdot \hat{r}
+    \end{equation}
+    $$
+    由于 $\vec{c}$ 与 $\vec{r}$ 同向, 所以 $\hat{c} = \hat{r}$. 因此:
+    $$
+    \begin{equation}\nonumber
+    E = m\ c\ r\ \dfrac{d\hat{c}}{dt} \cdot \hat{r} = m\ c\ r\ \dfrac{d\hat{r}}{dt} \cdot \hat{c} = m\ \vec{c}\ \cdot\ \dfrac{d\hat{r}}{dt}\ r
+    \end{equation}
+    $$
+    但是, $\dfrac{d\vec{r}}{dt} = \dfrac{d(r\ \hat{r})}{dt} = r\ \dfrac{d\hat{r}}{dt} + \hat{r}\ \dfrac{dr}{dt}$, 因此, 必须规定 $\vec{r}$ 的大小不变, 只方向变化, 才能推出 $\dfrac{d\hat{r}}{dt}\ r = \dfrac{d\vec{r}}{dt}$, 从而进一步推出 $E = m\ \vec{c}\ \cdot\ \dfrac{d\vec{r}}{dt}$
+
+    总而言之, 需要添加「 $\vec{r}$ 的大小不变, 只方向变化 」这个前提, $m\ \dfrac{d\vec{c}}{dt} \cdot \vec{r} = m\ \vec{c}\ \cdot\ \dfrac{d\vec{r}}{dt}$ 才能成立.
+
     <div style="text-align: right;">
       _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
     </div>
