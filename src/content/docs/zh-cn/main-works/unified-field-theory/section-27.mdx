@@ -40,7 +40,7 @@ $$
 \end{equation}
 $$
 
-中 ，为了便于分析问题，我们令光速运动空间位移矢量 $\vec{r} = \vec{c}\ t$ 来表示，则引力场方程为：
+中 ，为了便于分析问题，我们令光速运动空间位移矢量 $\vec{r} = \vec{c}\ t$ 的条数 $n$ 为 $1$ ，由 $o$ 点指向 $p$ 点的位矢，我们就用 $\vec{r}$ 来表示，则引力场方程为：
 
 $$
 \begin{equation}\nonumber
@@ -63,17 +63,6 @@ $$
 
 $\Omega$ 是包围 $o$ 点的高斯球面 $s = 4 \pi r^2$ 上的一个立体角，在 $r$ 取固定值的情况下，$\Omega$ 的大小正比于 $\vec{r} \cdot \vec{r} = c^2\ t^2$ 
 
-<details>
-  <summary class="custom-summary">点击展开疑问：上面想表达的是不是 $\Omega$ 的大小正比于 $s$ ？</summary>
-  <Aside type="caution" title="疑问">
-    上面想表达的是否是：在 $r$ 取固定值的情况下，$\Omega$ 的大小正比于 $s = 4 \pi r^2$ ？
-
-    <div style="text-align: right;">
-      _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
-    </div>
-  </Aside>
-</details>
-
 因为 $\vec{r}$ 的数量 $r$ 虽然不变，但是，$\vec{r}$ 是矢量，可以通过垂直于 $\vec{r}$ 上的一块面积。
 
 所以，有：
@@ -83,6 +72,17 @@ $$
 \vec{A} = - \dfrac{G\ k\ \vec{r}}{c^2\ t^2\ r^3}
 \end{equation}
 $$
+
+<details>
+  <summary class="custom-summary">点击展开注解：关于上式为什么直接将 $\Omega$ 替换为 $c^2\ t^2$ 的说明</summary>
+  <Aside title="注解">
+    根据上面所说的「 $\Omega$ 的大小正比于 $\vec{r} \cdot \vec{r} = c^2\ t^2$ 」，应有 $\Omega = k'\ c^2\ t^2$ , 所以严格来说, 上式应该写为 $\vec{A} = - \dfrac{G\ k\ \vec{r}}{k'\ c^2\ t^2\ r^3}$ , 但是原文中的上式直接将常数 $k'$ 省略了. 这没有关系, 因为后面会将所有常数合并到一起. 原文中类似的不严谨的情况有很多，明白其想表达的意思即可。
+
+    <div style="text-align: right;">
+        _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
+    </div>
+  </Aside>
+</details>
 
 由于 $G,\ k,\ c,\ r$ 都是常数，合并常数，得到：
 
@@ -101,20 +101,11 @@ $$
 $$
 
 <details>
-  <summary class="custom-summary">点击展开注解：上式的具体推导过程</summary>
-  <Aside title="注解">
-    对 $\vec{A} = - \text{常数乘以} \dfrac{\vec{r}}{t^2}$ 中分式的分子和分母分别对 $t$ 求二阶导，有 $\dfrac{d^2\vec{r}}{dt^2} = $ 和 $ = 2$ ，因此有：
+  <summary class="custom-summary">点击展开疑问：上式是如何推导出来的?</summary>
+  <Aside type="caution" title="疑问">
+    上式相当于是在说, 对一个分式的分子和分母分别求二阶导, 结果仍等于原分式. 即 $\dfrac{x}{y} = \dfrac{x''}{y''}$. 
 
-    $$
-    \begin{align}
-      \vec{A} &= - \text{常数乘以}\ \dfrac{d^2\vec{r} / dt^2}{d^2t^2 / dt^2} \nonumber \\
-      &= - \text{常数乘以}\ \dfrac{d^2\vec{r} / dt^2}{2} \nonumber \\
-      &= - \dfrac{\text{常数}}{2}\ \dfrac{d^2\vec{r}}{dt^2} \nonumber \\
-      &= - \text{新常数乘以}\ \dfrac{d^2\vec{r}}{dt^2} \nonumber
-    \end{align}
-    $$
-
-    关于高阶导数的相关知识，可以参考 “<a href="https://pan.baidu.com/s/14if0AaMRdByVgxAt5ONaoQ?pwd=bv59" target="_blank" rel="noopener noreferrer">同济大学《高等数学》（第七版）上册</a>”  p26 第二章 导数与微分 第三节 高阶导数。
+    然而在一般情况下, 上式并不成立. 加什么条件才能使上式成立呢? 欢迎读者在评论区留言讨论.
 
     <div style="text-align: right;">
       _由 **<a href="mailto:bzsgbq@163.com" target="_blank" rel="noopener noreferrer">RainDream</a>** 添加_
