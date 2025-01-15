@@ -27,6 +27,11 @@ export default [
 		slug: 'professional-evaluations',
 		key: 'professional-evaluations',
 	},
+	{
+		text: 'Milestones',
+		slug: 'milestones',
+		key: 'milestones',
+	},
 	{ text: 'About website', slug: 'about-website', key: 'about-website' },
 	{ text: 'Join community', slug: 'join-community', key: 'join-community' },
 	// {
