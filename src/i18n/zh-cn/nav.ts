@@ -50,14 +50,12 @@ export default NavDictionary({
 	'main-works/unified-field-theory/section-28': '二十八、解释万有引力的本质',
 	'main-works/unified-field-theory/section-29': '二十九、引力场与时空波动方程',
 	'main-works/unified-field-theory/section-30': '三十、电荷与电场的定义方程',
-	'main-works/unified-field-theory/section-31':
-		'三十一、速度乘以质量随时间变化率就是电磁场力',
+	'main-works/unified-field-theory/section-31': '三十一、速度乘以质量随时间变化率就是电磁场力',
 	'main-works/unified-field-theory/section-32': '三十二、核力场的定义方程',
 	'main-works/unified-field-theory/section-33': '三十三、磁场的定义方程',
 	'main-works/unified-field-theory/section-34': '三十四、推导麦克斯韦方程',
 	'main-works/unified-field-theory/section-35': '三十五、随时间变化的引力场产生电场',
-	'main-works/unified-field-theory/section-36':
-		'三十六、匀速直线运动物体的引力场变化产生电场',
+	'main-works/unified-field-theory/section-36': '三十六、匀速直线运动物体的引力场变化产生电场',
 	'main-works/unified-field-theory/section-37': '三十七、运动电荷的磁场产生引力场',
 	'main-works/unified-field-theory/section-38': '三十八、变化电磁场产生引力场的试验情况',
 	'main-works/unified-field-theory/section-39': '三十九、统一场论能量方程',
