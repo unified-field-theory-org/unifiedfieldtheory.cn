@@ -22,6 +22,11 @@ export default [
 	{ text: 'Welcome', header: true, type: 'learn', key: 'welcome' },
 	{ text: 'About Xiangqian Zhang', slug: 'about-xiangqian-zhang', key: 'about-xiangqian-zhang' },
 	{ text: "Zhang's videos", slug: 'videos-of-zhang', key: 'videos-of-zhang' },
+	{
+		text: 'Professional evaluations',
+		slug: 'professional-evaluations',
+		key: 'professional-evaluations',
+	},
 	{ text: 'About website', slug: 'about-website', key: 'about-website' },
 	{ text: 'Join community', slug: 'join-community', key: 'join-community' },
 	// {
