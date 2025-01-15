@@ -4,6 +4,7 @@ export default NavDictionary({
 	welcome: '欢迎',
 	'about-xiangqian-zhang': '关于张祥前',
 	'videos-of-zhang': '张祥前的视频',
+	'professional-evaluations': '专业人士评价张祥前',
 	'about-website': '关于本网站',
 	'join-community': '加入社区',
 	// researchExperiment: '研究实验',
